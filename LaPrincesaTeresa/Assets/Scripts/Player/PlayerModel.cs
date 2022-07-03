@@ -44,6 +44,7 @@ public class PlayerModel : MonoBehaviour
         _currentSpeed = data.walkSpeed;
         _rb = GetComponent<Rigidbody2D>();
         _isLookingRight = true;
+        _crouchSpeedMultiplier = 1f;
     }
 
     private void OpenInventoryHandler(bool obj)
@@ -64,12 +65,13 @@ public class PlayerModel : MonoBehaviour
     {
         var currentSpeed = _currentSpeed * _crouchSpeedMultiplier;
         OnMoveUpdate?.Invoke(_moveDirCached * _currentSpeed);
+        
+        print($"Current speed {currentSpeed}");
 
         if (_moveDirCached == 0)
             return;
         
-        var transform1 = transform;
-        _rb.MovePosition(transform1.position + _moveDirCached * currentSpeed * Vector3.right);
+        _rb.velocity = new Vector2(currentSpeed * _moveDirCached * Time.fixedDeltaTime, _rb.velocity.y);
         var lookRight = _moveDirCached > 0;
         if (lookRight != _isLookingRight)
         {
