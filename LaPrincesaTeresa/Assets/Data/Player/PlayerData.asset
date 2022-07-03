@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c3e01f965a84e9ab9a6252f9f8e8373, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  walkSpeed: 1
+  runSpeed: 2
+  crouchSpeedMultiplier: 0.85
+  jumpInitialForce: 10
+  jumpContinousForce: 1
+  maxJumpTime: 0.15
+  maxFallSpeed: 10
+  groundCheckAreaRadius: 0.2
+  groundCheckLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  coyoteTime: 0.2
+  interactionLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  interactionRadius: 1
