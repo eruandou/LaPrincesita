@@ -1,33 +1,24 @@
 ﻿using System;
-using System.Collections;
 using Interface;
 using UnityEngine;
 
 public class PlayerModel : MonoBehaviour
 {
-    [SerializeField] private PlayerData data;
-
-    private float _currentSpeed;
-
-    private bool _hasDoubleJump;
-    private bool _isJumping;
-    private float _crouchSpeedMultiplier;
-    private WaitForFixedUpdate _waitForFixedUpdate = new WaitForFixedUpdate();
-    [SerializeField] private Transform interactionPoint;
-    [SerializeField] private Transform groundCheckPoint;
-
     public event Action<float> OnMoveUpdate;
     public event Action<bool> OnJumpUpdate;
     public event Action<bool> OnCrouchUpdate;
 
-    private float _moveDirCached;
+    [SerializeField] private PlayerData data;
+    [SerializeField] private Transform interactionPoint;
+    [SerializeField] private Transform groundCheckPoint;
 
+    private bool _isJumping, _hasDoubleJump, _isLookingRight, _isGrounded;
+    private float _currentSpeed, _crouchSpeedMultiplier, _currentGravity, _moveDirCached;
+    private BoxCollider2D _collider;
     private Rigidbody2D _rb;
-
-    private bool _isLookingRight;
-
     private Collider2D[] _interactablesArray = new Collider2D[2];
     private Collider2D[] _groundedArray = new Collider2D[2];
+
 
     public void SubscribeToController(IPlayerController controller)
     {
@@ -45,7 +36,33 @@ public class PlayerModel : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _isLookingRight = true;
         _crouchSpeedMultiplier = 1f;
+        _currentGravity = data.normalGravityValue;
+        _collider = GetComponent<BoxCollider2D>();
+        SetColliderData(1, 0);
     }
+
+    private void SetColliderData(float colliderHeightY, float colliderOffsetY)
+    {
+        var size = _collider.size;
+        size.y = colliderHeightY;
+        _collider.size = size;
+
+        var offset = _collider.offset;
+        offset.y = colliderOffsetY;
+        _collider.offset = offset;
+    }
+
+    private void ApplyCustomGravity()
+    {
+        if (_rb.velocity.y < data.maxFallSpeed)
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x, data.maxFallSpeed);
+            return;
+        }
+
+        _rb.AddForce(Vector2.up * (_currentGravity * Time.fixedDeltaTime), ForceMode2D.Force);
+    }
+
 
     private void OpenInventoryHandler(bool obj)
     {
@@ -58,26 +75,35 @@ public class PlayerModel : MonoBehaviour
 
     private void MoveHandler(float moveDir)
     {
-        _moveDirCached += moveDir;
+        _moveDirCached = moveDir;
     }
 
     private void FixedUpdate()
     {
+        PhysicsMovement();
+        ApplyCustomGravity();
+    }
+
+
+    private void PhysicsMovement()
+    {
         var currentSpeed = _currentSpeed * _crouchSpeedMultiplier;
         OnMoveUpdate?.Invoke(_moveDirCached * _currentSpeed);
-        
-        print($"Current speed {currentSpeed}");
 
         if (_moveDirCached == 0)
+        {
+            _rb.velocity = new Vector2(0, _rb.velocity.y);
             return;
-        
-        _rb.velocity = new Vector2(currentSpeed * _moveDirCached * Time.fixedDeltaTime, _rb.velocity.y);
+        }
+
+        _rb.velocity = new Vector2(currentSpeed * _moveDirCached, _rb.velocity.y);
+
         var lookRight = _moveDirCached > 0;
         if (lookRight != _isLookingRight)
         {
             FlipCharacter();
         }
-        
+
         _moveDirCached = 0;
     }
 
@@ -92,18 +118,28 @@ public class PlayerModel : MonoBehaviour
 
     private bool CheckGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheckPoint.position, data.groundCheckAreaRadius, data.groundCheckLayerMask);
+        return Physics2D.OverlapBoxNonAlloc(groundCheckPoint.position, data.groundCheckBoxSize, 0, _groundedArray,
+            data.groundCheckLayerMask) != 0;
     }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (GameStaticFunctions.IsGoInLayerMask(col.gameObject, data.groundCheckLayerMask))
+        {
+            _isGrounded = true;
+            _currentGravity = data.normalGravityValue;
+        }
+    }
+
     private void JumpHandler(bool jumpState)
     {
-        print("Jump");
-        var isGrounded = CheckGrounded();
+        _isGrounded = CheckGrounded();
         switch (jumpState)
         {
-            case true when isGrounded:
+            case true when _isGrounded:
                 StartJump();
-                return;
-            case false when !isGrounded:
+                break;
+            case false when !_isGrounded:
                 EndJump();
                 break;
         }
@@ -111,34 +147,38 @@ public class PlayerModel : MonoBehaviour
 
     private void StartJump()
     {
-        print("Start jump");
         _rb.AddForce(Vector2.up * data.jumpInitialForce, ForceMode2D.Impulse);
     }
 
     private void EndJump()
     {
-        print("End jump");
+        _currentGravity = data.maxFallGravityValue;
     }
+
+
     private void InteractHandler()
     {
         var interactablesFound = Physics2D.OverlapCircleNonAlloc(interactionPoint.position, data.interactionRadius,
             _interactablesArray, data.interactionLayers);
-        
+
         if (interactablesFound < 1)
             return;
-        
+
         var interactable = _interactablesArray[0].GetComponent<IInteractable>();
         interactable?.OnInteract();
     }
 
 
-    private void CrouchHandler(bool obj)
+    private void CrouchHandler(bool isCrouching)
     {
-        _crouchSpeedMultiplier = obj ? data.crouchSpeedMultiplier : 1;
-        OnCrouchUpdate?.Invoke(obj);
+        _crouchSpeedMultiplier = isCrouching ? data.crouchSpeedMultiplier : 1;
+        var size = isCrouching ? data.crouchColliderSizeY : 1;
+        var offset = isCrouching ? data.crouchColliderOffsetY : 0;
+        SetColliderData(size, offset);
+        OnCrouchUpdate?.Invoke(isCrouching);
     }
-    
-    #if UNITY_EDITOR
+
+#if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
         if (interactionPoint == null || groundCheckPoint == null)
@@ -147,7 +187,7 @@ public class PlayerModel : MonoBehaviour
         Gizmos.DrawWireSphere(interactionPoint.position, data.interactionRadius);
 
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(groundCheckPoint.position, data.groundCheckAreaRadius);
+        Gizmos.DrawWireCube(groundCheckPoint.position, data.groundCheckBoxSize);
     }
 #endif
 }
