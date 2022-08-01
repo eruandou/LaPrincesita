@@ -19,6 +19,14 @@ public class PlayerModel : MonoBehaviour
     private Collider2D[] _interactablesArray = new Collider2D[2];
     private Collider2D[] _groundedArray = new Collider2D[2];
 
+    #region Attributes
+    // All attributes that can be modifypublic int _jump
+
+
+    private int _jump;
+    private float _dash;
+
+    #endregion
 
     public void SubscribeToController(IPlayerController controller)
     {
@@ -97,7 +105,7 @@ public class PlayerModel : MonoBehaviour
         }
 
         _rb.velocity = new Vector2(currentSpeed * _moveDirCached, _rb.velocity.y);
-
+        print("freeeze 2");
         var lookRight = _moveDirCached > 0;
         if (lookRight != _isLookingRight)
         {
@@ -133,6 +141,7 @@ public class PlayerModel : MonoBehaviour
 
     private void JumpHandler(bool jumpState)
     {
+
         _isGrounded = CheckGrounded();
         switch (jumpState)
         {
@@ -147,14 +156,24 @@ public class PlayerModel : MonoBehaviour
 
     private void StartJump()
     {
+       // print("Aca");
         _rb.AddForce(Vector2.up * data.jumpInitialForce, ForceMode2D.Impulse);
     }
 
     private void EndJump()
     {
+       // print("Aca No");
         _currentGravity = data.maxFallGravityValue;
     }
 
+    public void SetJumpAmount(int times)
+    {
+        _jump += times;
+    }    
+    public void SetDashForce(float force)
+    {
+        _dash = force;
+    }
 
     private void InteractHandler()
     {

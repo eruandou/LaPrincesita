@@ -12,21 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c3e01f965a84e9ab9a6252f9f8e8373, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  walkSpeed: 4
-  runSpeed: 6
+  walkSpeed: 6
+  runSpeed: 8
   crouchSpeedMultiplier: 0.4
   crouchColliderSizeY: 0.65
   crouchColliderOffsetY: -0.172
-  jumpInitialForce: 150
-  normalGravityValue: -10000
-  maxFallGravityValue: -40000
-  maxFallSpeed: -20
+  jumpInitialForce: 85
+  normalGravityValue: -5000
+  maxFallGravityValue: -9000
+  maxFallSpeed: -30
   groundCheckAreaRadius: 0.2
   groundCheckLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  groundCheckBoxSize: {x: 1.21, y: 0.17}
-  coyoteTime: 0.2
+  groundCheckBoxSize: {x: 0.98, y: 0.17}
+  coyoteTime: 0.05
   interactionLayers:
     serializedVersion: 2
     m_Bits: 1
