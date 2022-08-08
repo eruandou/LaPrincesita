@@ -1,23 +1,16 @@
-﻿using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewAddJumpBadge", menuName = "ScriptableObjects/Player/Passive Badge", order = 0)]
-public class AddJumpBadge : ScriptableObject
+[CreateAssetMenu(fileName = "NewAddJumpBadge", menuName = "ScriptableObjects/Passive Badges/JumpBadge", order = 0)]
+public class AddJumpBadge : PassiveBadge
 {
-    
-    [Header("Name")] public string name;
-    [Tooltip("This describes what the badge does")]
-    [Header("Description")] public string description;
-
-    [Header("Modifier")] public int modifier;
-    
+   // [Header("Modifier")] public int modifier;
     void Equip(PlayerModel playerModel)
     {
-        playerModel.SetJumpAmount(modifier);
+        playerModel.SetJumpAmount((int)modifier);
     }
 
     void UnEquip(PlayerModel playerModel)
     {
-        playerModel.SetJumpAmount(modifier * -1);
+        playerModel.SetJumpAmount((int)modifier * -1);
     }
 }
