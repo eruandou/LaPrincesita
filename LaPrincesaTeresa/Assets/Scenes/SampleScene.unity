@@ -792,6 +792,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4058278003756467409, guid: f06922410265864488d480569d1dd035, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 1bfcd98fc76aafb48b98ed4ec15b3d3a, type: 2}
     - target: {fileID: 4058278003756467411, guid: f06922410265864488d480569d1dd035, type: 3}
       propertyPath: normalCollider
       value: 
