@@ -20,11 +20,17 @@ public class PlayerModel : MonoBehaviour
     private Collider2D[] _groundedArray = new Collider2D[2];
 
     #region Attributes
-    // All attributes that can be modifypublic int _jump
+
+    // All attributes that can be modified by external sources
 
 
     private int _jump;
     private float _dash;
+
+    // Attribute setters
+
+    public int AddJumps(int newJumps) => _jump += newJumps;
+    public void AddDashForce(float force) => _dash += force;
 
     #endregion
 
@@ -104,8 +110,7 @@ public class PlayerModel : MonoBehaviour
             return;
         }
 
-        _rb.velocity = new Vector2(currentSpeed * _moveDirCached, _rb.velocity.y);
-        print("freeeze 2");
+        _rb.velocity = _rb.velocity.ModifyXAxis(currentSpeed * _moveDirCached);
         var lookRight = _moveDirCached > 0;
         if (lookRight != _isLookingRight)
         {
@@ -132,16 +137,14 @@ public class PlayerModel : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (GameStaticFunctions.IsGoInLayerMask(col.gameObject, data.groundCheckLayerMask))
-        {
-            _isGrounded = true;
-            _currentGravity = data.normalGravityValue;
-        }
+        if (!GameStaticFunctions.IsGoInLayerMask(col.gameObject, data.groundCheckLayerMask)) return;
+
+        _isGrounded = true;
+        _currentGravity = data.normalGravityValue;
     }
 
     private void JumpHandler(bool jumpState)
     {
-
         _isGrounded = CheckGrounded();
         switch (jumpState)
         {
@@ -156,24 +159,15 @@ public class PlayerModel : MonoBehaviour
 
     private void StartJump()
     {
-       // print("Aca");
         _rb.AddForce(Vector2.up * data.jumpInitialForce, ForceMode2D.Impulse);
     }
 
     private void EndJump()
     {
-       // print("Aca No");
+        print("End jump");
         _currentGravity = data.maxFallGravityValue;
     }
 
-    public void SetJumpAmount(int times)
-    {
-        _jump += times;
-    }    
-    public void SetDashForce(float force)
-    {
-        _dash = force;
-    }
 
     private void InteractHandler()
     {

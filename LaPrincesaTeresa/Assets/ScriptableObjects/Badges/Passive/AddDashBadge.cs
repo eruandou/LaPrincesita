@@ -1,30 +1,23 @@
-﻿using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewAddDashBadge", menuName = "ScriptableObjects/Passive Badges/DashBadge", order = 0)]
-public class AddDashBadge : PassiveBadge
+namespace ScriptableObjects.Badges.Passive
 {
-    
-    // [Header("Name")] public string name;
-    // [Tooltip("This describes what the badge does")]
-    // [Header("Description")] public string description;
-
-    // [Header("Modifier")] public float modifier;
-
-    private bool _equiped;
-    
-    void Equip(PlayerModel playerModel)
+    [CreateAssetMenu(fileName = "NewAddDashBadge", menuName = "ScriptableObjects/PassiveBadges/DashBadge", order = 0)]
+    public class AddDashBadge : PassiveNumericBadge
     {
-        if (!_equiped)
+        public override void OnEquip(PlayerModel model)
         {
-            playerModel.SetDashForce(modifier);
-            _equiped = !_equiped;
+            if (IsEquipped)
+                return;
+            IsEquipped = true;
+            model.AddDashForce(numericModifier);
         }
-        
-    }
-
-    void UnEquip(PlayerModel playerModel)
-    {
-        playerModel.SetDashForce(modifier * -1);
+        public override void OnUnequip(PlayerModel model)
+        {
+            if (!IsEquipped)
+                return;
+            IsEquipped = false;
+            model.AddDashForce(numericModifier * -1);
+        }
     }
 }

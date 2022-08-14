@@ -1,7 +1,6 @@
-﻿using UnityEngine;
-public abstract class PassiveBadge : Badge
+﻿public abstract class PassiveBadge : Badge
 {
-    [Tooltip("The value that will modify an attribute")]
-    [Header("Modifier")] public float modifier;
-    
+    public bool IsEquipped;
+    public abstract void OnEquip(PlayerModel model);
+    public abstract void OnUnequip(PlayerModel model);
 }

@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewAddJumpBadge", menuName = "ScriptableObjects/Passive Badges/JumpBadge", order = 0)]
-public class AddJumpBadge : PassiveBadge
+namespace ScriptableObjects.Badges.Passive
 {
-   // [Header("Modifier")] public int modifier;
-    void Equip(PlayerModel playerModel)
+    [CreateAssetMenu(fileName = "NewAddJumpBadge", menuName = "ScriptableObjects/PassiveBadges/JumpBadge", order = 0)]
+    public class AddJumpBadge : PassiveNumericBadge
     {
-        playerModel.SetJumpAmount((int)modifier);
-    }
+        public override void OnEquip(PlayerModel playerModel)
+        {
+            playerModel.AddJumps((int)numericModifier);
+        }
 
-    void UnEquip(PlayerModel playerModel)
-    {
-        playerModel.SetJumpAmount((int)modifier * -1);
+        public override void OnUnequip(PlayerModel playerModel)
+        {
+            playerModel.AddJumps((int)numericModifier * -1);
+        }
     }
 }

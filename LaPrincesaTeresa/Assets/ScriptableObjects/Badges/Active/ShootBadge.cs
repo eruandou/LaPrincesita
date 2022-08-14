@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewPlayerData", menuName = "ScriptableObjects/Player/PlayerData", order = 0)]
-public class ShootBadge : ActiveBadge
+namespace ScriptableObjects.Badges.Active
 {
-    
-    public override void Execute()
+    [CreateAssetMenu(fileName = "NewShootBadge", menuName = "ScriptableObjects/Badges/ActiveBadge/ShootBadge",
+        order = 0)]
+    public class ShootBadge : ActiveBadge
     {
-        base.Execute();
+        public override void Execute()
+        {
+            if (CheckCanExecute())
+            {
+#if UNITY_EDITOR
+                Debug.Log("Shoot");
+#endif
+            }
+        }
     }
 }
