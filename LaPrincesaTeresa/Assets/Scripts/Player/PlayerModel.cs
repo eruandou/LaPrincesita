@@ -2,6 +2,7 @@
 using Interface;
 using UnityEngine;
 
+[SelectionBase]
 public class PlayerModel : MonoBehaviour
 {
     public event Action<float> OnMoveUpdate;
@@ -12,24 +13,26 @@ public class PlayerModel : MonoBehaviour
     [SerializeField] private Transform interactionPoint;
     [SerializeField] private Transform groundCheckPoint;
 
-    private bool _isJumping, _hasDoubleJump, _isLookingRight, _isGrounded;
+    private bool _isJumping, _isLookingRight, _isGrounded;
     private float _currentSpeed, _crouchSpeedMultiplier, _currentGravity, _moveDirCached;
     private BoxCollider2D _collider;
     private Rigidbody2D _rb;
     private Collider2D[] _interactablesArray = new Collider2D[2];
     private Collider2D[] _groundedArray = new Collider2D[2];
+    private float _currentCoyoteTime = 0;
+    private int _currentJumps;
+    private float _initialColliderHeight, _initialColliderOffset;
 
     #region Attributes
 
     // All attributes that can be modified by external sources
 
-
-    private int _jump;
+    private int _maxJumps = 1;
     private float _dash;
 
     // Attribute setters
 
-    public int AddJumps(int newJumps) => _jump += newJumps;
+    public int AddJumps(int newJumps) => _maxJumps += newJumps;
     public void AddDashForce(float force) => _dash += force;
 
     #endregion
@@ -50,9 +53,13 @@ public class PlayerModel : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _isLookingRight = true;
         _crouchSpeedMultiplier = 1f;
-        _currentGravity = data.normalGravityValue;
+        _currentGravity = data.FallGravity;
+        _currentCoyoteTime = data.coyoteTime;
         _collider = GetComponent<BoxCollider2D>();
-        SetColliderData(1, 0);
+        _initialColliderHeight = _collider.size.y;
+        _initialColliderOffset = _collider.offset.y;
+        SetColliderData(_initialColliderHeight, _initialColliderOffset);
+        GetComponent<PlayerView>()?.SubscribeToEvents(this);
     }
 
     private void SetColliderData(float colliderHeightY, float colliderOffsetY)
@@ -96,6 +103,16 @@ public class PlayerModel : MonoBehaviour
     {
         PhysicsMovement();
         ApplyCustomGravity();
+        CheckGroundUpdate();
+    }
+
+    private void CheckGroundUpdate()
+    {
+        _isGrounded = CheckGrounded();
+        if (!_isGrounded)
+        {
+            _currentCoyoteTime -= Time.fixedDeltaTime;
+        }
     }
 
 
@@ -139,33 +156,38 @@ public class PlayerModel : MonoBehaviour
     {
         if (!GameStaticFunctions.IsGoInLayerMask(col.gameObject, data.groundCheckLayerMask)) return;
 
-        _isGrounded = true;
-        _currentGravity = data.normalGravityValue;
+        OnTouchFloor();
     }
 
-    private void JumpHandler(bool jumpState)
+    private void JumpHandler(bool isButtonPressed)
     {
-        _isGrounded = CheckGrounded();
-        switch (jumpState)
+        if (isButtonPressed && (_isGrounded || (_currentCoyoteTime > 0 && _currentJumps > 0)))
         {
-            case true when _isGrounded:
-                StartJump();
-                break;
-            case false when !_isGrounded:
-                EndJump();
-                break;
+            _currentJumps--;
+            StartJump();
+            return;
         }
+
+        EndJump();
     }
 
     private void StartJump()
     {
+        _currentGravity = data.jumpGravityValue;
+        if (_rb.velocity.y < 0)
+            _rb.velocity = _rb.velocity.ModifyYAxis(0);
         _rb.AddForce(Vector2.up * data.jumpInitialForce, ForceMode2D.Impulse);
     }
 
     private void EndJump()
     {
         print("End jump");
-        _currentGravity = data.maxFallGravityValue;
+        if (_rb.velocity.y > 0 && data.instantFalling)
+        {
+            _rb.velocity = _rb.velocity.ModifyYAxis(0);
+        }
+
+        _currentGravity = data.FallGravity;
     }
 
 
@@ -185,10 +207,17 @@ public class PlayerModel : MonoBehaviour
     private void CrouchHandler(bool isCrouching)
     {
         _crouchSpeedMultiplier = isCrouching ? data.crouchSpeedMultiplier : 1;
-        var size = isCrouching ? data.crouchColliderSizeY : 1;
-        var offset = isCrouching ? data.crouchColliderOffsetY : 0;
+        var size = isCrouching ? data.crouchColliderSizeY : _initialColliderHeight;
+        var offset = isCrouching ? data.crouchColliderOffsetY : _initialColliderOffset;
         SetColliderData(size, offset);
         OnCrouchUpdate?.Invoke(isCrouching);
+    }
+
+    private void OnTouchFloor()
+    {
+        _isGrounded = true;
+        _currentJumps = _maxJumps;
+        _currentCoyoteTime = data.coyoteTime;
     }
 
 #if UNITY_EDITOR

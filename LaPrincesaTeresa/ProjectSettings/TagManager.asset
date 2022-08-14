@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Scenery
-  - 
+  - Interactable
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3608806763
+    locked: 0
+  - name: Objects
+    uniqueID: 1382053865
+    locked: 0
+  - name: Foreground
+    uniqueID: 1692110567
     locked: 0
