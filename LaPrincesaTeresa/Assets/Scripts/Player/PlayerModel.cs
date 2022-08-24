@@ -23,6 +23,8 @@ public class PlayerModel : MonoBehaviour
     private int _currentJumps;
     private float _initialColliderHeight, _initialColliderOffset;
 
+    public PlayerController Controller { get; private set; }
+
     #region Attributes
 
     // All attributes that can be modified by external sources
@@ -37,7 +39,7 @@ public class PlayerModel : MonoBehaviour
 
     #endregion
 
-    public void SubscribeToController(IPlayerController controller)
+    public void SubscribeToController(PlayerController controller)
     {
         controller.OnCrouch += CrouchHandler;
         controller.OnInteract += InteractHandler;
@@ -45,6 +47,7 @@ public class PlayerModel : MonoBehaviour
         controller.OnMove += MoveHandler;
         controller.OnRun += RunHandler;
         controller.OnOpenInventory += OpenInventoryHandler;
+        Controller = controller;
     }
 
     private void Awake()
@@ -200,7 +203,7 @@ public class PlayerModel : MonoBehaviour
             return;
 
         var interactable = _interactablesArray[0].GetComponent<IInteractable>();
-        interactable?.OnInteract();
+        interactable?.OnInteract(this);
     }
 
 

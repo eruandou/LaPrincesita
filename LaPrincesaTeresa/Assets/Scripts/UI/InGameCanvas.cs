@@ -7,7 +7,6 @@ namespace UI
     public class InGameCanvas : MonoBehaviour
     {
         private DialogueManager _dialogueManager;
-        //[SerializeField] private UIEventListener uiEventListener;
 
         private void Awake()
         {
@@ -30,7 +29,7 @@ namespace UI
 
         private void DialogueManagementEvent(UIParams p)
         {
-            
+            _dialogueManager.ReceiveDialogue(p.message);
         }
     }
 }

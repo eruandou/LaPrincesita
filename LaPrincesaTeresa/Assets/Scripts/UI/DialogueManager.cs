@@ -1,26 +1,29 @@
 ﻿using System;
 using System.Collections;
+using System.Runtime.CompilerServices;
 using ScriptableObjects.Dialogue;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace UI
 {
     public class DialogueManager : MonoBehaviour
     {
-        [SerializeField] private Image _dialogueImage;
-        [SerializeField] private TextMeshProUGUI _dialogueText;
+        [SerializeField] private Image dialogueImage;
+        [SerializeField] private TextMeshProUGUI dialogueText;
         [SerializeField] private CanvasGroup canvasGroup;
         [SerializeField] private float canvasFadeTime;
         [SerializeField] private AnimationCurve fadeCurve;
         private float _dialogueWaitBetweenChars;
         private Coroutine _typingCoroutine;
+        private Coroutine _setCanvasOpacityCoroutine;
         private string _currentlyTypedText;
         private MultiDialogueObject _dialogueToShow;
 
+        public static event Action OnDialogueFinished;
 #if UNITY_EDITOR
         [Header("Test objects")] public MultiDialogueObject testDialogue;
 #endif
@@ -28,19 +31,62 @@ namespace UI
         private void Awake()
         {
             EnableDisableDialogue(false, true);
+            var playerInput = FindObjectOfType<PlayerInput>();
+
+            if (playerInput != null)
+            {
+                SubscribeToEvents(playerInput);
+            }
+        }
+
+        private void SubscribeToEvents(PlayerInput playerInput)
+        {
+            var moveOption = playerInput.actions["MoveOption"];
+            var selectOption = playerInput.actions["Select"];
+            var cancelOption = playerInput.actions["Cancel"];
+
+            moveOption.performed += PlayerPressMove;
+            selectOption.performed += PlayerPressSubmit;
+            cancelOption.performed += PlayerPressCancel;
+        }
+
+        private void PlayerPressMove(InputAction.CallbackContext context)
+        {
+            Debug.Log($"Move option with {context.ReadValue<Vector2>()}");
+        }
+
+
+        private void PlayerPressSubmit(InputAction.CallbackContext context)
+        {
+            PressContinueCallback();
+        }
+
+
+        private void PlayerPressCancel(InputAction.CallbackContext context)
+        {
+            Debug.Log("Player canceled selection");
         }
 
         private void EnableDisableDialogue(bool enable, bool isImmediate = false)
         {
             print($"Enable is {enable}");
-            canvasGroup.gameObject.SetActive(enable);
+            if (enable)
+            {
+                canvasGroup.gameObject.SetActive(true);
+            }
+
             if (isImmediate)
             {
                 canvasGroup.alpha = enable ? 1 : 0;
             }
             else
             {
-                StartCoroutine(SetCanvasOpacity(enable));
+                if (_setCanvasOpacityCoroutine != null)
+                {
+                    StopCoroutine(_setCanvasOpacityCoroutine);
+                }
+
+                _setCanvasOpacityCoroutine = StartCoroutine(SetCanvasOpacity(enable));
             }
         }
 
@@ -48,15 +94,23 @@ namespace UI
         {
             var timePassed = 0f;
             var targetFade = isFadeIn ? 1 : 0;
+            var start = canvasGroup.alpha;
             while (timePassed < canvasFadeTime)
             {
                 var lerpAmount = timePassed / canvasFadeTime;
-                var fadeAmount = Mathf.Lerp(canvasGroup.alpha, targetFade, fadeCurve.Evaluate(lerpAmount));
+                var fadeAmount = Mathf.Lerp(start, targetFade, fadeCurve.Evaluate(lerpAmount));
                 canvasGroup.alpha = fadeAmount;
                 timePassed += Time.deltaTime;
+                print(fadeAmount);
                 yield return null;
             }
 
+            if (!isFadeIn)
+            {
+                canvasGroup.gameObject.SetActive(false);
+            }
+
+            _setCanvasOpacityCoroutine = null;
             canvasGroup.alpha = targetFade;
         }
 
@@ -83,7 +137,7 @@ namespace UI
                 _typingCoroutine = null;
             }
 
-            _dialogueText.text = _currentlyTypedText;
+            dialogueText.text = _currentlyTypedText;
         }
 
         public void PressContinueCallback()
@@ -102,12 +156,19 @@ namespace UI
             if (!_dialogueToShow.CheckNextDialogueAvailable())
             {
                 EnableDisableDialogue(false);
+                OnDialogueFinished?.Invoke();
                 return;
             }
 
             var nextDialogueObject = _dialogueToShow.GetNextDialogue();
             PrepareDialogueText(nextDialogueObject.timeBetweenCharacters, nextDialogueObject.dialogue);
+            SetupDialogueImage(nextDialogueObject.speakerImage);
             _typingCoroutine = StartCoroutine(TypeOutText());
+        }
+
+        private void SetupDialogueImage(Sprite talkerSprite)
+        {
+            dialogueImage.sprite = talkerSprite;
         }
 
         private IEnumerator TypeOutText()
@@ -115,10 +176,10 @@ namespace UI
             Assert.IsTrue(_dialogueWaitBetweenChars > 0);
 
             var waitForSeconds = new WaitForSeconds(_dialogueWaitBetweenChars);
-            _dialogueText.text = "";
+            dialogueText.text = "";
             foreach (var character in _currentlyTypedText)
             {
-                _dialogueText.text += character;
+                dialogueText.text += character;
                 yield return waitForSeconds;
             }
 

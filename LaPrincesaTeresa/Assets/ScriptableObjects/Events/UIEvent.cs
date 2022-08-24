@@ -17,6 +17,11 @@ namespace ScriptableObjects.Events
             }
         }
 
+        public bool CheckActiveListeners()
+        {
+            return _listeners.Count > 0;
+        }
+
         public void RegisterListener(UIEventListener listener)
         {
             if (!_listeners.Contains(listener))

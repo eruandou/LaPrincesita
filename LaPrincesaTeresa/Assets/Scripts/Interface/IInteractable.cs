@@ -2,7 +2,10 @@
 {
     public interface IInteractable
     {
-        void OnInteract();
+        void OnInteract(PlayerModel model);
         bool IsInteractable();
+
+        void FinishedInteractionCallback();
+
     }
 }

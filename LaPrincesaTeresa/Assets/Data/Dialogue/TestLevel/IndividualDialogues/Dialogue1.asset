@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2411b1af4a3b467ca4bdf9dbaf54fdd3, type: 3}
   m_Name: Dialogue1
   m_EditorClassIdentifier: 
-  speakerImage: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  speakerImage: {fileID: 1313171334, guid: 11c2b26feb8794c448c265879db95472, type: 3}
   timeBetweenCharacters: 0.1
   dialogue: Hello, dialogue 1 here.

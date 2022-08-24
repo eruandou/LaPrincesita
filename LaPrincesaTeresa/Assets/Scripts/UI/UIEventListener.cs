@@ -1,4 +1,5 @@
-﻿using ScriptableObjects.Events;
+﻿using ScriptableObjects.Dialogue;
+using ScriptableObjects.Events;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,15 +15,14 @@ namespace UI
     public struct UIParams
     {
         public UICommand command;
-        public string message;
-        public Sprite speakerImage;
+        public MultiDialogueObject message;
 
-        public UIParams(UICommand newCommand, string newMessage = default, Sprite speakerImage = default)
+        public UIParams(UICommand newCommand, MultiDialogueObject dialogueObject = default)
         {
             command = newCommand;
-            message = newMessage;
-            this.speakerImage = speakerImage;
+            message = dialogueObject;
         }
+        
     }
 
     [System.Serializable]

@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public interface IPlayerController
 {
@@ -14,6 +16,12 @@ public interface IPlayerController
     event Action<bool> OnOpenInventory;
 }
 
+public enum ControllerTypes
+{
+    Regular,
+    Dialogue
+}
+
 public class PlayerController : MonoBehaviour, IPlayerController
 {
     private PlayerInput _playerInput;
@@ -23,6 +31,8 @@ public class PlayerController : MonoBehaviour, IPlayerController
     public event Action<bool> OnCrouch;
     public event Action<bool> OnRun;
     public event Action<bool> OnOpenInventory;
+
+    private Dictionary<ControllerTypes, string> _controllerTypes;
 
     //Actions
 
@@ -47,6 +57,12 @@ public class PlayerController : MonoBehaviour, IPlayerController
         _openInventoryAction = actions["Inventory"];
 
         SubscribeToEvents();
+
+        _controllerTypes = new Dictionary<ControllerTypes, string>()
+        {
+            { ControllerTypes.Regular, GameConstants.REGULAR_MAP_NAME },
+            { ControllerTypes.Dialogue, GameConstants.DIALOGUE_MAP_NAME }
+        };
 
         if (TryGetComponent(out PlayerModel model))
         {
@@ -89,6 +105,13 @@ public class PlayerController : MonoBehaviour, IPlayerController
         _runAction.performed -= OnRunAction;
         _runAction.canceled -= OnRunAction;
         _openInventoryAction.performed -= OnOpenInventoryAction;
+    }
+
+    public void RequestChangeMap(ControllerTypes newType)
+    {
+        if (!_controllerTypes.TryGetValue(newType, out var newMap))
+            return;
+        _playerInput.SwitchCurrentActionMap(newMap);
     }
 
     private void OnMoveAction(InputAction.CallbackContext context)

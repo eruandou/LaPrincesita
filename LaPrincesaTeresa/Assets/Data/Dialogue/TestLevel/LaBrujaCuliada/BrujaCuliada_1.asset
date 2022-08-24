@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2411b1af4a3b467ca4bdf9dbaf54fdd3, type: 3}
-  m_Name: Dialogue2
+  m_Name: BrujaCuliada_1
   m_EditorClassIdentifier: 
-  speakerImage: {fileID: 21300000, guid: 6b28e55bffb34ac438532b8d4d806096, type: 3}
-  timeBetweenCharacters: 0.2
-  dialogue: 'Hello, Dialogue 2 heere
-
-'
+  speakerImage: {fileID: 21300000, guid: 0e58d3cf548ac2345b4557f116c5432b, type: 3}
+  timeBetweenCharacters: 0.5
+  dialogue: 1111111111111111111111111
