@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Diagnostics.Tracing;
 using Interfaces;
+using UnityEditor.Searcher;
 using UnityEngine;
 
 [SelectionBase]
@@ -21,22 +24,23 @@ public class PlayerModel : MonoBehaviour
     private Collider2D[] _groundedArray = new Collider2D[2];
     private float _currentCoyoteTime = 0;
     private int _currentJumps;
-    private int _currentDashes;
+    private float _lastDash;
     private float _initialColliderHeight, _initialColliderOffset;
-
+    private bool _gravityEnabled;
     public PlayerController Controller { get; private set; }
+
 
     #region Attributes
 
     // All attributes that can be modified by external sources
 
     private int _maxJumps = 1;
-    private float _dashModifier = 1f;
+    private float _dashTime = 1f;
 
     // Attribute setters
 
     public int AddJumps(int newJumps) => _maxJumps += newJumps;
-    public void AddDashForce(float force) => _dashModifier += force;
+    public void AddDashForce(float time) => _dashTime += time;
 
     #endregion
 
@@ -54,16 +58,28 @@ public class PlayerModel : MonoBehaviour
 
     private void Awake()
     {
+        GetReferences();
+        Initialize();
+    }
+
+    private void Initialize()
+    {
+        _dashTime = data.dashTime;
         _currentSpeed = data.walkSpeed;
-        _rb = GetComponent<Rigidbody2D>();
         _isLookingRight = true;
         _crouchSpeedMultiplier = 1f;
         _currentGravity = data.FallGravity;
         _currentCoyoteTime = data.coyoteTime;
-        _collider = GetComponent<BoxCollider2D>();
         _initialColliderHeight = _collider.size.y;
         _initialColliderOffset = _collider.offset.y;
+        SetGravityEnabled(true);
         SetColliderData(_initialColliderHeight, _initialColliderOffset);
+    }
+
+    private void GetReferences()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+        _collider = GetComponent<BoxCollider2D>();
         GetComponent<PlayerView>()?.SubscribeToEvents(this);
     }
 
@@ -80,6 +96,8 @@ public class PlayerModel : MonoBehaviour
 
     private void ApplyCustomGravity()
     {
+        if (!_gravityEnabled)
+            return;
         if (_rb.velocity.y < data.maxFallSpeed)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, data.maxFallSpeed);
@@ -89,6 +107,11 @@ public class PlayerModel : MonoBehaviour
         _rb.AddForce(Vector2.up * (_currentGravity * Time.fixedDeltaTime), ForceMode2D.Force);
     }
 
+
+    private void SetGravityEnabled(bool gravityIsEnabled)
+    {
+        _gravityEnabled = gravityIsEnabled;
+    }
 
     private void OpenInventoryHandler(bool obj)
     {
@@ -186,7 +209,7 @@ public class PlayerModel : MonoBehaviour
 
     private void EndJump()
     {
-      //  print("End jump");
+        //  print("End jump");
         if (_rb.velocity.y > 0 && data.instantFalling)
         {
             _rb.velocity = _rb.velocity.ModifyYAxis(0);
@@ -194,33 +217,41 @@ public class PlayerModel : MonoBehaviour
 
         _currentGravity = data.FallGravity;
     }
-    private void DashHandler(bool isButtonPressed)
-    {
-        if (isButtonPressed && _currentDashes == 0)
-        {
-            _currentDashes++;
-            StartDash();
-            return;
-        }
 
-        EndDash();
+    private void DashHandler()
+    {
+        if (_lastDash > Time.time)
+            return;
+
+        _lastDash = Time.time + data.dashCooldown;
+        Controller.EnableInput(false);
+        StartDash();
     }
 
     private void StartDash()
     {
-        print("Start DASH");
-        var direction = _isLookingRight ? Vector2.right : Vector2.left;
-    
-        _rb.velocity = _rb.velocity.ModifyXAxis(_isLookingRight ? 1 : -1);
-        
-        _rb.AddForce(direction * data.dashInitialForce * _dashModifier, ForceMode2D.Impulse);
+        var direction = _isLookingRight ? 1 : -1;
+        _rb.velocity = Vector2.zero;
+        SetGravityEnabled(false);
+        StartCoroutine(DashCoroutine(direction));
     }
 
-    private void EndDash()
+
+    private IEnumerator DashCoroutine(float dirToMoveX)
     {
-        _currentDashes--;
-    }
+        var dashCurrentTime = 0f;
+        var playerRight = transform.right;
+        while (dashCurrentTime < _dashTime)
+        {
+            var deltaT = Time.deltaTime;
+            transform.position += playerRight * (dirToMoveX * deltaT * data.dashInitialForce);
+            dashCurrentTime += deltaT;
+            yield return null;
+        }
 
+        SetGravityEnabled(true);
+        Controller.EnableInput(true);
+    }
 
     private void InteractHandler()
     {
