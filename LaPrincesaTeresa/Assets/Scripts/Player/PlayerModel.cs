@@ -21,6 +21,7 @@ public class PlayerModel : MonoBehaviour
     private Collider2D[] _groundedArray = new Collider2D[2];
     private float _currentCoyoteTime = 0;
     private int _currentJumps;
+    private int _currentDashes;
     private float _initialColliderHeight, _initialColliderOffset;
 
     public PlayerController Controller { get; private set; }
@@ -30,12 +31,12 @@ public class PlayerModel : MonoBehaviour
     // All attributes that can be modified by external sources
 
     private int _maxJumps = 1;
-    private float _dash;
+    private float _dashModifier = 1f;
 
     // Attribute setters
 
     public int AddJumps(int newJumps) => _maxJumps += newJumps;
-    public void AddDashForce(float force) => _dash += force;
+    public void AddDashForce(float force) => _dashModifier += force;
 
     #endregion
 
@@ -44,6 +45,7 @@ public class PlayerModel : MonoBehaviour
         controller.OnCrouch += CrouchHandler;
         controller.OnInteract += InteractHandler;
         controller.OnJump += JumpHandler;
+        controller.OnDash += DashHandler;
         controller.OnMove += MoveHandler;
         controller.OnRun += RunHandler;
         controller.OnOpenInventory += OpenInventoryHandler;
@@ -184,13 +186,39 @@ public class PlayerModel : MonoBehaviour
 
     private void EndJump()
     {
-        print("End jump");
+      //  print("End jump");
         if (_rb.velocity.y > 0 && data.instantFalling)
         {
             _rb.velocity = _rb.velocity.ModifyYAxis(0);
         }
 
         _currentGravity = data.FallGravity;
+    }
+    private void DashHandler(bool isButtonPressed)
+    {
+        if (isButtonPressed && _currentDashes == 0)
+        {
+            _currentDashes++;
+            StartDash();
+            return;
+        }
+
+        EndDash();
+    }
+
+    private void StartDash()
+    {
+        print("Start DASH");
+        var direction = _isLookingRight ? Vector2.right : Vector2.left;
+    
+        _rb.velocity = _rb.velocity.ModifyXAxis(_isLookingRight ? 1 : -1);
+        
+        _rb.AddForce(direction * data.dashInitialForce * _dashModifier, ForceMode2D.Impulse);
+    }
+
+    private void EndDash()
+    {
+        _currentDashes--;
     }
 
 

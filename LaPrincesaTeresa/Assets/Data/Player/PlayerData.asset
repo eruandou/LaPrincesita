@@ -18,6 +18,7 @@ MonoBehaviour:
   crouchColliderSizeY: 1
   crouchColliderOffsetY: -0.5
   jumpInitialForce: 150
+  dashInitialForce: 1500
   jumpGravityValue: -7200
   FallGravity: -15000
   maxFallSpeed: -30
