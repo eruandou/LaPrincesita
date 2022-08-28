@@ -18,8 +18,7 @@ public class PlayerData : ScriptableObject
     [Tooltip("The max fall speed for the player")]
     public float maxFallSpeed = -30f;
 
-    [Header("GroundCheck")] public float groundCheckAreaRadius;
-    public LayerMask groundCheckLayerMask;
+    [Header("GroundCheck")] public LayerMask groundCheckLayerMask;
     public Vector2 groundCheckBoxSize;
     public float coyoteTime;
     [Header("Interaction")] public LayerMask interactionLayers;

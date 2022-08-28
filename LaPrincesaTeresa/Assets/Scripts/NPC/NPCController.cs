@@ -1,5 +1,4 @@
-﻿using System;
-using Interface;
+﻿using Interfaces;
 using ScriptableObjects.Dialogue;
 using ScriptableObjects.Events;
 using UI;
@@ -7,6 +6,7 @@ using UnityEngine;
 
 namespace NPC
 {
+    [SelectionBase]
     public class NPCController : MonoBehaviour, IInteractable
     {
         [SerializeField] private MultiDialogueObject npcDialogue;

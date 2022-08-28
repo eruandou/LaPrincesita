@@ -1,5 +1,5 @@
 ﻿using System;
-using Interface;
+using Interfaces;
 using UnityEngine;
 
 [SelectionBase]

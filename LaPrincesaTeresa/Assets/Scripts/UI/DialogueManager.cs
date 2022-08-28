@@ -15,7 +15,7 @@ namespace UI
         [SerializeField] private Image dialogueImage;
         [SerializeField] private TextMeshProUGUI dialogueText;
         [SerializeField] private CanvasGroup canvasGroup;
-        [SerializeField] private float canvasFadeTime;
+        [SerializeField] private float canvasFadeInTime, canvasFadeOutTime;
         [SerializeField] private AnimationCurve fadeCurve;
         private float _dialogueWaitBetweenChars;
         private Coroutine _typingCoroutine;
@@ -86,18 +86,19 @@ namespace UI
                     StopCoroutine(_setCanvasOpacityCoroutine);
                 }
 
-                _setCanvasOpacityCoroutine = StartCoroutine(SetCanvasOpacity(enable));
+                _setCanvasOpacityCoroutine =
+                    StartCoroutine(SetCanvasOpacity(enable, enable ? canvasFadeInTime : canvasFadeOutTime));
             }
         }
 
-        private IEnumerator SetCanvasOpacity(bool isFadeIn)
+        private IEnumerator SetCanvasOpacity(bool isFadeIn, float timeToFade)
         {
             var timePassed = 0f;
             var targetFade = isFadeIn ? 1 : 0;
             var start = canvasGroup.alpha;
-            while (timePassed < canvasFadeTime)
+            while (timePassed < timeToFade)
             {
-                var lerpAmount = timePassed / canvasFadeTime;
+                var lerpAmount = timePassed / timeToFade;
                 var fadeAmount = Mathf.Lerp(start, targetFade, fadeCurve.Evaluate(lerpAmount));
                 canvasGroup.alpha = fadeAmount;
                 timePassed += Time.deltaTime;

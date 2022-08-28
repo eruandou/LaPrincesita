@@ -21,11 +21,11 @@ MonoBehaviour:
   jumpGravityValue: -7200
   FallGravity: -15000
   maxFallSpeed: -30
-  groundCheckAreaRadius: 0.2
+  groundCheckAreaRadius: 0.08
   groundCheckLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  groundCheckBoxSize: {x: 0.68, y: 0.08}
+  groundCheckBoxSize: {x: 1.23, y: 0.05}
   coyoteTime: 0.15
   interactionLayers:
     serializedVersion: 2
