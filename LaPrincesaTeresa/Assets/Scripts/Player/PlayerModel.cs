@@ -12,6 +12,7 @@ public class PlayerModel : MonoBehaviour
 
     public event Action<bool> OnGroundedUpdate;
     public event Action<bool> OnGlidingUpdate;
+    public event Action<bool> OnDashUpdate;
 
     [SerializeField] private PlayerData data;
     [SerializeField] private Transform interactionPoint;
@@ -250,7 +251,6 @@ public class PlayerModel : MonoBehaviour
     {
         if (_lastDash > Time.time)
             return;
-
         _lastDash = Time.time + data.dashCooldown;
         StartDash();
     }
@@ -260,6 +260,7 @@ public class PlayerModel : MonoBehaviour
         var direction = _isLookingRight ? 1 : -1;
         _rb.velocity = Vector2.zero;
         HandleDashConditions(true);
+        OnDashUpdate?.Invoke(true);
         StartCoroutine(DashCoroutinePhysics(direction));
     }
 
@@ -269,6 +270,7 @@ public class PlayerModel : MonoBehaviour
         _rb.velocity = new Vector2(data.dashInitialForce * dirToMoveX, 0);
         yield return new WaitForSeconds(_dashTime);
         _rb.velocity = Vector2.zero;
+        OnDashUpdate?.Invoke(false);
         HandleDashConditions(false);
     }
 

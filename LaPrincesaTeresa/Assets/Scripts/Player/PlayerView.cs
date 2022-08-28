@@ -6,7 +6,7 @@ public class PlayerView : MonoBehaviour
 {
     private Animator _animator;
 
-    private bool _isCrouching, _isJumping, _isGrounded, _isGliding;
+    private bool _isCrouching, _isJumping, _isGrounded, _isGliding, _isDashing;
     private static readonly int Movement = Animator.StringToHash("Movement");
 
     private void Awake()
@@ -21,6 +21,12 @@ public class PlayerView : MonoBehaviour
         model.OnMoveUpdate += OnMoveHandler;
         model.OnGroundedUpdate += SetGrounded;
         model.OnGlidingUpdate += SetGliding;
+        model.OnDashUpdate += SetDashing;
+    }
+
+    private void SetDashing(bool isDashing)
+    {
+        _isDashing = isDashing;
     }
 
     private void SetGliding(bool isGliding)
@@ -58,6 +64,13 @@ public class PlayerView : MonoBehaviour
         if (_isCrouching)
         {
             _animator.Play("Crouched");
+            return;
+        }
+
+
+        if (_isDashing)
+        {
+            _animator.Play("Dashing");
             return;
         }
 
