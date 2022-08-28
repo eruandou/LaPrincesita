@@ -10,6 +10,9 @@ public class PlayerModel : MonoBehaviour
     public event Action<bool> OnJumpUpdate;
     public event Action<bool> OnCrouchUpdate;
 
+    public event Action<bool> OnGroundedUpdate;
+    public event Action<bool> OnGlidingUpdate;
+
     [SerializeField] private PlayerData data;
     [SerializeField] private Transform interactionPoint;
     [SerializeField] private Transform groundCheckPoint;
@@ -20,11 +23,13 @@ public class PlayerModel : MonoBehaviour
     private Rigidbody2D _rb;
     private Collider2D[] _interactablesArray = new Collider2D[2];
     private Collider2D[] _groundedArray = new Collider2D[2];
+    private RaycastHit2D[] _checkCollisionsAbove = new RaycastHit2D[1];
     private float _currentCoyoteTime = 0;
     private int _currentJumps;
     private float _lastDash;
     private float _initialColliderHeight, _initialColliderOffset;
     private bool _gravityEnabled;
+    private bool _isPreventedFromUncrouching;
     public PlayerController Controller { get; private set; }
 
 
@@ -135,7 +140,15 @@ public class PlayerModel : MonoBehaviour
 
     private void CheckGroundUpdate()
     {
-        _isGrounded = CheckGrounded();
+        var previousGroundedState = _isGrounded;
+        var newGrounded = CheckGrounded();
+
+        if (previousGroundedState != newGrounded)
+        {
+            _isGrounded = newGrounded;
+        }
+
+        OnGroundedUpdate?.Invoke(_isGrounded);
         if (!_isGrounded)
         {
             _currentCoyoteTime -= Time.fixedDeltaTime;
@@ -150,8 +163,14 @@ public class PlayerModel : MonoBehaviour
             return;
         }
 
+        if (_isPreventedFromUncrouching && !CheckCollisionAbove())
+        {
+            CrouchHandler(false);
+            _isPreventedFromUncrouching = false;
+        }
+
         var currentSpeed = _currentSpeed * _crouchSpeedMultiplier;
-        OnMoveUpdate?.Invoke(_moveDirCached * _currentSpeed);
+        OnMoveUpdate?.Invoke(_moveDirCached != 0 ? 1 * _currentSpeed : 0);
 
 
         if (_moveDirCached == 0)
@@ -207,6 +226,7 @@ public class PlayerModel : MonoBehaviour
     private void StartJump()
     {
         _currentGravity = data.jumpGravityValue;
+        OnJumpUpdate?.Invoke(true);
         if (_rb.velocity.y < 0)
             _rb.velocity = _rb.velocity.ModifyYAxis(0);
         _rb.AddForce(Vector2.up * data.jumpInitialForce, ForceMode2D.Impulse);
@@ -219,6 +239,8 @@ public class PlayerModel : MonoBehaviour
         {
             _rb.velocity = _rb.velocity.ModifyYAxis(0);
         }
+
+        OnJumpUpdate?.Invoke(false);
 
         _currentGravity = data.FallGravity;
     }
@@ -271,11 +293,23 @@ public class PlayerModel : MonoBehaviour
 
     private void CrouchHandler(bool isCrouching)
     {
+        if (!isCrouching && CheckCollisionAbove())
+        {
+            _isPreventedFromUncrouching = true;
+            return;
+        }
+
         _crouchSpeedMultiplier = isCrouching ? data.crouchSpeedMultiplier : 1;
         var size = isCrouching ? data.crouchColliderSizeY : _initialColliderHeight;
         var offset = isCrouching ? data.crouchColliderOffsetY : _initialColliderOffset;
         SetColliderData(size, offset);
         OnCrouchUpdate?.Invoke(isCrouching);
+    }
+
+    private bool CheckCollisionAbove()
+    {
+        return Physics2D.RaycastNonAlloc(transform.position, Vector2.up, _checkCollisionsAbove,
+            data.aboveHeadMinimumDistance, data.groundCheckLayerMask) != 0;
     }
 
     private void OnTouchFloor()
@@ -295,6 +329,10 @@ public class PlayerModel : MonoBehaviour
 
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(groundCheckPoint.position, data.groundCheckBoxSize);
+
+        Gizmos.color = Color.red;
+        var position = transform.position;
+        Gizmos.DrawLine(position, position + data.aboveHeadMinimumDistance * Vector3.up);
     }
 #endif
 }

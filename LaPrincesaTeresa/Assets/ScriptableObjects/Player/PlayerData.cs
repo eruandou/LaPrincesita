@@ -24,6 +24,7 @@ public class PlayerData : ScriptableObject
     [Header("GroundCheck")] public LayerMask groundCheckLayerMask;
     public Vector2 groundCheckBoxSize;
     [Min(0)] public float coyoteTime;
+    [Min(0)] public float aboveHeadMinimumDistance = 1f;
     [Header("Interaction")] public LayerMask interactionLayers;
     [Min(0)] public float interactionRadius;
     public bool instantFalling = true;
