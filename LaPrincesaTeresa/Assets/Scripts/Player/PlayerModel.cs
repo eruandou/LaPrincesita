@@ -227,6 +227,7 @@ public class PlayerModel : MonoBehaviour
     {
         _currentGravity = data.jumpGravityValue;
         OnJumpUpdate?.Invoke(true);
+        CrouchHandler(false);
         if (_rb.velocity.y < 0)
             _rb.velocity = _rb.velocity.ModifyYAxis(0);
         _rb.AddForce(Vector2.up * data.jumpInitialForce, ForceMode2D.Impulse);
