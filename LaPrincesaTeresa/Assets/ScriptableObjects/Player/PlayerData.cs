@@ -8,7 +8,7 @@ public class PlayerData : ScriptableObject
     [Range(0, 1)] public float crouchSpeedMultiplier;
     public float crouchColliderSizeY, crouchColliderOffsetY;
     public float jumpInitialForce;
-
+    public float dashInitialForce;
     [Tooltip("This represents the players usual gravity for most situations")]
     public float jumpGravityValue = -9.81f;
 

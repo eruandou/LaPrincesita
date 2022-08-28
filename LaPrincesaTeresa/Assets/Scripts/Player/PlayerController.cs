@@ -11,6 +11,7 @@ public interface IPlayerController
     event Action<float> OnMove;
     event Action OnInteract;
     event Action<bool> OnJump;
+    event Action<bool> OnDash;
     event Action<bool> OnCrouch;
     event Action<bool> OnRun;
     event Action<bool> OnOpenInventory;
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
     public event Action<float> OnMove;
     public event Action OnInteract;
     public event Action<bool> OnJump;
+    public event Action<bool> OnDash;
     public event Action<bool> OnCrouch;
     public event Action<bool> OnRun;
     public event Action<bool> OnOpenInventory;
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
     private InputAction _moveAction;
     private InputAction _interactAction;
     private InputAction _jumpAction;
+    private InputAction _dashAction;
     private InputAction _crouchAction;
     private InputAction _runAction;
     private InputAction _openInventoryAction;
@@ -52,6 +55,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
         _moveAction = actions["Move"];
         _interactAction = actions["Interact"];
         _jumpAction = actions["Jump"];
+        _dashAction = actions["Dash"];
         _crouchAction = actions["Crouch"];
         _runAction = actions["Run"];
         _openInventoryAction = actions["Inventory"];
@@ -76,6 +80,8 @@ public class PlayerController : MonoBehaviour, IPlayerController
         _interactAction.performed += OnInteractAction;
         _jumpAction.performed += OnJumpAction;
         _jumpAction.canceled += OnJumpAction;
+        _dashAction.performed += OnDashAction;
+        _dashAction.canceled += OnDashAction;
         _crouchAction.performed += OnCrouchAction;
         _crouchAction.canceled += OnCrouchAction;
         _runAction.performed += OnRunAction;
@@ -122,6 +128,10 @@ public class PlayerController : MonoBehaviour, IPlayerController
     private void OnJumpAction(InputAction.CallbackContext context)
     {
         OnJump?.Invoke(context.ReadValueAsButton());
+    } 
+    private void OnDashAction(InputAction.CallbackContext context)
+    {
+        OnDash?.Invoke(context.ReadValueAsButton());
     }
 
     private void OnInteractAction(InputAction.CallbackContext context)

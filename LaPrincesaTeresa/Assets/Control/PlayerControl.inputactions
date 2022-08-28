@@ -305,7 +305,7 @@
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Controller",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -316,7 +316,7 @@
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardMouse",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
