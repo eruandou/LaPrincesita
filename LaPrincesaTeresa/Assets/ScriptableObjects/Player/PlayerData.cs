@@ -7,10 +7,11 @@ public class PlayerData : ScriptableObject
     public float runSpeed;
     [Range(0, 1)] public float crouchSpeedMultiplier;
     public float crouchColliderSizeY, crouchColliderOffsetY;
-    public float jumpInitialForce;
-    public float dashInitialForce;
-    public float dashCooldown = 3f;
-    public float dashTime = 0.8f;
+    [Min(0)] public float jumpInitialForce;
+    [Min(0)] public float dashInitialForce;
+    [Min(0)] public float dashCooldown = 3f;
+    [Min(0)] public float dashTime = 0.8f;
+
     [Tooltip("This represents the players usual gravity for most situations")]
     public float jumpGravityValue = -9.81f;
 
@@ -22,8 +23,8 @@ public class PlayerData : ScriptableObject
 
     [Header("GroundCheck")] public LayerMask groundCheckLayerMask;
     public Vector2 groundCheckBoxSize;
-    public float coyoteTime;
+    [Min(0)] public float coyoteTime;
     [Header("Interaction")] public LayerMask interactionLayers;
-    public float interactionRadius;
+    [Min(0)] public float interactionRadius;
     public bool instantFalling = true;
 }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Diagnostics.Tracing;
 using Interfaces;
-using UnityEditor.Searcher;
 using UnityEngine;
 
 [SelectionBase]
@@ -36,6 +34,7 @@ public class PlayerModel : MonoBehaviour
 
     private int _maxJumps = 1;
     private float _dashTime = 1f;
+    private bool _isDashing;
 
     // Attribute setters
 
@@ -146,12 +145,18 @@ public class PlayerModel : MonoBehaviour
 
     private void PhysicsMovement()
     {
+        if (_isDashing)
+        {
+            return;
+        }
+
         var currentSpeed = _currentSpeed * _crouchSpeedMultiplier;
         OnMoveUpdate?.Invoke(_moveDirCached * _currentSpeed);
 
+
         if (_moveDirCached == 0)
         {
-            _rb.velocity = new Vector2(0, _rb.velocity.y);
+            _rb.velocity = _rb.velocity.ModifyXAxis(0);
             return;
         }
 
@@ -224,7 +229,6 @@ public class PlayerModel : MonoBehaviour
             return;
 
         _lastDash = Time.time + data.dashCooldown;
-        Controller.EnableInput(false);
         StartDash();
     }
 
@@ -232,25 +236,24 @@ public class PlayerModel : MonoBehaviour
     {
         var direction = _isLookingRight ? 1 : -1;
         _rb.velocity = Vector2.zero;
-        SetGravityEnabled(false);
-        StartCoroutine(DashCoroutine(direction));
+        HandleDashConditions(true);
+        StartCoroutine(DashCoroutinePhysics(direction));
     }
 
 
-    private IEnumerator DashCoroutine(float dirToMoveX)
+    private IEnumerator DashCoroutinePhysics(float dirToMoveX)
     {
-        var dashCurrentTime = 0f;
-        var playerRight = transform.right;
-        while (dashCurrentTime < _dashTime)
-        {
-            var deltaT = Time.deltaTime;
-            transform.position += playerRight * (dirToMoveX * deltaT * data.dashInitialForce);
-            dashCurrentTime += deltaT;
-            yield return null;
-        }
+        _rb.velocity = new Vector2(data.dashInitialForce * dirToMoveX, 0);
+        yield return new WaitForSeconds(_dashTime);
+        _rb.velocity = Vector2.zero;
+        HandleDashConditions(false);
+    }
 
-        SetGravityEnabled(true);
-        Controller.EnableInput(true);
+    private void HandleDashConditions(bool isDashing)
+    {
+        SetGravityEnabled(!isDashing);
+        Controller.EnableInput(!isDashing);
+        _isDashing = isDashing;
     }
 
     private void InteractHandler()
