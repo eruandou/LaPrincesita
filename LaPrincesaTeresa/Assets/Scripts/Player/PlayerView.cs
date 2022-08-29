@@ -8,6 +8,7 @@ public class PlayerView : MonoBehaviour
 
     private bool _isCrouching, _isJumping, _isGrounded, _isGliding, _isDashing;
     private static readonly int Movement = Animator.StringToHash("Movement");
+    private static readonly int Jumping = Animator.StringToHash("Jumping");
 
     private void Awake()
     {
@@ -42,6 +43,7 @@ public class PlayerView : MonoBehaviour
     private void OnJumpHandler(bool isJumping)
     {
         _isJumping = isJumping;
+        _animator.SetBool(Jumping, isJumping);
     }
 
     private void SetGrounded(bool isGrounded)
@@ -82,6 +84,12 @@ public class PlayerView : MonoBehaviour
         if (_isJumping)
         {
             _animator.Play("Jumping");
+            return;
+        }
+
+        if (_isGliding)
+        {
+            _animator.Play("Gliding");
             return;
         }
 

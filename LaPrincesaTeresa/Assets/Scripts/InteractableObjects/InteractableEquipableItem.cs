@@ -27,5 +27,19 @@ namespace InteractableObjects
             transform1.localRotation = Quaternion.identity;
             FinishedInteractionCallback();
         }
+
+#if UNITY_EDITOR
+        public void SetDefaults()
+        {
+            socketName = "BackSocket";
+        }
+
+        public void SetSocketByEditor(string socket)
+        {
+            socketName = socket;
+        }
+#endif
     }
+    
+    
 }

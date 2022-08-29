@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 namespace InteractableObjects
@@ -38,6 +37,13 @@ namespace InteractableObjects
         {
             var calculatedProgressPerInteract = 1f / numberOfInteractionsNeeded;
             progressPerInteraction = calculatedProgressPerInteract;
+        }
+
+        public void SetDefaults()
+        {
+            interactionCooldown = 0.1f;
+            progressPerInteraction = 0.2f;
+            numberOfInteractionsNeeded = 5;
         }
 #endif
     }

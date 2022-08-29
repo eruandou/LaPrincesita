@@ -259,8 +259,7 @@ public class PlayerModel : MonoBehaviour
 
     private void JumpHandler(bool isButtonPressed)
     {
-        if (isButtonPressed && (_isGrounded || (_currentCoyoteTime > 0 && _currentJumps > 0) ||
-                                (_maxJumps > 1 && _currentJumps > 0)))
+        if (isButtonPressed && (_isGrounded || ((_currentCoyoteTime > 0 || _maxJumps > 1) && _currentJumps > 0)))
         {
             _currentJumps--;
             StartJump();
