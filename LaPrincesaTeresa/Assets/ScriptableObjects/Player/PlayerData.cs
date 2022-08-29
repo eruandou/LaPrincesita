@@ -11,6 +11,8 @@ public class PlayerData : ScriptableObject
     [Min(0)] public float dashInitialForce;
     [Min(0)] public float dashCooldown = 3f;
     [Min(0)] public float dashTime = 0.8f;
+    public float glidingGravity;
+    [Min(0.1f)] public float glidingTime;
 
     [Tooltip("This represents the players usual gravity for most situations")]
     public float jumpGravityValue = -9.81f;

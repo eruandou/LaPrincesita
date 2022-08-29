@@ -67,7 +67,6 @@ public class PlayerView : MonoBehaviour
             return;
         }
 
-
         if (_isDashing)
         {
             _animator.Play("Dashing");

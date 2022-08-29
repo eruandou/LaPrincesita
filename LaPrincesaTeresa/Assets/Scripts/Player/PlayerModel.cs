@@ -1,7 +1,16 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Interfaces;
 using UnityEngine;
+
+[Serializable]
+public class Socket
+{
+    public string socketName;
+    public Transform transformObject;
+}
 
 [SelectionBase]
 public class PlayerModel : MonoBehaviour
@@ -18,7 +27,7 @@ public class PlayerModel : MonoBehaviour
     [SerializeField] private Transform interactionPoint;
     [SerializeField] private Transform groundCheckPoint;
 
-    private bool _isJumping, _isLookingRight, _isGrounded;
+    private bool _isJumping, _isLookingRight, _isGrounded, _isGliding;
     private float _currentSpeed, _crouchSpeedMultiplier, _currentGravity, _moveDirCached;
     private BoxCollider2D _collider;
     private Rigidbody2D _rb;
@@ -31,7 +40,12 @@ public class PlayerModel : MonoBehaviour
     private float _initialColliderHeight, _initialColliderOffset;
     private bool _gravityEnabled;
     private bool _isPreventedFromUncrouching;
+    private Coroutine _glidingCoroutine;
     public PlayerController Controller { get; private set; }
+
+    [SerializeField] private List<Socket> playerSockets;
+
+    private Dictionary<string, Transform> _equipableItemsPositionBySocket;
 
 
     #region Attributes
@@ -41,6 +55,15 @@ public class PlayerModel : MonoBehaviour
     private int _maxJumps = 1;
     private float _dashTime = 1f;
     private bool _isDashing;
+    private bool _canGlide;
+
+#if UNITY_EDITOR
+    [ContextMenu("Set can glide bool")]
+    public void SetCanGlide()
+    {
+        _canGlide = true;
+    }
+#endif
 
     // Attribute setters
 
@@ -67,6 +90,11 @@ public class PlayerModel : MonoBehaviour
         Initialize();
     }
 
+    public Transform GetSocket(string socketName)
+    {
+        return _equipableItemsPositionBySocket.TryGetValue(socketName, out var socket) ? socket : default;
+    }
+
     private void Initialize()
     {
         _dashTime = data.dashTime;
@@ -79,6 +107,17 @@ public class PlayerModel : MonoBehaviour
         _initialColliderOffset = _collider.offset.y;
         SetGravityEnabled(true);
         SetColliderData(_initialColliderHeight, _initialColliderOffset);
+        _equipableItemsPositionBySocket = new Dictionary<string, Transform>();
+
+        foreach (var socket in playerSockets)
+        {
+            _equipableItemsPositionBySocket.Add(socket.socketName, socket.transformObject);
+        }
+    }
+
+    public List<string> GetAllSockets()
+    {
+        return playerSockets.Select(t => t.socketName).ToList();
     }
 
     private void GetReferences()
@@ -221,6 +260,32 @@ public class PlayerModel : MonoBehaviour
             return;
         }
 
+        if (_canGlide && isButtonPressed && !_isGrounded && !_isGliding)
+        {
+            _isGliding = true;
+            _glidingCoroutine = StartCoroutine(GlidingTimer());
+            return;
+        }
+
+        EndJump();
+    }
+
+    private IEnumerator GlidingTimer()
+    {
+        _currentGravity = data.glidingGravity;
+        OnGlidingUpdate?.Invoke(true);
+        _rb.velocity = _rb.velocity.ModifyYAxis(0);
+        var _counter = 0f;
+
+        while (_counter < data.glidingTime)
+        {
+            _counter += Time.deltaTime;
+            yield return null;
+        }
+
+        _isGliding = false;
+        OnGlidingUpdate?.Invoke(false);
+        _glidingCoroutine = null;
         EndJump();
     }
 
@@ -236,10 +301,16 @@ public class PlayerModel : MonoBehaviour
 
     private void EndJump()
     {
-        //  print("End jump");
         if (_rb.velocity.y > 0 && data.instantFalling)
         {
             _rb.velocity = _rb.velocity.ModifyYAxis(0);
+        }
+
+        if (_glidingCoroutine != null)
+        {
+            StopCoroutine(_glidingCoroutine);
+            _isGliding = false;
+            OnGlidingUpdate?.Invoke(false);
         }
 
         OnJumpUpdate?.Invoke(false);
