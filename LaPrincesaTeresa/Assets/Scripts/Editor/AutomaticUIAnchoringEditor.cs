@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-public class AutomaticUIAnchoringEditor : Editor
+public class AutomaticUIAnchoringEditor : UnityEditor.Editor
 {
     private static void Anchor(RectTransform rectTransform)
     {

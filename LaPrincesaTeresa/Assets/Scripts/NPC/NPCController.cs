@@ -1,5 +1,4 @@
-﻿using System;
-using Interface;
+﻿using Interfaces;
 using ScriptableObjects.Dialogue;
 using ScriptableObjects.Events;
 using UI;
@@ -7,6 +6,7 @@ using UnityEngine;
 
 namespace NPC
 {
+    [SelectionBase]
     public class NPCController : MonoBehaviour, IInteractable
     {
         [SerializeField] private MultiDialogueObject npcDialogue;
@@ -28,13 +28,9 @@ namespace NPC
 
             OnInteractionChange(ControllerTypes.Dialogue);
 
-            uiEvent.Raise(new UIParams()
-            {
-                command = UICommand.DialogueCommand,
-                message = npcDialogue
-            });
+            uiEvent.Raise(new UIParams(UICommand.DialogueCommand, npcDialogue));
 
-            DialogueManager.OnDialogueFinished += FinishedInteractionCallback;
+            InGameDialogueManager.OnInGameDialogueFinished += FinishedInteractionCallback;
         }
 
 
@@ -49,7 +45,7 @@ namespace NPC
         {
             _isInteractable = true;
             OnInteractionChange(ControllerTypes.Regular);
-            DialogueManager.OnDialogueFinished -= FinishedInteractionCallback;
+            InGameDialogueManager.OnInGameDialogueFinished -= FinishedInteractionCallback;
         }
 
         public bool IsInteractable()

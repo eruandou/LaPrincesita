@@ -8,11 +8,12 @@ namespace UI
     public enum UICommand
     {
         DialogueCommand,
+        DiegeticDialogueCommand,
         DeathCommand
     }
 
     [System.Serializable]
-    public struct UIParams
+    public class UIParams
     {
         public UICommand command;
         public MultiDialogueObject message;

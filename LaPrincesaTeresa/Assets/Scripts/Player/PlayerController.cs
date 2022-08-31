@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Build.Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
@@ -11,7 +12,7 @@ public interface IPlayerController
     event Action<float> OnMove;
     event Action OnInteract;
     event Action<bool> OnJump;
-    event Action<bool> OnDash;
+    event Action OnDash;
     event Action<bool> OnCrouch;
     event Action<bool> OnRun;
     event Action<bool> OnOpenInventory;
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
     public event Action<float> OnMove;
     public event Action OnInteract;
     public event Action<bool> OnJump;
-    public event Action<bool> OnDash;
+    public event Action OnDash;
     public event Action<bool> OnCrouch;
     public event Action<bool> OnRun;
     public event Action<bool> OnOpenInventory;
@@ -81,7 +82,6 @@ public class PlayerController : MonoBehaviour, IPlayerController
         _jumpAction.performed += OnJumpAction;
         _jumpAction.canceled += OnJumpAction;
         _dashAction.performed += OnDashAction;
-        _dashAction.canceled += OnDashAction;
         _crouchAction.performed += OnCrouchAction;
         _crouchAction.canceled += OnCrouchAction;
         _runAction.performed += OnRunAction;
@@ -89,6 +89,11 @@ public class PlayerController : MonoBehaviour, IPlayerController
         _openInventoryAction.performed += OnOpenInventoryAction;
     }
 
+
+    public void EnableInput(bool isEnabled)
+    {
+        _playerInput.enabled = isEnabled;
+    }
 
     private void OnDisable()
     {
@@ -106,6 +111,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
         _interactAction.performed -= OnInteractAction;
         _jumpAction.performed -= OnJumpAction;
         _jumpAction.canceled -= OnJumpAction;
+        _dashAction.performed -= OnDashAction;
         _crouchAction.performed -= OnCrouchAction;
         _crouchAction.canceled -= OnCrouchAction;
         _runAction.performed -= OnRunAction;
@@ -128,10 +134,11 @@ public class PlayerController : MonoBehaviour, IPlayerController
     private void OnJumpAction(InputAction.CallbackContext context)
     {
         OnJump?.Invoke(context.ReadValueAsButton());
-    } 
+    }
+
     private void OnDashAction(InputAction.CallbackContext context)
     {
-        OnDash?.Invoke(context.ReadValueAsButton());
+        OnDash?.Invoke();
     }
 
     private void OnInteractAction(InputAction.CallbackContext context)

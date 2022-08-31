@@ -18,16 +18,20 @@ MonoBehaviour:
   crouchColliderSizeY: 1
   crouchColliderOffsetY: -0.5
   jumpInitialForce: 150
-  dashInitialForce: 1500
+  dashInitialForce: 18
+  dashCooldown: 0.8
+  dashTime: 0.5
+  glidingGravity: -1000
+  glidingTime: 2
   jumpGravityValue: -7200
   FallGravity: -15000
   maxFallSpeed: -30
-  groundCheckAreaRadius: 0.2
   groundCheckLayerMask:
     serializedVersion: 2
-    m_Bits: 64
-  groundCheckBoxSize: {x: 0.68, y: 0.08}
+    m_Bits: 192
+  groundCheckBoxSize: {x: 1.23, y: 0.05}
   coyoteTime: 0.15
+  aboveHeadMinimumDistance: 1
   interactionLayers:
     serializedVersion: 2
     m_Bits: 128

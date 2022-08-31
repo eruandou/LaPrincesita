@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections;
-using System.Runtime.CompilerServices;
+﻿using System.Collections;
 using ScriptableObjects.Dialogue;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace UI
 {
-    public class DialogueManager : MonoBehaviour
+    public abstract class GenericDialogueManager : MonoBehaviour
     {
         [SerializeField] private Image dialogueImage;
-        [SerializeField] private TextMeshProUGUI dialogueText;
+        [SerializeField] private TextMeshProUGUI dialogueText, speakerName;
         [SerializeField] private CanvasGroup canvasGroup;
-        [SerializeField] private float canvasFadeTime;
+        [SerializeField] private float canvasFadeInTime, canvasFadeOutTime;
         [SerializeField] private AnimationCurve fadeCurve;
         private float _dialogueWaitBetweenChars;
         private Coroutine _typingCoroutine;
@@ -23,53 +20,20 @@ namespace UI
         private string _currentlyTypedText;
         private MultiDialogueObject _dialogueToShow;
 
-        public static event Action OnDialogueFinished;
 #if UNITY_EDITOR
         [Header("Test objects")] public MultiDialogueObject testDialogue;
 #endif
 
-        private void Awake()
+        protected abstract void DialogueFinished();
+
+        protected virtual void Awake()
         {
             EnableDisableDialogue(false, true);
-            var playerInput = FindObjectOfType<PlayerInput>();
-
-            if (playerInput != null)
-            {
-                SubscribeToEvents(playerInput);
-            }
         }
 
-        private void SubscribeToEvents(PlayerInput playerInput)
-        {
-            var moveOption = playerInput.actions["MoveOption"];
-            var selectOption = playerInput.actions["Select"];
-            var cancelOption = playerInput.actions["Cancel"];
-
-            moveOption.performed += PlayerPressMove;
-            selectOption.performed += PlayerPressSubmit;
-            cancelOption.performed += PlayerPressCancel;
-        }
-
-        private void PlayerPressMove(InputAction.CallbackContext context)
-        {
-            Debug.Log($"Move option with {context.ReadValue<Vector2>()}");
-        }
-
-
-        private void PlayerPressSubmit(InputAction.CallbackContext context)
-        {
-            PressContinueCallback();
-        }
-
-
-        private void PlayerPressCancel(InputAction.CallbackContext context)
-        {
-            Debug.Log("Player canceled selection");
-        }
 
         private void EnableDisableDialogue(bool enable, bool isImmediate = false)
         {
-            print($"Enable is {enable}");
             if (enable)
             {
                 canvasGroup.gameObject.SetActive(true);
@@ -86,22 +50,22 @@ namespace UI
                     StopCoroutine(_setCanvasOpacityCoroutine);
                 }
 
-                _setCanvasOpacityCoroutine = StartCoroutine(SetCanvasOpacity(enable));
+                _setCanvasOpacityCoroutine =
+                    StartCoroutine(SetCanvasOpacity(enable, enable ? canvasFadeInTime : canvasFadeOutTime));
             }
         }
 
-        private IEnumerator SetCanvasOpacity(bool isFadeIn)
+        private IEnumerator SetCanvasOpacity(bool isFadeIn, float timeToFade)
         {
             var timePassed = 0f;
             var targetFade = isFadeIn ? 1 : 0;
             var start = canvasGroup.alpha;
-            while (timePassed < canvasFadeTime)
+            while (timePassed < timeToFade)
             {
-                var lerpAmount = timePassed / canvasFadeTime;
+                var lerpAmount = timePassed / timeToFade;
                 var fadeAmount = Mathf.Lerp(start, targetFade, fadeCurve.Evaluate(lerpAmount));
                 canvasGroup.alpha = fadeAmount;
                 timePassed += Time.deltaTime;
-                print(fadeAmount);
                 yield return null;
             }
 
@@ -140,7 +104,7 @@ namespace UI
             dialogueText.text = _currentlyTypedText;
         }
 
-        public void PressContinueCallback()
+        protected void PressContinueCallback()
         {
             if (_typingCoroutine != null)
             {
@@ -156,19 +120,21 @@ namespace UI
             if (!_dialogueToShow.CheckNextDialogueAvailable())
             {
                 EnableDisableDialogue(false);
-                OnDialogueFinished?.Invoke();
+                DialogueFinished();
                 return;
             }
 
             var nextDialogueObject = _dialogueToShow.GetNextDialogue();
             PrepareDialogueText(nextDialogueObject.timeBetweenCharacters, nextDialogueObject.dialogue);
-            SetupDialogueImage(nextDialogueObject.speakerImage);
+            SetupDialogueImage(nextDialogueObject.speakerImage, nextDialogueObject.speakerName);
             _typingCoroutine = StartCoroutine(TypeOutText());
         }
 
-        private void SetupDialogueImage(Sprite talkerSprite)
+
+        private void SetupDialogueImage(Sprite talkerSprite, string speakerNameText)
         {
             dialogueImage.sprite = talkerSprite;
+            speakerName.text = speakerNameText;
         }
 
         private IEnumerator TypeOutText()
@@ -184,7 +150,13 @@ namespace UI
             }
 
             _typingCoroutine = null;
+            FinishedTypingTextCallback();
         }
+
+        protected virtual void FinishedTypingTextCallback()
+        {
+        }
+
 
 #if UNITY_EDITOR
         [ContextMenu("Test dialogue object")]

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public static class VectorExtentions
+public static class VectorExtensions
 {
     #region Vector2
 
