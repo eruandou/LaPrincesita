@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: 9cd3e7bea49d4dc4f989ba404dc0802a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 360
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f82315cd70bc9124a8ab54ff359d3163
+      internalID: 1734195509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 360
+        width: 5
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d8b389ba052ebd4d91b755ec0968849
+      internalID: -1365840887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 351
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38bad8d66fa0f334f8fed58e34a98ddc
+      internalID: -704586967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_3
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 351
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f0d59331c3e274d816a75f89d116aa
+      internalID: 991087965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_4
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 360
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b21e3ec058c0347be039a8de129666
+      internalID: 1403285311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_5
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 360
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 987d1b933200b61448879718cd21d2ba
+      internalID: 445546702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_6
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 360
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49dcd9d573312154a9e737fa337d2fcd
+      internalID: -7154918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_7
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 351
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e7f67808b214c64090fa6a1d49b53c7
+      internalID: -329410936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_8
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 374
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773ee8376a3e93346ac649471d913a20
+      internalID: -1321845518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_9
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 359
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d14f7ad32c7575d46b71b8ec37c86dbc
+      internalID: 1730783430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_10
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 360
+        width: 5
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d62f8b2c79f8be47bc5c804828a0310
+      internalID: 1207506941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_11
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 351
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afaf8564e780d6241bbb1359f50f2f93
+      internalID: 1866528214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_12
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 351
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c89650a4d360e9148b3e0339df1a7cbc
+      internalID: -1684996372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_13
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 360
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4444065cacdcc040b53b495f8964047
+      internalID: -238163598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_14
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 360
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 841d308fcc59ebc489248a0a7a383397
+      internalID: 91623611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_15
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 360
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f908ae065dd4ae846a091de65b17db5b
+      internalID: -469201731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_16
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 360
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea42d909aad57cb4d9e47b4ffaeb5b5c
+      internalID: 1856037042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_17
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 360
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9adffd1f1eb086e46ad697890021db33
+      internalID: -307007014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_18
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 360
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e52564cfccb13f40b823b8a1e2c5728
+      internalID: 255328470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_19
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 360
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c782f9defc45344a77905f40092726
+      internalID: 1969790987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_20
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 351
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9703f9e54a13c447aff6f61b546cfca
+      internalID: 1445276532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_21
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 360
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebad09d11c3dc8b4d88f9232df26b599
+      internalID: 1903801155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_22
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 360
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e56d82f1fcff4c443bbb9e36d794da63
+      internalID: -1679928333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_23
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 362
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 321c90b5952f9a143a8418e4194e9d1a
+      internalID: -1613863696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_24
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 354
+        width: 22
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55d856a6bfbc65b4cb9784a10036dfc4
+      internalID: 959829254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_25
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 17
+        width: 174
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd6703b003dd2e242a053f8d07652c54
+      internalID: 1410624006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_26
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 16
+        width: 172
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a72e263cbb4e4c8469ed2ba368ed9249
+      internalID: -1249153151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_27
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 17
+        width: 169
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 945d8c6120e48ac49997d117a85407ff
+      internalID: 1425795104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_28
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 17
+        width: 341
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 092c50b4dac42fc4891c6eb57e4b5ed4
+      internalID: 1703163818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_29
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 18
+        width: 250
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0228ed7623c386439ebcbf05866fa8b
+      internalID: 831288168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_30
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 35
+        width: 276
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0252bdaa7ffd0446a13f8f98567d20d
+      internalID: 535917363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu
+        Knight_31
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 17
+        width: 128
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0879d8764f4af7429550a07e82a419d
+      internalID: 1758537785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_31: 1758537785
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_0: 1734195509
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_2: -704586967
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_9: 1730783430
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_30: 535917363
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_15: -469201731
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_26: -1249153151
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_21: 1903801155
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_10: 1207506941
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_19: 1969790987
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_27: 1425795104
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_28: 1703163818
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_8: -1321845518
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_16: 1856037042
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_17: -307007014
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_14: 91623611
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_5: 445546702
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_18: 255328470
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_24: 959829254
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_12: -1684996372
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_11: 1866528214
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_6: -7154918
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_23: -1613863696
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_4: 1403285311
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_3: 991087965
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_1: -1365840887
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_7: -329410936
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_20: 1445276532
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_13: -238163598
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_29: 831288168
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_25: 1410624006
+      Mobile - Osomatsu-san Hesokuri Wars Battle of the NEETs - Choromatsu Knight_22: -1679928333
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
