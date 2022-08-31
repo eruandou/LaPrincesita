@@ -281,11 +281,11 @@ public class PlayerModel : MonoBehaviour
         _currentGravity = data.glidingGravity;
         OnGlidingUpdate?.Invoke(true);
         _rb.velocity = _rb.velocity.ModifyYAxis(0);
-        var _counter = 0f;
+        var counter = 0f;
 
-        while (_counter < data.glidingTime)
+        while (counter < data.glidingTime)
         {
-            _counter += Time.deltaTime;
+            counter += Time.deltaTime;
             yield return null;
         }
 

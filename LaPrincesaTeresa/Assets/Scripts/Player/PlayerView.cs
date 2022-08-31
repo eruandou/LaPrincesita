@@ -1,11 +1,11 @@
-﻿using System;
-using UnityEditor;
+﻿using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerView : MonoBehaviour
 {
     private Animator _animator;
-
+    [SerializeField] private Transform visuals;
     private bool _isCrouching, _isJumping, _isGrounded, _isGliding, _isDashing;
     private static readonly int Movement = Animator.StringToHash("Movement");
     private static readonly int Jumping = Animator.StringToHash("Jumping");
@@ -60,6 +60,19 @@ public class PlayerView : MonoBehaviour
     {
         EvaluateAnimation();
     }
+
+    /*
+    private IEnumerator DoubleJumpSpin()
+    {
+        var slerpValue = 0f;
+        var timePassed = 0f;
+        var finalTime = 0.4f;
+        while (timePassed < finalTime)
+        {
+            slerpValue = Mathf.Lerp(0, 1, timePassed);
+            timePassed += Time.deltaTime;
+        }
+    }*/
 
     private void EvaluateAnimation()
     {

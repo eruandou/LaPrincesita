@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BrujaCuliada_3
   m_EditorClassIdentifier: 
   speakerImage: {fileID: 21300000, guid: 0e58d3cf548ac2345b4557f116c5432b, type: 3}
+  speakerName: speakerName
   timeBetweenCharacters: 0.5
   dialogue: 3333333333333333333

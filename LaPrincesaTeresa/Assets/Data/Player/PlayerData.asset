@@ -21,7 +21,7 @@ MonoBehaviour:
   dashInitialForce: 18
   dashCooldown: 0.8
   dashTime: 0.5
-  glidingGravity: 0
+  glidingGravity: -1000
   glidingTime: 2
   jumpGravityValue: -7200
   FallGravity: -15000

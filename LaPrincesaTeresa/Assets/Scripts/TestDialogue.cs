@@ -12,11 +12,7 @@ public class TestDialogue : MonoBehaviour
     {
         if (eventManager.CheckActiveListeners())
         {
-            eventManager.Raise(new UIParams()
-            {
-                command = UICommand.DialogueCommand,
-                message = dialogueToDisplay
-            });
+            eventManager.Raise(new UIParams(UICommand.DialogueCommand, dialogueToDisplay));
         }
     }
 }

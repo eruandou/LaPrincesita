@@ -28,13 +28,9 @@ namespace NPC
 
             OnInteractionChange(ControllerTypes.Dialogue);
 
-            uiEvent.Raise(new UIParams()
-            {
-                command = UICommand.DialogueCommand,
-                message = npcDialogue
-            });
+            uiEvent.Raise(new UIParams(UICommand.DialogueCommand, npcDialogue));
 
-            DialogueManager.OnDialogueFinished += FinishedInteractionCallback;
+            InGameDialogueManager.OnInGameDialogueFinished += FinishedInteractionCallback;
         }
 
 
@@ -49,7 +45,7 @@ namespace NPC
         {
             _isInteractable = true;
             OnInteractionChange(ControllerTypes.Regular);
-            DialogueManager.OnDialogueFinished -= FinishedInteractionCallback;
+            InGameDialogueManager.OnInGameDialogueFinished -= FinishedInteractionCallback;
         }
 
         public bool IsInteractable()
