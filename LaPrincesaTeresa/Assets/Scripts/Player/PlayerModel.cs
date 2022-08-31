@@ -58,6 +58,9 @@ public class PlayerModel : MonoBehaviour
     private bool _isDashing;
     private bool _canGlide;
 
+    public void AddMaxJumps(int jumpsToAdd) => _maxJumps += jumpsToAdd;
+    public void AddDashTime(float extraDashTime) => _dashTime = extraDashTime;
+
 #if UNITY_EDITOR
     [ContextMenu("Set can glide bool")]
     public void SetCanGlide()
@@ -71,11 +74,6 @@ public class PlayerModel : MonoBehaviour
         _maxJumps += 1;
     }
 #endif
-
-    // Attribute setters
-
-    public int AddJumps(int newJumps) => _maxJumps += newJumps;
-    public void AddDashForce(float time) => _dashTime += time;
 
     #endregion
 

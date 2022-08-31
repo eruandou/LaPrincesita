@@ -7,17 +7,17 @@ namespace ScriptableObjects.Badges.Passive
     {
         public override void OnEquip(PlayerModel model)
         {
-            if (IsEquipped)
+            if (isEquipped)
                 return;
-            IsEquipped = true;
-            model.AddDashForce(numericModifier);
+            isEquipped = true;
+            model.AddDashTime(numericModifier);
         }
         public override void OnUnequip(PlayerModel model)
         {
-            if (!IsEquipped)
+            if (!isEquipped)
                 return;
-            IsEquipped = false;
-            model.AddDashForce(numericModifier * -1);
+            isEquipped = false;
+            model.AddDashTime(numericModifier * -1);
         }
     }
 }
