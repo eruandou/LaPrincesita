@@ -18,6 +18,7 @@ public class PlayerModel : MonoBehaviour
     public event Action<float> OnMoveUpdate;
     public event Action<bool> OnJumpUpdate;
     public event Action<bool> OnCrouchUpdate;
+    public event Action OnDoubleJump;
 
     public event Action<bool> OnGroundedUpdate;
     public event Action<bool> OnGlidingUpdate;
@@ -299,6 +300,12 @@ public class PlayerModel : MonoBehaviour
     {
         _currentGravity = data.jumpGravityValue;
         OnJumpUpdate?.Invoke(true);
+        //Which means we jumped more than once in the air
+        if (_maxJumps > 1 && _currentJumps == 0)
+        {
+            OnDoubleJump?.Invoke();
+        }
+
         CrouchHandler(false);
         if (_rb.velocity.y < 0)
             _rb.velocity = _rb.velocity.ModifyYAxis(0);

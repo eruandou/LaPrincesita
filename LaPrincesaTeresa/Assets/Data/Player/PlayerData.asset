@@ -35,5 +35,5 @@ MonoBehaviour:
   interactionLayers:
     serializedVersion: 2
     m_Bits: 128
-  interactionRadius: 1
+  interactionRadius: 0.73
   instantFalling: 1

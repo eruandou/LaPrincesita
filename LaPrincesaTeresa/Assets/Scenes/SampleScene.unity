@@ -499,12 +499,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160004553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.44, y: -1.6782722, z: 1.0659182}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalPosition: {x: -4.5314956, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1962267195}
-  m_RootOrder: 2
+  m_Father: {fileID: 917723719}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &160004555
 SpriteRenderer:
@@ -2503,6 +2503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 917723719}
   - component: {fileID: 917723718}
+  - component: {fileID: 917723720}
   m_Layer: 0
   m_Name: hei_btl_sora
   m_TagString: Untagged
@@ -2573,10 +2574,25 @@ Transform:
   m_LocalPosition: {x: 9.874954, y: -1.6782722, z: 1.0659182}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2008704793}
+  - {fileID: 160004554}
   m_Father: {fileID: 1962267195}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &917723720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917723717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7ba52d950fe1dc4f810628290bd68d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxEffectX: 0.4
 --- !u!4 &938226842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4322045565129483214, guid: 2299fbaf74adf584081637d4ccb665c9, type: 3}
@@ -3940,8 +3956,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -686160533
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.49056602, g: 0.3494126, b: 0.3494126, a: 1}
@@ -4670,7 +4686,19 @@ MonoBehaviour:
       m_Calls: []
   onFinishedInteraction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1491685349}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   socketName: BackSocket
 --- !u!82 &1491685351
 AudioSource:
@@ -5814,7 +5842,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1622913, y: 1}
+    m_SensorSize: {x: 1.776435, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6743,8 +6771,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 917723719}
-  - {fileID: 2008704793}
-  - {fileID: 160004554}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6830,12 +6856,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008704791}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 60.834953, y: -1.6782722, z: 1.0659182}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalPosition: {x: 5.096, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1962267195}
-  m_RootOrder: 1
+  m_Father: {fileID: 917723719}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2036030562 stripped
 Transform:
@@ -7359,6 +7385,10 @@ PrefabInstance:
     - target: {fileID: 4058278003756467422, guid: f06922410265864488d480569d1dd035, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4058278004621988938, guid: f06922410265864488d480569d1dd035, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.671
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f06922410265864488d480569d1dd035, type: 3}
