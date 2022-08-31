@@ -29,7 +29,7 @@ MonoBehaviour:
   groundCheckLayerMask:
     serializedVersion: 2
     m_Bits: 192
-  groundCheckBoxSize: {x: 1.23, y: 0.05}
+  groundCheckBoxSize: {x: 0.84, y: 0.05}
   coyoteTime: 0.15
   aboveHeadMinimumDistance: 1
   interactionLayers:
