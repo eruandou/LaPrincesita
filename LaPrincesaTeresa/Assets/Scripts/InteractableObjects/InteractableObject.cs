@@ -1,4 +1,4 @@
-﻿using Interfaces;
+﻿using Interface;
 using UnityEngine;
 using UnityEngine.Events;
 

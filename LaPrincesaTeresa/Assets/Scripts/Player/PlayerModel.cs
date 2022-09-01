@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Interfaces;
+using InteractableObjects;
+using Interface;
 using UnityEngine;
 
 [Serializable]
@@ -28,6 +29,7 @@ public class PlayerModel : MonoBehaviour
     [SerializeField] private Transform interactionPoint;
     [SerializeField] private Transform groundCheckPoint;
     [SerializeField] private List<Socket> playerSockets;
+    [SerializeField] private Transform pickupPosition;
     public PlayerController Controller { private set; get; }
 
     private bool _isJumping, _isLookingRight, _isGrounded, _isGliding;
@@ -45,6 +47,7 @@ public class PlayerModel : MonoBehaviour
     private bool _isPreventedFromUncrouching;
     private Coroutine _glidingCoroutine;
     private Dictionary<string, Transform> _equipableItemsPositionBySocket;
+    private ThrowableInteractable _pickedUpObject;
 
     #region Attributes
 
@@ -126,6 +129,17 @@ public class PlayerModel : MonoBehaviour
         {
             _equipableItemsPositionBySocket.Add(socket.socketName, socket.transformObject);
         }
+    }
+
+    public void PickupObject(ThrowableInteractable objectToPickup)
+    {
+        if (_pickedUpObject != null)
+            return;
+
+        _pickedUpObject = objectToPickup;
+        Transform transform1;
+        (transform1 = _pickedUpObject.transform).SetParent(pickupPosition);
+        transform1.localPosition = Vector3.zero;
     }
 
     public List<string> GetAllSockets()
@@ -373,6 +387,13 @@ public class PlayerModel : MonoBehaviour
 
     private void InteractHandler()
     {
+        if (_pickedUpObject != null)
+        {
+            _pickedUpObject.ThrowObject(_isLookingRight ? 1 : -1);
+            _pickedUpObject = null;
+            return;
+        }
+
         var interactablesFound = Physics2D.OverlapCircleNonAlloc(interactionPoint.position, data.interactionRadius,
             _interactablesArray, data.interactionLayers);
 

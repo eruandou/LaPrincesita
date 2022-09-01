@@ -1,4 +1,4 @@
-﻿using Interfaces;
+﻿using Interface;
 using ScriptableObjects.Dialogue;
 using ScriptableObjects.Events;
 using UI;

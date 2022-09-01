@@ -30,23 +30,32 @@ public class EditorInstantiator
     [MenuItem("GameObject/Princesita/CreateEquipableInteractable")]
     public static InteractableEquipableItem CreateEquipableInteractable()
     {
-        var itemSpawned = CreateInteractableObject("ContinuedInteractable");
+        var itemSpawned = CreateBasicInteractableObjectStructure("ContinuedInteractable");
         var interactable = itemSpawned.AddComponent<InteractableEquipableItem>();
         interactable.SetDefaults();
         return interactable;
     }
 
+    [MenuItem("GameObject/Princesita/CreateThrowableInteractable")]
+    public static void CreateThrowableItem()
+    {
+        var itemSpawned = CreateBasicInteractableObjectStructure("Throwable Interactable");
+        var throwableInteractable = itemSpawned.AddComponent<ThrowableInteractable>();
+        itemSpawned.AddComponent<Rigidbody2D>();
+        throwableInteractable.SetBasics();
+        SetObjectAsFinal(itemSpawned);
+    }
 
     [MenuItem("GameObject/Princesita/CreateContinuedInteractable")]
     public static void CreateContinuedInteractable()
     {
-        var itemSpawned = CreateInteractableObject("ContinuedInteractable");
+        var itemSpawned = CreateBasicInteractableObjectStructure("ContinuedInteractable");
         var interactable = itemSpawned.AddComponent<ContinuedInteractionObject>();
         interactable.SetDefaults();
         SetObjectAsFinal(itemSpawned);
     }
 
-    private static GameObject CreateInteractableObject(string objectName)
+    private static GameObject CreateBasicInteractableObjectStructure(string objectName)
     {
         var itemSpawned = new GameObject(objectName)
         {

@@ -2,8 +2,8 @@
 
 namespace ScriptableObjects.Badges.Passive
 {
-    [CreateAssetMenu(fileName = "NewAddJumpBadge", menuName = "ScriptableObjects/PassiveBadges/JumpBadge", order = 0)]
-    public class AddJumpBadge : PassiveNumericBadge
+    [CreateAssetMenu(menuName = "ScriptableObjects/PassiveBadges/JumpBadge")]
+    public class AddJumpAmountBadge : PassiveNumericBadge
     {
         public override void OnEquip(PlayerModel playerModel)
         {

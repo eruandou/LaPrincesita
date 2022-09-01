@@ -1,7 +1,6 @@
 ﻿namespace ScriptableObjects.Badges.Passive
 {
     public class ActivateDashBadge : PassiveBadge
-
     {
         public override void OnEquip(PlayerModel model)
         {

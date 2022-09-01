@@ -1,9 +1,6 @@
-﻿using System;
-using ScriptableObjects.Extras;
-using UnityEditor;
+﻿using ScriptableObjects.Extras;
 using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.UI;
 
 namespace InteractableObjects
 {

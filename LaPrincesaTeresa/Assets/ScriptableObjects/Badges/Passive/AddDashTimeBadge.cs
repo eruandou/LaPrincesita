@@ -2,21 +2,23 @@
 
 namespace ScriptableObjects.Badges.Passive
 {
-    [CreateAssetMenu(menuName = "ScriptableObjects/PassiveBadges/GlideBadge")]
-    public class AddGlideBadge : PassiveBadge
+    [CreateAssetMenu(menuName = "ScriptableObjects/PassiveBadges/DashBadge")]
+    public class AddDashTimeBadge : PassiveNumericBadge
     {
         public override void OnEquip(PlayerModel model)
         {
             if (isEquipped)
                 return;
-            model.SetGlideAbility(true);
+            isEquipped = true;
+            model.AddDashTime(numericModifier);
         }
 
         public override void OnUnequip(PlayerModel model)
         {
             if (!isEquipped)
                 return;
-            model.SetGlideAbility(false);
+            isEquipped = false;
+            model.AddDashTime(numericModifier * -1);
         }
     }
 }
