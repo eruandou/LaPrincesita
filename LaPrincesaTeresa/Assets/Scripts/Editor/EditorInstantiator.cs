@@ -8,7 +8,7 @@ public class EditorInstantiator
     [MenuItem("GameObject/Princesita/CreateNPC")]
     public static void CreateNPCCcharacter()
     {
-        var itemSpawnObj = new GameObject("NewNPC")
+        var itemSpawned = new GameObject("NewNPC")
         {
             layer = LayerMask.NameToLayer("Interactable")
         };
@@ -17,36 +17,45 @@ public class EditorInstantiator
         {
             transform =
             {
-                parent = itemSpawnObj.transform
+                parent = itemSpawned.transform
             }
         };
 
-        itemSpawnObj.AddComponent<BoxCollider2D>();
-        itemSpawnObj.AddComponent<NPCController>();
+        itemSpawned.AddComponent<BoxCollider2D>();
+        itemSpawned.AddComponent<NPCController>();
         visuals.AddComponent<SpriteRenderer>();
-
-        Selection.activeObject = itemSpawnObj;
+        SetObjectAsFinal(itemSpawned);
     }
 
     [MenuItem("GameObject/Princesita/CreateEquipableInteractable")]
     public static InteractableEquipableItem CreateEquipableInteractable()
     {
-        var itemSpawned = CreateInteractableObject("ContinuedInteractable");
+        var itemSpawned = CreateBasicInteractableObjectStructure("ContinuedInteractable");
         var interactable = itemSpawned.AddComponent<InteractableEquipableItem>();
         interactable.SetDefaults();
         return interactable;
     }
 
+    [MenuItem("GameObject/Princesita/CreateThrowableInteractable")]
+    public static void CreateThrowableItem()
+    {
+        var itemSpawned = CreateBasicInteractableObjectStructure("Throwable Interactable");
+        var throwableInteractable = itemSpawned.AddComponent<ThrowableInteractable>();
+        itemSpawned.AddComponent<Rigidbody2D>();
+        throwableInteractable.SetBasics();
+        SetObjectAsFinal(itemSpawned);
+    }
 
     [MenuItem("GameObject/Princesita/CreateContinuedInteractable")]
     public static void CreateContinuedInteractable()
     {
-        var itemSpawned = CreateInteractableObject("ContinuedInteractable");
+        var itemSpawned = CreateBasicInteractableObjectStructure("ContinuedInteractable");
         var interactable = itemSpawned.AddComponent<ContinuedInteractionObject>();
         interactable.SetDefaults();
+        SetObjectAsFinal(itemSpawned);
     }
 
-    private static GameObject CreateInteractableObject(string objectName)
+    private static GameObject CreateBasicInteractableObjectStructure(string objectName)
     {
         var itemSpawned = new GameObject(objectName)
         {
@@ -63,8 +72,26 @@ public class EditorInstantiator
 
         visuals.AddComponent<SpriteRenderer>();
         itemSpawned.AddComponent<BoxCollider2D>();
-        Selection.activeGameObject = itemSpawned;
-
         return itemSpawned;
+    }
+
+    [MenuItem("GameObject/Princesita/CreateTriggerDialogueArea")]
+    public static void CreateTriggerDialogueArea()
+    {
+        var itemSpawned = new GameObject("New Trigger Dialogue Area")
+        {
+            layer = LayerMask.NameToLayer("Triggerer")
+        };
+        itemSpawned.AddComponent<DiegeticDialogueTrigger>();
+        itemSpawned.AddComponent<BoxCollider2D>();
+
+        SetObjectAsFinal(itemSpawned);
+    }
+
+    private static void SetObjectAsFinal(GameObject goToModify)
+    {
+        Selection.activeGameObject = goToModify;
+        var sceneCam = SceneView.lastActiveSceneView;
+        goToModify.transform.position = sceneCam.camera.transform.position;
     }
 }

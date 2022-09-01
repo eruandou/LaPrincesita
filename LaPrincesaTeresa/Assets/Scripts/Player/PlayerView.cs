@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class PlayerView : MonoBehaviour
 {
     private Animator _animator;
     [SerializeField] private Transform visuals;
+    [SerializeField] private float doubleJumpSpinDuration;
     private bool _isCrouching, _isJumping, _isGrounded, _isGliding, _isDashing;
     private static readonly int Movement = Animator.StringToHash("Movement");
     private static readonly int Jumping = Animator.StringToHash("Jumping");
@@ -23,6 +25,7 @@ public class PlayerView : MonoBehaviour
         model.OnGroundedUpdate += SetGrounded;
         model.OnGlidingUpdate += SetGliding;
         model.OnDashUpdate += SetDashing;
+        model.OnDoubleJump += DoubleJump;
     }
 
     private void SetDashing(bool isDashing)
@@ -61,18 +64,29 @@ public class PlayerView : MonoBehaviour
         EvaluateAnimation();
     }
 
-    /*
-    private IEnumerator DoubleJumpSpin()
+    private void DoubleJump()
     {
-        var slerpValue = 0f;
-        var timePassed = 0f;
-        var finalTime = 0.4f;
-        while (timePassed < finalTime)
+        StartCoroutine(DoubleJumpSpin(doubleJumpSpinDuration));
+    }
+
+    private IEnumerator DoubleJumpSpin(float duration)
+    {
+        var startRotation = transform.eulerAngles.y;
+        var endRotation = startRotation + (startRotation > 360 ? 360 : -360);
+        var currentTime = 0.0f;
+        var transform1 = visuals.transform;
+        while (currentTime < duration)
         {
-            slerpValue = Mathf.Lerp(0, 1, timePassed);
-            timePassed += Time.deltaTime;
+            currentTime += Time.deltaTime;
+            var yRotation = Mathf.Lerp(startRotation, endRotation, currentTime / duration) % 360.0f;
+            var eulerAngles = transform1.eulerAngles;
+            eulerAngles.y = yRotation;
+            transform1.eulerAngles = eulerAngles;
+            yield return null;
         }
-    }*/
+
+        transform1.eulerAngles = Vector3.zero;
+    }
 
     private void EvaluateAnimation()
     {

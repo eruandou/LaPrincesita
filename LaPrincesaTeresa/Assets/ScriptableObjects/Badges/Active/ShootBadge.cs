@@ -2,8 +2,7 @@
 
 namespace ScriptableObjects.Badges.Active
 {
-    [CreateAssetMenu(fileName = "NewShootBadge", menuName = "ScriptableObjects/Badges/ActiveBadge/ShootBadge",
-        order = 0)]
+    [CreateAssetMenu(menuName = "ScriptableObjects/Badges/ActiveBadge/ShootBadge")]
     public class ShootBadge : ActiveBadge
     {
         public override void Execute()

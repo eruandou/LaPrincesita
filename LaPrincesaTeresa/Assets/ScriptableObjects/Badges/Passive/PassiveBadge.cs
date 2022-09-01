@@ -1,6 +1,8 @@
-﻿public abstract class PassiveBadge : Badge
+﻿using UnityEngine;
+
+public abstract class PassiveBadge : Badge
 {
-    public bool IsEquipped;
+    [HideInInspector] public bool isEquipped;
     public abstract void OnEquip(PlayerModel model);
     public abstract void OnUnequip(PlayerModel model);
 }

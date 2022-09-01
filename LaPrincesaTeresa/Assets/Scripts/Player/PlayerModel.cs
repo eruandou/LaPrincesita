@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Interfaces;
+using InteractableObjects;
+using Interface;
 using UnityEngine;
 
 [Serializable]
@@ -18,6 +19,7 @@ public class PlayerModel : MonoBehaviour
     public event Action<float> OnMoveUpdate;
     public event Action<bool> OnJumpUpdate;
     public event Action<bool> OnCrouchUpdate;
+    public event Action OnDoubleJump;
 
     public event Action<bool> OnGroundedUpdate;
     public event Action<bool> OnGlidingUpdate;
@@ -26,6 +28,9 @@ public class PlayerModel : MonoBehaviour
     [SerializeField] private PlayerData data;
     [SerializeField] private Transform interactionPoint;
     [SerializeField] private Transform groundCheckPoint;
+    [SerializeField] private List<Socket> playerSockets;
+    [SerializeField] private Transform pickupPosition;
+    public PlayerController Controller { private set; get; }
 
     private bool _isJumping, _isLookingRight, _isGrounded, _isGliding;
     private float _currentSpeed, _crouchSpeedMultiplier, _currentGravity, _moveDirCached;
@@ -41,12 +46,8 @@ public class PlayerModel : MonoBehaviour
     private bool _gravityEnabled;
     private bool _isPreventedFromUncrouching;
     private Coroutine _glidingCoroutine;
-    public PlayerController Controller { get; private set; }
-
-    [SerializeField] private List<Socket> playerSockets;
-
     private Dictionary<string, Transform> _equipableItemsPositionBySocket;
-
+    private ThrowableInteractable _pickedUpObject;
 
     #region Attributes
 
@@ -56,25 +57,34 @@ public class PlayerModel : MonoBehaviour
     private float _dashTime = 1f;
     private bool _isDashing;
     private bool _canGlide;
+    private bool _canDash;
+    private bool _canBigPush;
+
+    public void AddMaxJumps(int jumpsToAdd) => _maxJumps += jumpsToAdd;
+    public void AddDashTime(float extraDashTime) => _dashTime = extraDashTime;
+    public void SetGlideAbility(bool canGlide) => _canGlide = canGlide;
+    public void SetDashAbility(bool canDash) => _canDash = canDash;
 
 #if UNITY_EDITOR
+
+    /// <summary>
+    /// For Testing only EDITOR ONLY
+    /// </summary>
     [ContextMenu("Set can glide bool")]
     public void SetCanGlide()
     {
         _canGlide = true;
     }
 
+    /// <summary>
+    /// For Testing only EDITOR ONLY
+    /// </summary>
     [ContextMenu("Set double jump")]
     public void SetDoubleJump()
     {
         _maxJumps += 1;
     }
 #endif
-
-    // Attribute setters
-
-    public int AddJumps(int newJumps) => _maxJumps += newJumps;
-    public void AddDashForce(float time) => _dashTime += time;
 
     #endregion
 
@@ -119,6 +129,17 @@ public class PlayerModel : MonoBehaviour
         {
             _equipableItemsPositionBySocket.Add(socket.socketName, socket.transformObject);
         }
+    }
+
+    public void PickupObject(ThrowableInteractable objectToPickup)
+    {
+        if (_pickedUpObject != null)
+            return;
+
+        _pickedUpObject = objectToPickup;
+        Transform transform1;
+        (transform1 = _pickedUpObject.transform).SetParent(pickupPosition);
+        transform1.localPosition = Vector3.zero;
     }
 
     public List<string> GetAllSockets()
@@ -299,6 +320,12 @@ public class PlayerModel : MonoBehaviour
     {
         _currentGravity = data.jumpGravityValue;
         OnJumpUpdate?.Invoke(true);
+        //Which means we jumped more than once in the air
+        if (_maxJumps > 1 && _currentJumps == 0)
+        {
+            OnDoubleJump?.Invoke();
+        }
+
         CrouchHandler(false);
         if (_rb.velocity.y < 0)
             _rb.velocity = _rb.velocity.ModifyYAxis(0);
@@ -326,7 +353,7 @@ public class PlayerModel : MonoBehaviour
 
     private void DashHandler()
     {
-        if (_lastDash > Time.time)
+        if (!_canDash || _lastDash > Time.time)
             return;
         _lastDash = Time.time + data.dashCooldown;
         StartDash();
@@ -360,6 +387,13 @@ public class PlayerModel : MonoBehaviour
 
     private void InteractHandler()
     {
+        if (_pickedUpObject != null)
+        {
+            _pickedUpObject.ThrowObject(_isLookingRight ? 1 : -1);
+            _pickedUpObject = null;
+            return;
+        }
+
         var interactablesFound = Physics2D.OverlapCircleNonAlloc(interactionPoint.position, data.interactionRadius,
             _interactablesArray, data.interactionLayers);
 
