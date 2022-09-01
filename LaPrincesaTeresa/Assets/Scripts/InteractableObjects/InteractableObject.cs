@@ -9,7 +9,7 @@ namespace InteractableObjects
         [SerializeField] private UnityEvent onTriggered, onFinishedInteraction;
         private bool _isInteractable;
 
-        protected void Awake()
+        protected virtual void Awake()
         {
             SetInteractable(true);
         }
