@@ -1,0 +1,3224 @@
+fileFormatVersion: 2
+guid: d5f59843b5580ea4a96ba12b3f9d51d1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 658
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5073c72c523bd9419646cae4e5a8157
+      internalID: 1151670042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 649
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b42a27bdee1664aa0473daefefa549
+      internalID: 807669235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_2
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 650
+        width: 50
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e51b8283f700b42bf7a680b574f2ca
+      internalID: 1739565736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 653
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab45ba76cc619034d985dbb28fdacf97
+      internalID: 181489287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_4
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 648
+        width: 31
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2521019402a104c4b8d4f35ca20fdba3
+      internalID: -1939714849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_5
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 650
+        width: 49
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb0c1b666f77a946bb2d7d76e7b6dfb
+      internalID: -944680446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_6
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 648
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce872a91fc1ec64c89e71b676de100b
+      internalID: 1762193684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_7
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 651
+        width: 41
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b91c3d0c55cab40a103a4b980e1ead
+      internalID: -547310131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_8
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 649
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c3e6bc1f53a9a4884448ee94753b93
+      internalID: 1330584535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_9
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 644
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcc8f02d5ec71db4fbf9e9da3ac6ea7b
+      internalID: -981412902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_10
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 649
+        width: 47
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e2a85af5ee7f9d4fa79b2f5c553195d
+      internalID: -691448718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_11
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 631
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d264ea96bd03ae46911f91af7042458
+      internalID: 801704147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_12
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 583
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df2c5d278216f804d9d25e240ddcca92
+      internalID: 937655024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_13
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 584
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f18fcbd89f1d974a966602d8e38a27b
+      internalID: -1301689555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_14
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 587
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6770ee1a758f9cd478cc58f5abfe965d
+      internalID: 1683186384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_15
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 583
+        width: 39
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f8552986cba5764e896b37520bc35be
+      internalID: -514092169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_16
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 582
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89af12d81815364a8b82a96916252f4
+      internalID: 881713288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_17
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 579
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50ea474bda27a494897d981638988342
+      internalID: 438211351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_18
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 584
+        width: 33
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89533c699d0dddf4b89e84fa778313fb
+      internalID: -814777383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_19
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 618
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b411b3f06e833c343a695d0a8afa8316
+      internalID: 15510678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_20
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 583
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16db010172631194ea9b1b7241aa0909
+      internalID: -1156122776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_21
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 586
+        width: 52
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 984100d89b8c2b141a9a633de389177d
+      internalID: -2002521753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_22
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 598
+        width: 17
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb911ada0fc39d499a8397c81d3a950
+      internalID: 1570120206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_23
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 590
+        width: 51
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ec9f4ab67488441a62d11565176663
+      internalID: -965290238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_24
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 584
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92b611a9c4ef0124e93e61b881dad7f3
+      internalID: -1279427129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_25
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 521
+        width: 37
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1273af8e5bc87264cb1d77850aaaf539
+      internalID: -1512361836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_26
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 523
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 366643bbcafa0554898aa7008ef1123a
+      internalID: 500371619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_27
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 523
+        width: 30
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4821194bf5e46ca418ee64b5bdc5eedb
+      internalID: 1882001357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_28
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 523
+        width: 5
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f629819be5dc744ebf7ddb39117e03c
+      internalID: -1606692556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_29
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 523
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d776e5de02722a24195364c7441a86d7
+      internalID: 414333536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_30
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 523
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb1005ed7330d7041822b35168032711
+      internalID: 718409619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_31
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 523
+        width: 5
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0034daabf4cf264899d4b5bf16870a3
+      internalID: -1044232493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_32
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 523
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43fe3cd945fb184885446279acfed41
+      internalID: 878793633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_33
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 522
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 528c80f1e55c913458a34a2e9ae8cf9c
+      internalID: 1103861783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_34
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 522
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66ea4aef2c88c4d41a4f723ec0d48979
+      internalID: 234566709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_35
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 521
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd1f40e8e6758084881495e08eb9f75e
+      internalID: 1735425007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_36
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 521
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e9a96e7706bbf84ea7a79302b3e9c3a
+      internalID: -289586909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_37
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 521
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c628afcf30d04947a4da4ad63606fa5
+      internalID: 1187230116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_38
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 521
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb18602f2ca23ac41bd56808ad02c479
+      internalID: -1436501567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_39
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 535
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0713474ecab5e7e4e95026ebc3bc4119
+      internalID: -1670198410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_40
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 535
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54079a60dc3df3045bbe4e593fb4c8a7
+      internalID: 1452697510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_41
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 534
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe7529c7fd04f44a9e38f5af49d7671
+      internalID: -264914834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_42
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 457
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feab448210e9fbc42bc04494b50a2e34
+      internalID: 392519603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_43
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 457
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee9770f008af2b4bb8f19aa9c6d2ec7
+      internalID: 1597560708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_44
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 457
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4929f705a3b9747826ebea47df4b0b
+      internalID: 1240980704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_45
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 457
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0d2e70f0b47b34cb18e349aa0d9287
+      internalID: -1813534768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_46
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 457
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e45e0d5d918914fbadbbec464d418c
+      internalID: 808566656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_47
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 449
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23e64edae0151f0489ce663f74e8a1d3
+      internalID: 881703035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_48
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 457
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e2d9a2645067f4d875688a8f3f00f4
+      internalID: 1061072596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_49
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 461
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd6425b77883064e89b3df615eaa41f
+      internalID: -1783407872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_50
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 457
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cae0188da0c019248877673aaaafe4f5
+      internalID: -1196335724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_51
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 459
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 357615768edc12d4b9dcff67619eb18b
+      internalID: -134444226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_52
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 458
+        width: 40
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e2767d4bedb7a4682728d919c6f2eb
+      internalID: -1240375028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_53
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 384
+        width: 45
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6566a077c51f81f4dbf178c9d71cac72
+      internalID: 1569103238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_54
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 430
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fc555b362f5f8d49bc8bc6ac5df38dd
+      internalID: -1153582425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_55
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 434
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd28901981d94e4b89acd28b0c976a7
+      internalID: 880670833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_56
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 428
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e8794671ee15684697e2b83f52752df
+      internalID: 1324969963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_57
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 393
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba6bd59a4b911b47ab186c96c0bc017
+      internalID: -595812252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_58
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 410
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fda4431d0844504091b61a183415740
+      internalID: -1051536478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_59
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 427
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc64149dbb371247893ae7d0e8f6a3c
+      internalID: -1759993021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_60
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 395
+        width: 44
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df789494a3647946bcad842e9a5c91a
+      internalID: -991264173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_61
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 393
+        width: 49
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38718f36dc53cfc45aa278b3ac7f6f97
+      internalID: -991700271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_62
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 400
+        width: 43
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9cb0d34379a48f40891bad3a0ea9e8c
+      internalID: -6043376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_63
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 393
+        width: 53
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67761b8af9c3ea94aa071366cac08824
+      internalID: -1843791049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_64
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 402
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045f694ecf5282a4d940159d4921f4c5
+      internalID: 163921097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_65
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 425
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b38cbd4465fb44986e5631c07aceb4
+      internalID: 116846943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_66
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 393
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e8b038087dcbe408731bd293371494
+      internalID: 1163341643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_67
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 413
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43204536bb3754d4d8189f473707c0bc
+      internalID: 227912053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_68
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 414
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eace72943b1e4cd4abb618bdbc6e883d
+      internalID: -767391212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_69
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 393
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a7cc85e02768543b6fba5554e6b846
+      internalID: 1830100801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_70
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 417
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52716f4c8df45c147b7bdc67613a1559
+      internalID: -269839812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_71
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 395
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d7f3128e3c50b149a810363ef916284
+      internalID: -1361480159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_72
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 398
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e361b1a696a304c88aee46df20747b
+      internalID: -408932203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_73
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 401
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530877666dfc58944a9b74b4ac74be0e
+      internalID: 201188185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_74
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 400
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23b7b11d6a2eeb54c8b99b25e93752b4
+      internalID: 1402023534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_75
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 387
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f29b7520e6abb045990a2d156b21292
+      internalID: 1179449953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_76
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 390
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6b2befdee83ec46bcfcf6135ddaa2c
+      internalID: 1296209872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_77
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 390
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8c56c945882154ab94167d0665da34
+      internalID: -193883367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_78
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 393
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc0f9a40ca084a3438df90f5c09cf44f
+      internalID: 498605368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_79
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 325
+        width: 25
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69788c00019f3354ba1e942f0a830340
+      internalID: -728535335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_80
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 329
+        width: 45
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25712bea7479cc044aada738d5b1973b
+      internalID: 1312710420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_81
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 371
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41583ad7b6c8abb449aef773783347e9
+      internalID: 902383180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_82
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 363
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0145e27b8cc38ff4283dd44f850449c2
+      internalID: 1659944490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_83
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 329
+        width: 52
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23007d14459de1b4f9a99dddbd3a3997
+      internalID: 1798339934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_84
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 327
+        width: 49
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67f9e25b7b8f5f04ab389a558636bb0f
+      internalID: 2108392875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_85
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 323
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e09b8678b65c77f47867040f92e5c3f8
+      internalID: 75042063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_86
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 327
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26036203842699044b1de67802b98c65
+      internalID: -249847418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_87
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 331
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26912840e5a61db43980778b7aaf8cae
+      internalID: -838360516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_88
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 329
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb00a5b243985e49b2f98f4e8ed661b
+      internalID: 1669398599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_89
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 361
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef6dc3d456cc4b44b7005f0450fb461
+      internalID: -942464269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_90
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 329
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc1833323ec3cdb4ab71691be6649c42
+      internalID: 1525173275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_91
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 333
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf189d414f26ddf4d80da5a73e31562f
+      internalID: 1337707449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_92
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 329
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fcdb1568ebe3e940836a76f6f2a027d
+      internalID: -1071146323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_93
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 353
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee16e4972994f714e990607b13ab7bef
+      internalID: 1705221395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_94
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 266
+        width: 52
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de84a654d323df42956a68cf9f2ec0a
+      internalID: -1798968014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_95
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 266
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e269f6f8f579a0c40bcf2356df1447aa
+      internalID: -1393402884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_96
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 267
+        width: 40
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b19d0a0de62cc42a6797272722e22a
+      internalID: -1090627543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_97
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 273
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b58b76ae0b866e469b45dc61cb436bd
+      internalID: -1646917009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_98
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 266
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd745c6a6fc55d7418d94ac65d6b0ca0
+      internalID: 876609487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_99
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 266
+        width: 44
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b4ae19312930f4f8837bc86c3504bf
+      internalID: -1286511686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_100
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 257
+        width: 59
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5749d9bd1ff70ac459f6f24b3e3de008
+      internalID: -1555018638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_101
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 257
+        width: 59
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b286fd15c1c2f4a956376ee1d33600
+      internalID: -557127960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_102
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 260
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bae8bc5360d2a54f9b9c363fd220114
+      internalID: 1171891819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_103
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 261
+        width: 59
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb64e4b3e07207c449c0246793dd0df4
+      internalID: -39714388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_104
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 258
+        width: 57
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b45d4a2997c354aa76803829d38d44
+      internalID: 871563881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_105
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 197
+        width: 59
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de4884c17ab85ae4fb52a7cc154a9873
+      internalID: -72290556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_106
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 196
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359c579dfcbe02a44bff4ee2280ec204
+      internalID: 243440958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_107
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 202
+        width: 49
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3562219b227fd5346b7d53d68e55d66b
+      internalID: -554691565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_108
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 63
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b10e47cb2895bee45ad32cae3aa2295f
+      internalID: 423411791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_109
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 196
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbe515c58141974bbbae1db90c63228
+      internalID: 1139904381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_110
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 63
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c78d7dc385fe5642b4fbf633daa2816
+      internalID: -517541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_111
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 193
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d56385fa92b095d4e8844126460669b5
+      internalID: -1219473758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_112
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 193
+        width: 59
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6ea10d5da08b4499597a8774e94185
+      internalID: 306821219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_113
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 197
+        width: 58
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a5c8f1309f0ed5429cccc7d791a158b
+      internalID: -148878514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_114
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 193
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 524a8f656220d6947be88fec99373eab
+      internalID: -56013275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_115
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 194
+        width: 57
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d910a2165bb0cdf428b7b3c03d2b56e5
+      internalID: 822409877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_116
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 138
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3859303627e1b4545aac176b6d56a765
+      internalID: -1580745934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_117
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 138
+        width: 52
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec75e77e6bfe0b14286a6028c9f99fde
+      internalID: 1224777158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_118
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 132
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b912414ad590d75408c4b212c3535396
+      internalID: 280037614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_119
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 138
+        width: 52
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb78df5113ff8f40b5729522866ed40
+      internalID: 1549923637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_120
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 131
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 882401d64fe5fb3429206f24073bdfdd
+      internalID: 468395926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_121
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 129
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65c2735c662a7d4ca8f732f062bf4bd
+      internalID: -2026152721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_122
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 133
+        width: 58
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22d3f6af0b795848b3cb716969c3b53
+      internalID: -607166691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_123
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 138
+        width: 49
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da932172cc48637429adf0d05421cef7
+      internalID: -772015502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_124
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 131
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b13196aeedfc4545ae2644642d5330e
+      internalID: -1463422341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_125
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 129
+        width: 59
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb2ef486e8cc584fbd0e7be54c4101e
+      internalID: 125703247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_126
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 138
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32b2a9003ced0c42a82f64ce8a5d701
+      internalID: 1174396741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_127
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 65
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e46587875c1cb45abf6bfeda01e936
+      internalID: 971965906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_128
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 68
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dbdcfc2be9076a448254339b4258540
+      internalID: -781463647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_129
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 68
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa2919a8be5e804ca5a0c84d0cbae6a
+      internalID: -1842660838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_130
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 73
+        width: 45
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b78c68d87c30b4d9ade7ffed4ff46c
+      internalID: -1536100790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_131
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 78
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceaf39cca302387449cf2ba8fa902667
+      internalID: 545671549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_132
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 78
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59aa220efd7ce304eae7d8fcfafaa237
+      internalID: -1787940265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_133
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 75
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51eaaf35986c86240b3a4c663cb0b674
+      internalID: 1962580779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_134
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 78
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f916a91203684684a8c27b7316814b5e
+      internalID: 361393160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_135
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 75
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460d5e9dba35fb741b810698db638213
+      internalID: 273905447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_136
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 78
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 351c72fdfdee1c84990701b098603064
+      internalID: -1881474412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_137
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 82
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9c062805d7a7348a72ecf44c42f465
+      internalID: -1286430189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_138
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 11
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4240fcd3dff260479dc95faddd1013d
+      internalID: 594482969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_139
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 8
+        width: 43
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94caad1b1cede5046b8fd556afd85bd7
+      internalID: -140060848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Crystal Story - Icons_140
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 8
+        width: 49
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa585aac0bd3c74ca0f2a1bc158884c
+      internalID: 902676887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Browser Games - Crystal Story - Icons_39: -1670198410
+      Browser Games - Crystal Story - Icons_46: 808566656
+      Browser Games - Crystal Story - Icons_111: -1219473758
+      Browser Games - Crystal Story - Icons_92: -1071146323
+      Browser Games - Crystal Story - Icons_75: 1179449953
+      Browser Games - Crystal Story - Icons_35: 1735425007
+      Browser Games - Crystal Story - Icons_77: -193883367
+      Browser Games - Crystal Story - Icons_50: -1196335724
+      Browser Games - Crystal Story - Icons_122: -607166691
+      Browser Games - Crystal Story - Icons_17: 438211351
+      Browser Games - Crystal Story - Icons_26: 500371619
+      Browser Games - Crystal Story - Icons_51: -134444226
+      Browser Games - Crystal Story - Icons_80: 1312710420
+      Browser Games - Crystal Story - Icons_20: -1156122776
+      Browser Games - Crystal Story - Icons_3: 181489287
+      Browser Games - Crystal Story - Icons_61: -991700271
+      Browser Games - Crystal Story - Icons_117: 1224777158
+      Browser Games - Crystal Story - Icons_116: -1580745934
+      Browser Games - Crystal Story - Icons_84: 2108392875
+      Browser Games - Crystal Story - Icons_112: 306821219
+      Browser Games - Crystal Story - Icons_137: -1286430189
+      Browser Games - Crystal Story - Icons_7: -547310131
+      Browser Games - Crystal Story - Icons_1: 807669235
+      Browser Games - Crystal Story - Icons_29: 414333536
+      Browser Games - Crystal Story - Icons_62: -6043376
+      Browser Games - Crystal Story - Icons_69: 1830100801
+      Browser Games - Crystal Story - Icons_99: -1286511686
+      Browser Games - Crystal Story - Icons_19: 15510678
+      Browser Games - Crystal Story - Icons_95: -1393402884
+      Browser Games - Crystal Story - Icons_127: 971965906
+      Browser Games - Crystal Story - Icons_6: 1762193684
+      Browser Games - Crystal Story - Icons_120: 468395926
+      Browser Games - Crystal Story - Icons_44: 1240980704
+      Browser Games - Crystal Story - Icons_18: -814777383
+      Browser Games - Crystal Story - Icons_81: 902383180
+      Browser Games - Crystal Story - Icons_63: -1843791049
+      Browser Games - Crystal Story - Icons_101: -557127960
+      Browser Games - Crystal Story - Icons_47: 881703035
+      Browser Games - Crystal Story - Icons_55: 880670833
+      Browser Games - Crystal Story - Icons_130: -1536100790
+      Browser Games - Crystal Story - Icons_40: 1452697510
+      Browser Games - Crystal Story - Icons_33: 1103861783
+      Browser Games - Crystal Story - Icons_97: -1646917009
+      Browser Games - Crystal Story - Icons_93: 1705221395
+      Browser Games - Crystal Story - Icons_0: 1151670042
+      Browser Games - Crystal Story - Icons_121: -2026152721
+      Browser Games - Crystal Story - Icons_5: -944680446
+      Browser Games - Crystal Story - Icons_27: 1882001357
+      Browser Games - Crystal Story - Icons_90: 1525173275
+      Browser Games - Crystal Story - Icons_25: -1512361836
+      Browser Games - Crystal Story - Icons_64: 163921097
+      Browser Games - Crystal Story - Icons_128: -781463647
+      Browser Games - Crystal Story - Icons_54: -1153582425
+      Browser Games - Crystal Story - Icons_79: -728535335
+      Browser Games - Crystal Story - Icons_24: -1279427129
+      Browser Games - Crystal Story - Icons_58: -1051536478
+      Browser Games - Crystal Story - Icons_135: 273905447
+      Browser Games - Crystal Story - Icons_96: -1090627543
+      Browser Games - Crystal Story - Icons_140: 902676887
+      Browser Games - Crystal Story - Icons_136: -1881474412
+      Browser Games - Crystal Story - Icons_67: 227912053
+      Browser Games - Crystal Story - Icons_10: -691448718
+      Browser Games - Crystal Story - Icons_139: -140060848
+      Browser Games - Crystal Story - Icons_2: 1739565736
+      Browser Games - Crystal Story - Icons_60: -991264173
+      Browser Games - Crystal Story - Icons_48: 1061072596
+      Browser Games - Crystal Story - Icons_88: 1669398599
+      Browser Games - Crystal Story - Icons_138: 594482969
+      Browser Games - Crystal Story - Icons_98: 876609487
+      Browser Games - Crystal Story - Icons_72: -408932203
+      Browser Games - Crystal Story - Icons_49: -1783407872
+      Browser Games - Crystal Story - Icons_83: 1798339934
+      Browser Games - Crystal Story - Icons_41: -264914834
+      Browser Games - Crystal Story - Icons_65: 116846943
+      Browser Games - Crystal Story - Icons_9: -981412902
+      Browser Games - Crystal Story - Icons_56: 1324969963
+      Browser Games - Crystal Story - Icons_37: 1187230116
+      Browser Games - Crystal Story - Icons_59: -1759993021
+      Browser Games - Crystal Story - Icons_30: 718409619
+      Browser Games - Crystal Story - Icons_114: -56013275
+      Browser Games - Crystal Story - Icons_43: 1597560708
+      Browser Games - Crystal Story - Icons_45: -1813534768
+      Browser Games - Crystal Story - Icons_16: 881713288
+      Browser Games - Crystal Story - Icons_115: 822409877
+      Browser Games - Crystal Story - Icons_71: -1361480159
+      Browser Games - Crystal Story - Icons_94: -1798968014
+      Browser Games - Crystal Story - Icons_126: 1174396741
+      Browser Games - Crystal Story - Icons_53: 1569103238
+      Browser Games - Crystal Story - Icons_129: -1842660838
+      Browser Games - Crystal Story - Icons_102: 1171891819
+      Browser Games - Crystal Story - Icons_86: -249847418
+      Browser Games - Crystal Story - Icons_110: -517541
+      Browser Games - Crystal Story - Icons_132: -1787940265
+      Browser Games - Crystal Story - Icons_103: -39714388
+      Browser Games - Crystal Story - Icons_123: -772015502
+      Browser Games - Crystal Story - Icons_21: -2002521753
+      Browser Games - Crystal Story - Icons_109: 1139904381
+      Browser Games - Crystal Story - Icons_133: 1962580779
+      Browser Games - Crystal Story - Icons_15: -514092169
+      Browser Games - Crystal Story - Icons_106: 243440958
+      Browser Games - Crystal Story - Icons_104: 871563881
+      Browser Games - Crystal Story - Icons_4: -1939714849
+      Browser Games - Crystal Story - Icons_13: -1301689555
+      Browser Games - Crystal Story - Icons_78: 498605368
+      Browser Games - Crystal Story - Icons_125: 125703247
+      Browser Games - Crystal Story - Icons_22: 1570120206
+      Browser Games - Crystal Story - Icons_52: -1240375028
+      Browser Games - Crystal Story - Icons_82: 1659944490
+      Browser Games - Crystal Story - Icons_14: 1683186384
+      Browser Games - Crystal Story - Icons_57: -595812252
+      Browser Games - Crystal Story - Icons_66: 1163341643
+      Browser Games - Crystal Story - Icons_85: 75042063
+      Browser Games - Crystal Story - Icons_89: -942464269
+      Browser Games - Crystal Story - Icons_76: 1296209872
+      Browser Games - Crystal Story - Icons_11: 801704147
+      Browser Games - Crystal Story - Icons_134: 361393160
+      Browser Games - Crystal Story - Icons_118: 280037614
+      Browser Games - Crystal Story - Icons_32: 878793633
+      Browser Games - Crystal Story - Icons_12: 937655024
+      Browser Games - Crystal Story - Icons_34: 234566709
+      Browser Games - Crystal Story - Icons_8: 1330584535
+      Browser Games - Crystal Story - Icons_31: -1044232493
+      Browser Games - Crystal Story - Icons_124: -1463422341
+      Browser Games - Crystal Story - Icons_131: 545671549
+      Browser Games - Crystal Story - Icons_100: -1555018638
+      Browser Games - Crystal Story - Icons_119: 1549923637
+      Browser Games - Crystal Story - Icons_23: -965290238
+      Browser Games - Crystal Story - Icons_74: 1402023534
+      Browser Games - Crystal Story - Icons_38: -1436501567
+      Browser Games - Crystal Story - Icons_42: 392519603
+      Browser Games - Crystal Story - Icons_87: -838360516
+      Browser Games - Crystal Story - Icons_68: -767391212
+      Browser Games - Crystal Story - Icons_91: 1337707449
+      Browser Games - Crystal Story - Icons_70: -269839812
+      Browser Games - Crystal Story - Icons_28: -1606692556
+      Browser Games - Crystal Story - Icons_73: 201188185
+      Browser Games - Crystal Story - Icons_113: -148878514
+      Browser Games - Crystal Story - Icons_105: -72290556
+      Browser Games - Crystal Story - Icons_107: -554691565
+      Browser Games - Crystal Story - Icons_108: 423411791
+      Browser Games - Crystal Story - Icons_36: -289586909
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

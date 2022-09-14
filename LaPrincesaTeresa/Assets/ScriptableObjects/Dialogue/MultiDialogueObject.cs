@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace ScriptableObjects.Dialogue
@@ -7,6 +8,7 @@ namespace ScriptableObjects.Dialogue
     public class MultiDialogueObject : ScriptableObject
     {
         public DialogueObject[] dialogueObjects;
+
         private int _currentIndex;
         public int PositionedIndex { get; private set; }
 
