@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2411b1af4a3b467ca4bdf9dbaf54fdd3, type: 3}
   m_Name: Girl_Dialogue
   m_EditorClassIdentifier: 
-  speakerImage: {fileID: -1260760172, guid: a02ccc207cb7bf9439430783244e8aa3, type: 3}
+  speakerImage: {fileID: 21300000, guid: 28b0f9049bed9e6408c6c16c3698e3c3, type: 3}
   speakerName: Girl
   timeBetweenCharacters: 0.05
   dialogue: This is the girl dialogue

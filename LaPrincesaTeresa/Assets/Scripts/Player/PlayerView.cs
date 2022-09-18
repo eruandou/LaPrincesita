@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
@@ -6,15 +7,20 @@ using UnityEngine.Experimental.GlobalIllumination;
 public class PlayerView : MonoBehaviour
 {
     private Animator _animator;
-    [SerializeField] private Transform visuals;
     [SerializeField] private float doubleJumpSpinDuration;
     private bool _isCrouching, _isJumping, _isGrounded, _isGliding, _isDashing;
     private static readonly int Movement = Animator.StringToHash("Movement");
     private static readonly int Jumping = Animator.StringToHash("Jumping");
+    private WaitForSeconds _waitTimeForSpinAnim;
+    private int _spinJumpLayer;
+
+    public static event Action OnStartJumpFromGround = delegate { };
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _spinJumpLayer = _animator.GetLayerIndex("Twirl");
+        _waitTimeForSpinAnim = new WaitForSeconds(doubleJumpSpinDuration);
     }
 
     public void SubscribeToEvents(PlayerModel model)
@@ -45,6 +51,11 @@ public class PlayerView : MonoBehaviour
 
     private void OnJumpHandler(bool isJumping)
     {
+        if (isJumping && _isGrounded)
+        {
+            OnStartJumpFromGround();
+        }
+
         _isJumping = isJumping;
         _animator.SetBool(Jumping, isJumping);
     }
@@ -66,26 +77,16 @@ public class PlayerView : MonoBehaviour
 
     private void DoubleJump()
     {
-        StartCoroutine(DoubleJumpSpin(doubleJumpSpinDuration));
+        StartCoroutine(DoubleJumpSpin());
     }
 
-    private IEnumerator DoubleJumpSpin(float duration)
+    private IEnumerator DoubleJumpSpin()
     {
-        var startRotation = transform.eulerAngles.y;
-        var endRotation = startRotation + (startRotation > 360 ? 360 : -360);
-        var currentTime = 0.0f;
-        var transform1 = visuals.transform;
-        while (currentTime < duration)
-        {
-            currentTime += Time.deltaTime;
-            var yRotation = Mathf.Lerp(startRotation, endRotation, currentTime / duration) % 360.0f;
-            var eulerAngles = transform1.eulerAngles;
-            eulerAngles.y = yRotation;
-            transform1.eulerAngles = eulerAngles;
-            yield return null;
-        }
+        _animator.SetLayerWeight(_spinJumpLayer, 1);
+        _animator.Play("Twirl", _spinJumpLayer, 0);
 
-        transform1.eulerAngles = Vector3.zero;
+        yield return _waitTimeForSpinAnim;
+        _animator.SetLayerWeight(_spinJumpLayer, 0);
     }
 
     private void EvaluateAnimation()

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerImage: {fileID: 1322392728, guid: a02ccc207cb7bf9439430783244e8aa3, type: 3}
   speakerName: Sapoide
-  timeBetweenCharacters: 0.1
+  timeBetweenCharacters: 0.33333334
   dialogue: Este puente perdio la tension, seria muy pegriloso si lo intentas pasar
     ahora.
   characterPerSecond: 3

@@ -1,4 +1,5 @@
-﻿using Interface;
+﻿using System.Linq;
+using Interface;
 using ScriptableObjects.Dialogue;
 using ScriptableObjects.Events;
 using UI;
@@ -17,7 +18,23 @@ namespace NPC
         private void Awake()
         {
             _isInteractable = true;
+
+#if UNITY_EDITOR
+            CheckUniqueNPCController();
+#endif
         }
+
+#if UNITY_EDITOR
+        private void CheckUniqueNPCController()
+        {
+            var otherNPCController = GetComponentsInChildren<NPCController>().Where(x => x != this).ToArray();
+
+            if (otherNPCController.Length <= 0) return;
+            
+            Debug.LogError($"Character {gameObject.name} has more than one NPC Controller assigned");
+            Debug.Break();
+        }
+#endif
 
         public void OnInteract(PlayerModel model)
         {
