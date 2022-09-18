@@ -67,11 +67,13 @@ public class PlayerModel : MonoBehaviour
 
 #if UNITY_EDITOR
 
+    [SerializeField] private bool setAllAbilitiesForTesting;
+
     /// <summary>
     /// For Testing only EDITOR ONLY
     /// </summary>
     [ContextMenu("Set can glide bool")]
-    public void SetCanGlide()
+    private void TestSetCanGlide()
     {
         _canGlide = true;
     }
@@ -80,9 +82,26 @@ public class PlayerModel : MonoBehaviour
     /// For Testing only EDITOR ONLY
     /// </summary>
     [ContextMenu("Set double jump")]
-    public void SetDoubleJump()
+    private void TestSetDoubleJump()
     {
         _maxJumps += 1;
+    }
+
+    /// <summary>
+    /// For Testing only EDITOR ONLY
+    /// </summary>
+    /// <param name="controller"></param>
+    [ContextMenu("Set Can Dash")]
+    private void TestCanDash()
+    {
+        SetDashAbility(true);
+    }
+
+    private void SetAllAbilities()
+    {
+        AddMaxJumps(1);
+        SetGlideAbility(true);
+        SetDashAbility(true);
     }
 #endif
 
@@ -129,8 +148,16 @@ public class PlayerModel : MonoBehaviour
         {
             _equipableItemsPositionBySocket.Add(socket.socketName, socket.transformObject);
         }
+
+#if UNITY_EDITOR
+        if (setAllAbilitiesForTesting)
+        {
+            SetAllAbilities();
+        }
+#endif
     }
 
+    
     public void PickupObject(ThrowableInteractable objectToPickup)
     {
         if (_pickedUpObject != null)
