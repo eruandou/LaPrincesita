@@ -17,7 +17,24 @@ namespace NPC
         private void Awake()
         {
             _isInteractable = true;
+
+#if UNITY_EDITOR
+            CheckUniqueNPCController();
+#endif
         }
+
+#if UNITY_EDITOR
+        private void CheckUniqueNPCController()
+        {
+            var otherNPCController = GetComponentsInChildren<NPCController>();
+
+            if (otherNPCController != null)
+            {
+                Debug.LogError($"Character {gameObject.name} has more than one NPC Controller assigned");
+                Debug.Break();
+            }
+        }
+#endif
 
         public void OnInteract(PlayerModel model)
         {
