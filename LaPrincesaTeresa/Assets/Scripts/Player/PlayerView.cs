@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
@@ -6,13 +7,16 @@ using UnityEngine.Experimental.GlobalIllumination;
 public class PlayerView : MonoBehaviour
 {
     private Animator _animator;
-    [SerializeField] private Transform visuals;
     [SerializeField] private float doubleJumpSpinDuration;
     private bool _isCrouching, _isJumping, _isGrounded, _isGliding, _isDashing;
     private static readonly int Movement = Animator.StringToHash("Movement");
     private static readonly int Jumping = Animator.StringToHash("Jumping");
     private WaitForSeconds _waitTimeForSpinAnim;
     private int _spinJumpLayer;
+
+    public static event Action OnStartJumpFromGround = delegate {  };
+    public static event Action OnStartMove = delegate {  };
+    
 
     private void Awake()
     {
@@ -49,6 +53,10 @@ public class PlayerView : MonoBehaviour
 
     private void OnJumpHandler(bool isJumping)
     {
+        if (isJumping && _isGrounded)
+        {
+            OnStartJumpFromGround();
+        }
         _isJumping = isJumping;
         _animator.SetBool(Jumping, isJumping);
     }
