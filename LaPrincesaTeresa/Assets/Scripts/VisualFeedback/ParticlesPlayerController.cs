@@ -6,11 +6,21 @@ namespace VisualFeedback
     public class ParticlesPlayerController : MonoBehaviour
     {
         [SerializeField] private ParticleSystem jumpParticles;
-        [SerializeField] private ParticleSystem startRunParticles;
 
         private void Awake()
         {
-            PlayerView.OnStartJumpFromGround += () => jumpParticles.Play();
+            PlayerView.OnStartJumpFromGround += OnStarJumpHandler;
+        }
+
+        private void OnStarJumpHandler()
+        {
+            jumpParticles.Play();
+        }
+
+
+        private void OnDisable()
+        {
+            PlayerView.OnStartJumpFromGround -= OnStarJumpHandler;
         }
     }
 }

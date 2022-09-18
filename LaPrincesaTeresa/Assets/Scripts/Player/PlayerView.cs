@@ -14,9 +14,7 @@ public class PlayerView : MonoBehaviour
     private WaitForSeconds _waitTimeForSpinAnim;
     private int _spinJumpLayer;
 
-    public static event Action OnStartJumpFromGround = delegate {  };
-    public static event Action OnStartMove = delegate {  };
-    
+    public static event Action OnStartJumpFromGround = delegate { };
 
     private void Awake()
     {
@@ -57,6 +55,7 @@ public class PlayerView : MonoBehaviour
         {
             OnStartJumpFromGround();
         }
+
         _isJumping = isJumping;
         _animator.SetBool(Jumping, isJumping);
     }
