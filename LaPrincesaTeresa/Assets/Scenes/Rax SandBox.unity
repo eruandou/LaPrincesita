@@ -1399,6 +1399,11 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!4 &531237773 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4058278003756467420, guid: f06922410265864488d480569d1dd035, type: 3}
+  m_PrefabInstance: {fileID: 1163696574}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &532687232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5597,7 +5602,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 531237773}
   m_Lens:
     FieldOfView: 34
     OrthographicSize: 6.32

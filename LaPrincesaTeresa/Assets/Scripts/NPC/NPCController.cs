@@ -1,4 +1,5 @@
-﻿using Interface;
+﻿using System.Linq;
+using Interface;
 using ScriptableObjects.Dialogue;
 using ScriptableObjects.Events;
 using UI;
@@ -26,13 +27,12 @@ namespace NPC
 #if UNITY_EDITOR
         private void CheckUniqueNPCController()
         {
-            var otherNPCController = GetComponentsInChildren<NPCController>();
+            var otherNPCController = GetComponentsInChildren<NPCController>().Where(x => x != this).ToArray();
 
-            if (otherNPCController != null)
-            {
-                Debug.LogError($"Character {gameObject.name} has more than one NPC Controller assigned");
-                Debug.Break();
-            }
+            if (otherNPCController.Length <= 0) return;
+            
+            Debug.LogError($"Character {gameObject.name} has more than one NPC Controller assigned");
+            Debug.Break();
         }
 #endif
 
