@@ -460,6 +460,10 @@ public class PlayerModel : MonoBehaviour
         _currentCoyoteTime = data.coyoteTime;
     }
 
+    public void ResetMobility()
+    {
+        _moveDirCached = 0;
+    }
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {

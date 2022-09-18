@@ -31,7 +31,6 @@ namespace UI
             EnableDisableDialogue(false, true);
         }
 
-
         private void EnableDisableDialogue(bool enable, bool isImmediate = false)
         {
             if (enable)

@@ -13,17 +13,17 @@ namespace UI
     }
 
     [System.Serializable]
-    public class UIParams
+    public struct UIParams
     {
         public UICommand command;
         public MultiDialogueObject message;
 
-        public UIParams(UICommand newCommand, MultiDialogueObject dialogueObject = default)
+        public UIParams(UICommand newCommand, MultiDialogueObject dialogueObject = default
+        )
         {
             command = newCommand;
             message = dialogueObject;
         }
-        
     }
 
     [System.Serializable]

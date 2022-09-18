@@ -1,7 +1,9 @@
-﻿using System.Linq;
+﻿using System.Collections;
+using System.Linq;
 using Interface;
 using ScriptableObjects.Dialogue;
 using ScriptableObjects.Events;
+using TMPro;
 using UI;
 using UnityEngine;
 
@@ -12,6 +14,8 @@ namespace NPC
     {
         [SerializeField] private MultiDialogueObject npcDialogue;
         [SerializeField] private UIEvent uiEvent;
+        [SerializeField] private CanvasGroup pressEToInteract;
+        [SerializeField] private float fadeInTime, fadeOutTime;
         private PlayerModel _model;
         private bool _isInteractable;
 
@@ -20,21 +24,70 @@ namespace NPC
             _isInteractable = true;
 
 #if UNITY_EDITOR
-            CheckUniqueNPCController();
+            CheckUniqueNpcController();
 #endif
         }
 
 #if UNITY_EDITOR
-        private void CheckUniqueNPCController()
+        private void CheckUniqueNpcController()
         {
-            var otherNPCController = GetComponentsInChildren<NPCController>().Where(x => x != this).ToArray();
+            var otherNpcController = GetComponentsInChildren<NPCController>().Where(x => x != this).ToArray();
 
-            if (otherNPCController.Length <= 0) return;
-            
+            if (otherNpcController.Length <= 0) return;
+
             Debug.LogError($"Character {gameObject.name} has more than one NPC Controller assigned");
             Debug.Break();
         }
 #endif
+
+        public void OnPlayerIsNear(bool playerIsNear)
+        {
+#if UNITY_EDITOR
+            print($"Player is near? {playerIsNear}");
+#endif
+            EnableDisableDialogue(playerIsNear);
+        }
+
+        private Coroutine _setCanvasOpacityCoroutine;
+
+        private void EnableDisableDialogue(bool enable)
+        {
+            if (enable)
+            {
+                pressEToInteract.gameObject.SetActive(true);
+            }
+
+            if (_setCanvasOpacityCoroutine != null)
+            {
+                StopCoroutine(_setCanvasOpacityCoroutine);
+            }
+
+            _setCanvasOpacityCoroutine =
+                StartCoroutine(SetCanvasOpacity(enable, enable ? fadeInTime : fadeOutTime));
+        }
+
+        private IEnumerator SetCanvasOpacity(bool isFadeIn, float timeToFade)
+        {
+            var timePassed = 0f;
+            var targetFade = isFadeIn ? 1 : 0;
+            var start = pressEToInteract.alpha;
+            while (timePassed < timeToFade)
+            {
+                var lerpAmount = timePassed / timeToFade;
+                var fadeAmount = Mathf.Lerp(start, targetFade, lerpAmount);
+                pressEToInteract.alpha = fadeAmount;
+                timePassed += Time.deltaTime;
+                yield return null;
+            }
+
+            if (!isFadeIn)
+            {
+                pressEToInteract.gameObject.SetActive(false);
+            }
+
+            _setCanvasOpacityCoroutine = null;
+            pressEToInteract.alpha = targetFade;
+        }
 
         public void OnInteract(PlayerModel model)
         {
@@ -42,6 +95,7 @@ namespace NPC
                 return;
             _isInteractable = false;
             _model = model;
+            _model.ResetMobility();
 
             OnInteractionChange(ControllerTypes.Dialogue);
 
