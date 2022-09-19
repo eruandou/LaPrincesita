@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using InteractableObjects;
 using ScriptableObjects.Extras;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace UI
 {
@@ -11,32 +12,39 @@ namespace UI
         [SerializeField] private GameObject inventoryScreen;
 
         [SerializeField] private List<EquippedSocketUI> socketUIElements;
+        private Dictionary<string, EquippedSocketUI> _socketToUISocket;
 
-        private void OnEnable()
+        private void Awake()
+        {
+            _socketToUISocket = new Dictionary<string, EquippedSocketUI>();
+
+            foreach (var socketElement in socketUIElements)
+            {
+                _socketToUISocket.Add(socketElement.TargetSocket, socketElement);
+            }
+
+       
+        }
+
+        public void Initialize()
         {
             InteractableEquipableItem.OnItemPickedUp += SetUIElement;
         }
 
-        private void OnDisable()
-        {
-            InteractableEquipableItem.OnItemPickedUp -= SetUIElement;
-        }
-
-        public void Disable()
+        public void DisableCanvas()
         {
             inventoryScreen.SetActive(false);
         }
 
-        public void SetUIElement(string socket, ItemData data)
+        private void SetUIElement(string socket, ItemData data)
         {
-            for (int i = 0; i < socketUIElements.Count; i++)
+            if (!_socketToUISocket.TryGetValue(socket, out var socketUI))
             {
-                if (socketUIElements[i].TargetSocket != socket) continue;
-                socketUIElements[i].SetData(data);
+                Debug.LogError($"Incorrect socket assigned to item {socket}");
                 return;
             }
 
-            Debug.LogError($"Incorrect socket assigned to item {socket}");
+            socketUI.SetData(data);
         }
     }
 }

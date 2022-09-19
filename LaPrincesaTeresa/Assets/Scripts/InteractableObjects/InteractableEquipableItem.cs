@@ -10,9 +10,7 @@ namespace InteractableObjects
         [SerializeField] private ItemData data;
         private UpAndDownConstantMovement _movement;
 
-        public static event Action<string, ItemData> OnItemPickedUp = delegate(string s, ItemData data)
-        {
-        };
+        public static event Action<string, ItemData> OnItemPickedUp;
 
         protected override void Awake()
         {
@@ -46,7 +44,7 @@ namespace InteractableObjects
             transform1.localPosition = Vector3.zero;
             transform1.localRotation = Quaternion.identity;
             FinishedInteractionCallback();
-            OnItemPickedUp.Invoke(socketName, data);
+            OnItemPickedUp?.Invoke(socketName, data);
         }
 
         public void UseItem()

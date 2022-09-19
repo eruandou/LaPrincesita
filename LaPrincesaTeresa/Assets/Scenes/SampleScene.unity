@@ -5027,7 +5027,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   socketName: BackSocket
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: e9d9fdbe40aa7a94aba05c5770b04581, type: 2}
 --- !u!82 &1491685351
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6170,7 +6170,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.778761, y: 1}
+    m_SensorSize: {x: 1.7764705, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

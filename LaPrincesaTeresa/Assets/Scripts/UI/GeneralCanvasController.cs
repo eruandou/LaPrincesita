@@ -1,3 +1,4 @@
+using System;
 using Attributes;
 using UI;
 using UnityEditor;
@@ -15,9 +16,14 @@ public class GeneralCanvasController : MonoBehaviour
 
     private void Awake()
     {
-        inventorySystemUI.Disable();
+        inventorySystemUI.Initialize();
+     
     }
 
+    private void Start()
+    {
+        inventorySystemUI.DisableCanvas();
+    }
 #if UNITY_EDITOR
     [ContextMenu("Get canvas child")]
     private void GetCanvasChild()
