@@ -169,6 +169,7 @@ public class PlayerModel : MonoBehaviour
         transform1.localPosition = Vector3.zero;
     }
 
+    
     public List<string> GetAllSockets()
     {
         return playerSockets.Select(t => t.socketName).ToList();

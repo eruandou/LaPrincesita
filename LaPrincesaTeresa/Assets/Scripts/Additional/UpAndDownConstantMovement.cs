@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class UpAndDownConstantMovement
 {
-    private ItemGenericData _data;
+    private ItemData _data;
     private float _sinCenterY;
     private float _currentSpeed;
     private Transform _visual;
 
-    public UpAndDownConstantMovement(Transform visualTransform, ItemGenericData data)
+    public UpAndDownConstantMovement(Transform visualTransform, ItemData data)
     {
         _visual = visualTransform;
         _sinCenterY = _visual.localPosition.y;
