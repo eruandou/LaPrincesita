@@ -8686,26 +8686,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 35.512466
-      objectReference: {fileID: 0}
-    - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.129214
-      objectReference: {fileID: 0}
     - target: {fileID: 6476147066444456642, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 699706707}
-    - target: {fileID: 6476147066444456643, guid: 64795cdd3666762479901256b896133a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 35.512466
-      objectReference: {fileID: 0}
-    - target: {fileID: 6476147066444456643, guid: 64795cdd3666762479901256b896133a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.129214
-      objectReference: {fileID: 0}
+    - target: {fileID: 6476147066444456642, guid: 64795cdd3666762479901256b896133a, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 699706707}
     - target: {fileID: 6483247662682776473, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_Name
       value: Cam System
@@ -9516,11 +9504,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4058278003756467420, guid: f06922410265864488d480569d1dd035, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.1
+      value: -19.82
       objectReference: {fileID: 0}
     - target: {fileID: 4058278003756467420, guid: f06922410265864488d480569d1dd035, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.59
+      value: -1.92
       objectReference: {fileID: 0}
     - target: {fileID: 4058278003756467420, guid: f06922410265864488d480569d1dd035, type: 3}
       propertyPath: m_LocalPosition.z
