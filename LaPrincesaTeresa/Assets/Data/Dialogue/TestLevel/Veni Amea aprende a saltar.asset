@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2411b1af4a3b467ca4bdf9dbaf54fdd3, type: 3}
   m_Name: Veni Amea aprende a saltar
   m_EditorClassIdentifier: 
-  speakerImage: {fileID: 21300000, guid: 0e58d3cf548ac2345b4557f116c5432b, type: 3}
+  speakerImage: {fileID: 21300000, guid: 9390c7e341bd54e439302fa74085483d, type: 3}
   speakerName: Bloombelda
-  timeBetweenCharacters: 0
-  dialogue: Venite parriba po
+  timeBetweenCharacters: 0.2
+  dialogue: "Ten\xED qui subi, cachai?"
   characterPerSecond: 0
