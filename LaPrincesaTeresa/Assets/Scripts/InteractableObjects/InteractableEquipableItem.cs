@@ -1,20 +1,21 @@
-﻿using ScriptableObjects.Extras;
+﻿using System;
+using ScriptableObjects.Extras;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace InteractableObjects
 {
     public class InteractableEquipableItem : InteractableObject
     {
         [SerializeField] private string socketName;
-        [SerializeField] private ItemGenericData genericData;
+        [SerializeField] private ItemData data;
         private UpAndDownConstantMovement _movement;
+
+        public static event Action<string, ItemData> OnItemPickedUp;
 
         protected override void Awake()
         {
             base.Awake();
-            _movement = new UpAndDownConstantMovement(transform, genericData);
-            Assert.IsNotNull(_movement);
+            _movement = new UpAndDownConstantMovement(transform, data);
         }
 
         private void Start()
@@ -28,11 +29,14 @@ namespace InteractableObjects
 
             var socket = model.GetSocket(socketName);
 
+#if UNITY_EDITOR
             if (socket == default)
             {
                 Debug.LogError($"No socket named {socketName} found in player");
                 return;
             }
+#endif
+
             _movement.SpeedChange();
             SetInteractable(false);
             var transform1 = transform;
@@ -40,6 +44,11 @@ namespace InteractableObjects
             transform1.localPosition = Vector3.zero;
             transform1.localRotation = Quaternion.identity;
             FinishedInteractionCallback();
+            OnItemPickedUp?.Invoke(socketName, data);
+        }
+
+        public void UseItem()
+        {
         }
 
 #if UNITY_EDITOR

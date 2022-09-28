@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a259d0a0a57348d98645dde1e20786d0, type: 3}
-  m_Name: ItemGenericData
+  m_Name: Key
   m_EditorClassIdentifier: 
   unpickedSpeed: 2
   pickedSpeed: 1
+  itemSprite: {fileID: 21300000, guid: 4894457810a559d4f992e452e53cd2e9, type: 3}
+  itemName: Key
+  itemDescription: LaLlamve

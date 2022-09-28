@@ -3,9 +3,12 @@
 namespace ScriptableObjects.Extras
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/ItemMoveGenericData")]
-    public class ItemGenericData : ScriptableObject
+    public class ItemData : ScriptableObject
     {
         public float unpickedSpeed;
         public float pickedSpeed;
+        public Sprite itemSprite;
+        public string itemName;
+        public string itemDescription;
     }
 }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a259d0a0a57348d98645dde1e20786d0, type: 3}
+  m_Name: PikminRed
+  m_EditorClassIdentifier: 
+  unpickedSpeed: 1.5
+  pickedSpeed: 2.5
+  itemSprite: {fileID: -2022325475, guid: a02ccc207cb7bf9439430783244e8aa3, type: 3}
+  itemName: Pikmin4Confirmed
+  itemDescription: SHIGERUUU
