@@ -33,11 +33,27 @@ namespace ScriptableObjects.Dialogue
             return dialogueObjects[PositionedIndex];
         }
 
+
 #if UNITY_EDITOR
         [ContextMenu("Purge dialogue")]
         public void PurgeDialogue()
         {
             dialogueObjects = dialogueObjects.Distinct().ToArray();
+        }
+
+        public float GetAllDialogueDelay()
+        {
+            //Time to fade in and out
+            var time = 1.6f;
+            const float timeBetweenDialogues = 1.5f;
+            for (int i = 0; i < dialogueObjects.Length; i++)
+            {
+                var currDialogueObject = dialogueObjects[i];
+                var thisTime = currDialogueObject.timeBetweenCharacters * currDialogueObject.dialogue.Length;
+                time += thisTime + timeBetweenDialogues;
+            }
+
+            return time;
         }
 #endif
     }

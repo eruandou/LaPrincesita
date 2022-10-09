@@ -7,7 +7,8 @@ namespace UI
     public class DiegeticDialogueManager : GenericDialogueManager
     {
         public static event Action OnDiegeticDialogueFinished;
-        private WaitForSeconds _waitForSeconds = new(1.5f);
+        [SerializeField] private float waitBetweenDialogues = 1.5f;
+        private WaitForSeconds _waitForSeconds;
 
         protected override void DialogueFinished()
         {
@@ -21,6 +22,7 @@ namespace UI
 
         private IEnumerator WaitToNextDialogue()
         {
+            _waitForSeconds ??= new WaitForSeconds(waitBetweenDialogues);
             yield return _waitForSeconds;
             NextDialogueTest();
         }
