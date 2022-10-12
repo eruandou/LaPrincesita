@@ -8,7 +8,7 @@ public class PlayerView : MonoBehaviour
 {
     private Animator _animator;
     [SerializeField] private float doubleJumpSpinDuration;
-    private bool _isCrouching, _isJumping, _isGrounded, _isGliding, _isDashing;
+    private bool _isCrouching, _isJumping, _isGrounded, _isGliding, _isDashing, _isDead;
     private static readonly int Movement = Animator.StringToHash("Movement");
     private static readonly int Jumping = Animator.StringToHash("Jumping");
     private WaitForSeconds _waitTimeForSpinAnim;
@@ -32,11 +32,17 @@ public class PlayerView : MonoBehaviour
         model.OnGlidingUpdate += SetGliding;
         model.OnDashUpdate += SetDashing;
         model.OnDoubleJump += DoubleJump;
+        model.OnDieUpdate += SetDead;
     }
 
     private void SetDashing(bool isDashing)
     {
         _isDashing = isDashing;
+    }
+
+    private void SetDead(bool isDead)
+    {
+        _isDead = isDead;
     }
 
     private void SetGliding(bool isGliding)
