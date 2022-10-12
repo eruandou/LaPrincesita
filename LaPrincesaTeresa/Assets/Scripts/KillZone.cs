@@ -1,12 +1,29 @@
+using System.Linq;
+using Interface;
 using UnityEngine;
 
 public class KillZone : MonoBehaviour
 {
+    private ILevelResetable[] _allResetables;
+
+    private void Awake()
+    {
+        _allResetables = FindObjectsOfType<MonoBehaviour>().OfType<ILevelResetable>().ToArray();
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.TryGetComponent(out PlayerModel model))
+        if (!col.TryGetComponent(out PlayerModel model)) return;
+
+        model.OnPlayerKilled();
+        ResetAllElements();
+    }
+
+    private void ResetAllElements()
+    {
+        for (int i = 0; i < _allResetables.Length; i++)
         {
-            model.OnPlayerKilled();
+            _allResetables[i].OnResetLevel();
         }
     }
 }

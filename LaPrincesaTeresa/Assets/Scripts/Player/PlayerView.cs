@@ -97,6 +97,12 @@ public class PlayerView : MonoBehaviour
 
     private void EvaluateAnimation()
     {
+        if (_isDead)
+        {
+            _animator.Play("PlayerDead");
+            return;
+        }
+
         if (_isCrouching)
         {
             _animator.Play("Crouched");
