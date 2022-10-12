@@ -28,7 +28,6 @@ public class FallingPlatform : MonoBehaviour
         _origin = transform.position;
         _collider2Ds = GetComponents<BoxCollider2D>();
         _rb = GetComponent<Rigidbody2D>();
-        print("Colliders" + _collider2Ds.Length);
         _rb.isKinematic = true;
      
     }
@@ -37,7 +36,6 @@ public class FallingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //print($"currCD {currCD} hasToFall {hasToFall} destroyT {destroyTime} restore {restore}");
         if(!activeTrap) return;
 
         if (currCD<Time.time && hasToFall)
@@ -69,7 +67,6 @@ public class FallingPlatform : MonoBehaviour
     {
         for (int i = 0; i < _collider2Ds.Length; i++)
         {
-            print("Enadis" + enaDis);
             _collider2Ds[i].enabled = enaDis;
         }
 
