@@ -1,7 +1,9 @@
 using System.Linq;
 using Interface;
 using UnityEngine;
+using UnityEngine.Scripting;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class KillZone : MonoBehaviour
 {
     private ILevelResetable[] _allResetables;
