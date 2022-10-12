@@ -13,6 +13,7 @@ public class PlayerView : MonoBehaviour
     private static readonly int Jumping = Animator.StringToHash("Jumping");
     private WaitForSeconds _waitTimeForSpinAnim;
     private int _spinJumpLayer;
+    private int _deadLayer;
 
     public static event Action OnStartJumpFromGround = delegate { };
 
@@ -20,6 +21,7 @@ public class PlayerView : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _spinJumpLayer = _animator.GetLayerIndex("Twirl");
+        _deadLayer = _animator.GetLayerIndex("DeadLayer");
         _waitTimeForSpinAnim = new WaitForSeconds(doubleJumpSpinDuration);
     }
 
@@ -43,6 +45,7 @@ public class PlayerView : MonoBehaviour
     private void SetDead(bool isDead)
     {
         _isDead = isDead;
+        StartCoroutine(PlayerIsDead());
     }
 
     private void SetGliding(bool isGliding)
@@ -84,6 +87,15 @@ public class PlayerView : MonoBehaviour
     private void DoubleJump()
     {
         StartCoroutine(DoubleJumpSpin());
+    }
+
+    private IEnumerator PlayerIsDead()
+    {
+        _animator.SetLayerWeight(_deadLayer, 1);
+        _animator.Play("DeadBreak", _deadLayer, 0);
+
+        yield return _waitTimeForSpinAnim;
+        _animator.SetLayerWeight(_deadLayer, 0);
     }
 
     private IEnumerator DoubleJumpSpin()

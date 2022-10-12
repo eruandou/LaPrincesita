@@ -15,8 +15,8 @@ MonoBehaviour:
   hints:
   - dialogueObject: {fileID: 11400000, guid: 16599556199ff4f459942b2361853d12, type: 2}
     timeToTrigger: 5
+  - dialogueObject: {fileID: 11400000, guid: aedbb38224d83d943af0cbb1b0dc13d7, type: 2}
+    timeToTrigger: 40
   - dialogueObject: {fileID: 11400000, guid: 96bd9796f4f090647aee2d4a82b7620a, type: 2}
-    timeToTrigger: 6.642
-  - dialogueObject: {fileID: 11400000, guid: 96bd9796f4f090647aee2d4a82b7620a, type: 2}
-    timeToTrigger: 20
-  repeatLast: 1
+    timeToTrigger: 17.7
+  repeatLast: 0

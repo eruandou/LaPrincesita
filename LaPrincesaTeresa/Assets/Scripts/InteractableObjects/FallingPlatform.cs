@@ -1,69 +1,61 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class FallingPlatform : MonoBehaviour
 {
-    public float timer;
-    private Vector3 _origin;
-    private float currCD;
+    [SerializeField] private float timer;
+    [SerializeField] private float countDown;
+    [SerializeField] private GameObject visual;
 
-    private float destroyTime;
-    public float countDown;
-    
+    private Vector3 _origin;
+    private float _currCd;
+    private float _destroyTime;
     private Rigidbody2D _rb;
     private Collider2D[] _collider2Ds;
-    public GameObject visual;
-    private bool hasToFall;
-    private bool restore; // tendria que hacer una coroutine jeje
-    private bool activeTrap;
+    private bool _hasToFall;
+    private bool _restore;
+    private bool _activeTrap;
+
     private void Awake()
     {
-        hasToFall = true;
-        restore = false;
-        activeTrap = false;
+        _hasToFall = true;
+        _restore = false;
+        _activeTrap = false;
 
         _origin = transform.position;
         _collider2Ds = GetComponents<BoxCollider2D>();
         _rb = GetComponent<Rigidbody2D>();
         _rb.isKinematic = true;
-     
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if(!activeTrap) return;
+        if (!_activeTrap) return;
 
-        if (currCD<Time.time && hasToFall)
+        if (_currCd < Time.time && _hasToFall)
         {
             _rb.isKinematic = false;
-            hasToFall = false;
-            destroyTime = Time.time + countDown;
+            _hasToFall = false;
+            _destroyTime = Time.time + countDown;
         }
 
-        if (!hasToFall && destroyTime<Time.time)
+        if (!_hasToFall && _destroyTime < Time.time)
         {
-
-            EnableDisableThingys(false);
-            
+            EnableDisableThingies(false);
         }
 
-        if (restore)
+        if (_restore)
         {
-            EnableDisableThingys(true);
-            hasToFall = true;
-            activeTrap = false;
+            EnableDisableThingies(true);
+            _hasToFall = true;
+            _activeTrap = false;
             _rb.isKinematic = true;
             _rb.velocity = Vector2.zero;
         }
-        
     }
 
-    void EnableDisableThingys(bool enaDis)
+    private void EnableDisableThingies(bool enaDis)
     {
         for (int i = 0; i < _collider2Ds.Length; i++)
         {
@@ -71,26 +63,21 @@ public class FallingPlatform : MonoBehaviour
         }
 
         visual.SetActive(enaDis);
-       // _rb.collisionDetectionMode. = enaDis ? true : false;
         if (enaDis)
         {
             transform.position = _origin;
-            restore = false;
+            _restore = false;
         }
         else
         {
-            restore = true;
+            _restore = true;
         }
-        
     }
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        currCD = Time.time + timer;
-        activeTrap = true;
+        _currCd = Time.time + timer;
+        _activeTrap = true;
     }
-    
-    
-    
 }
