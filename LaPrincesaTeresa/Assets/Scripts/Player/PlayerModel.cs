@@ -24,7 +24,6 @@ public class PlayerModel : MonoBehaviour
     public event Action<bool> OnGroundedUpdate;
     public event Action<bool> OnGlidingUpdate;
     public event Action<bool> OnDashUpdate;
-    public event Action<bool> OnDieUpdate;
 
     [SerializeField] private PlayerData data;
     [SerializeField] private Transform interactionPoint;
@@ -47,10 +46,8 @@ public class PlayerModel : MonoBehaviour
     private bool _gravityEnabled;
     private bool _isPreventedFromUncrouching;
     private Coroutine _glidingCoroutine;
-    private Coroutine _dyingCoroutine;
     private Dictionary<string, Transform> _equipableItemsPositionBySocket;
     private ThrowableInteractable _pickedUpObject;
-    private Vector3 levelStartingPosition;
 
     #region Attributes
 
@@ -133,35 +130,8 @@ public class PlayerModel : MonoBehaviour
         return _equipableItemsPositionBySocket.TryGetValue(socketName, out var socket) ? socket : default;
     }
 
-    public void OnPlayerKilled()
-    {
-        if (_dyingCoroutine != null)
-            return;
-        SetDeadElements(true);
-        _dyingCoroutine = StartCoroutine(Respawn());
-    }
-
-    private IEnumerator Respawn()
-    {
-        yield return new WaitForSeconds(2);
-        SetDeadElements(false);
-        transform.position = levelStartingPosition;
-        _dyingCoroutine = null;
-    }
-
-    private void SetDeadElements(bool isDead)
-    {
-        OnDieUpdate?.Invoke(isDead);
-        Controller.EnableInput(!isDead);
-        _collider.enabled = !isDead;
-        _rb.isKinematic = isDead;
-        _moveDirCached = 0;
-        _rb.velocity = Vector2.zero;
-    }
-
     private void Initialize()
     {
-        levelStartingPosition = transform.position + Vector3.up * .5f;
         _dashTime = data.dashTime;
         _currentSpeed = data.walkSpeed;
         _isLookingRight = true;
@@ -187,7 +157,7 @@ public class PlayerModel : MonoBehaviour
 #endif
     }
 
-
+    
     public void PickupObject(ThrowableInteractable objectToPickup)
     {
         if (_pickedUpObject != null)
@@ -199,7 +169,7 @@ public class PlayerModel : MonoBehaviour
         transform1.localPosition = Vector3.zero;
     }
 
-
+    
     public List<string> GetAllSockets()
     {
         return playerSockets.Select(t => t.socketName).ToList();

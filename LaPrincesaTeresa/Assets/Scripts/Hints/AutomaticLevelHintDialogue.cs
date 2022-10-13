@@ -50,11 +50,6 @@ namespace Hints
                 {
                     nextDialogue.timeToTrigger = thisObjectTime;
                 }
-
-                if (i == hints.Count - 1)
-                {
-                    currHintObject.timeToTrigger = thisObjectTime;
-                }
             }
         }
 #endif
