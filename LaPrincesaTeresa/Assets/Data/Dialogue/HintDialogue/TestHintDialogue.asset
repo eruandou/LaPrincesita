@@ -17,6 +17,4 @@ MonoBehaviour:
     timeToTrigger: 5
   - dialogueObject: {fileID: 11400000, guid: 96bd9796f4f090647aee2d4a82b7620a, type: 2}
     timeToTrigger: 6.642
-  - dialogueObject: {fileID: 11400000, guid: 96bd9796f4f090647aee2d4a82b7620a, type: 2}
-    timeToTrigger: 20
   repeatLast: 1

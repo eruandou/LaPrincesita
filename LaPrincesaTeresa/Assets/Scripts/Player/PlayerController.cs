@@ -89,7 +89,6 @@ public class PlayerController : MonoBehaviour, IPlayerController
     public void EnableInput(bool isEnabled)
     {
         _playerInput.enabled = isEnabled;
-        _moveDir = 0;
     }
 
     private void OnDisable()
