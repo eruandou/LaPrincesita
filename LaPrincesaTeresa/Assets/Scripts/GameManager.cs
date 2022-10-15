@@ -30,12 +30,12 @@ namespace DefaultNamespace
 
         public void LoadMenu()
         {
-            ChangeLevel(menuLevelName);
+            ChangeLevel(menuLevelScene);
         }
 
-        private static void ChangeLevel(string levelToLoad)
+        public void ChangeLevel(SceneAsset levelToLoad)
         {
-            SceneManager.LoadScene(levelToLoad);
+            SceneManager.LoadScene(levelToLoad.name);
         }
 
 #if UNITY_EDITOR

@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Totorial part1.unity
     guid: 611d8e6f94ce3c945be04c14bf6081b4
+  - enabled: 1
+    path: Assets/Scenes/Levels/Totorial part2 Fix.unity
+    guid: 6ff10d30892ea5a40b18434bb4f78035
+  - enabled: 1
+    path: Assets/Scenes/Levels/Totorial part3.unity
+    guid: 1cab7752d60cc2c4ea5120651b35042e
+  - enabled: 1
+    path: Assets/Scenes/Levels/Totorial part4.unity
+    guid: 851e24d7aa1533b40ad234ef173df06b
   m_configObjects: {}
