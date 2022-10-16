@@ -8,11 +8,12 @@ public class PlayerView : MonoBehaviour
 {
     private Animator _animator;
     [SerializeField] private float doubleJumpSpinDuration;
-    private bool _isCrouching, _isJumping, _isGrounded, _isGliding, _isDashing;
+    private bool _isCrouching, _isJumping, _isGrounded, _isGliding, _isDashing, _isDead;
     private static readonly int Movement = Animator.StringToHash("Movement");
     private static readonly int Jumping = Animator.StringToHash("Jumping");
     private WaitForSeconds _waitTimeForSpinAnim;
     private int _spinJumpLayer;
+    private int _deadLayer;
 
     public static event Action OnStartJumpFromGround = delegate { };
 
@@ -20,6 +21,7 @@ public class PlayerView : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _spinJumpLayer = _animator.GetLayerIndex("Twirl");
+        _deadLayer = _animator.GetLayerIndex("DeadLayer");
         _waitTimeForSpinAnim = new WaitForSeconds(doubleJumpSpinDuration);
     }
 
@@ -32,11 +34,18 @@ public class PlayerView : MonoBehaviour
         model.OnGlidingUpdate += SetGliding;
         model.OnDashUpdate += SetDashing;
         model.OnDoubleJump += DoubleJump;
+        model.OnDieUpdate += SetDead;
     }
 
     private void SetDashing(bool isDashing)
     {
         _isDashing = isDashing;
+    }
+
+    private void SetDead(bool isDead)
+    {
+        _isDead = isDead;
+        StartCoroutine(PlayerIsDead());
     }
 
     private void SetGliding(bool isGliding)
@@ -80,6 +89,15 @@ public class PlayerView : MonoBehaviour
         StartCoroutine(DoubleJumpSpin());
     }
 
+    private IEnumerator PlayerIsDead()
+    {
+        _animator.SetLayerWeight(_deadLayer, 1);
+        _animator.Play("DeadBreak", _deadLayer, 0);
+
+        yield return _waitTimeForSpinAnim;
+        _animator.SetLayerWeight(_deadLayer, 0);
+    }
+
     private IEnumerator DoubleJumpSpin()
     {
         _animator.SetLayerWeight(_spinJumpLayer, 1);
@@ -91,6 +109,12 @@ public class PlayerView : MonoBehaviour
 
     private void EvaluateAnimation()
     {
+        if (_isDead)
+        {
+            _animator.Play("PlayerDead");
+            return;
+        }
+
         if (_isCrouching)
         {
             _animator.Play("Crouched");

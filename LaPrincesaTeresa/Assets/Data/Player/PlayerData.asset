@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c3e01f965a84e9ab9a6252f9f8e8373, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  walkSpeed: 6
-  runSpeed: 8
+  walkSpeed: 10
+  runSpeed: 12
   crouchSpeedMultiplier: 0.4
   crouchColliderSizeY: 1
   crouchColliderOffsetY: -0.5
