@@ -1,5 +1,4 @@
-﻿using System;
-using Attributes;
+﻿using Attributes;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;

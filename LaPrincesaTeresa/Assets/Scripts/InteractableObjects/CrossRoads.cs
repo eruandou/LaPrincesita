@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DefaultNamespace;
 using Interface;
 using UnityEditor;
-using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class CrossRoads : MonoBehaviour, IInteractable
