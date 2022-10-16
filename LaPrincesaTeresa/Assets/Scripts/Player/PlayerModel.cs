@@ -465,6 +465,15 @@ public class PlayerModel : MonoBehaviour
     {
         _moveDirCached = 0;
     }
+    
+    //todo sacar en al build final
+    
+    public void SetAllAbilitiesSand()
+    {
+        AddMaxJumps(1);
+        SetGlideAbility(true);
+        SetDashAbility(true);
+    }
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
