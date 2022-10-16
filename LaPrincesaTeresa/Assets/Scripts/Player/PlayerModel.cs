@@ -497,7 +497,6 @@ public class PlayerModel : MonoBehaviour
     }
     
     //todo sacar en al build final
-    
     public void SetAllAbilitiesSand()
     {
         AddMaxJumps(1);
