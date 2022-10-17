@@ -9644,11 +9644,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9045944
+      value: -1.9168243
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7565806
+      value: -3.7566106
       objectReference: {fileID: 0}
     - target: {fileID: 6476147066444456642, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_Follow
@@ -10962,7 +10962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 801961c05b22b344d99886b1218bff9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 2112900096}
 --- !u!4 &1929751589
 Transform:
   m_ObjectHideFlags: 0
@@ -11194,6 +11194,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f06922410265864488d480569d1dd035, type: 3}
+--- !u!114 &2112900096 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4058278003756467411, guid: f06922410265864488d480569d1dd035, type: 3}
+  m_PrefabInstance: {fileID: 2112900095}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4f4a4b151148fd9b817f82f30e32d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &890373858798028128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11266,9 +11277,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2656972290831759106, guid: aab20167ec16f75469e6e7cb0b6ffa0e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2656972291605524802, guid: aab20167ec16f75469e6e7cb0b6ffa0e, type: 3}
       propertyPath: m_Name
       value: Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656972291605524802, guid: aab20167ec16f75469e6e7cb0b6ffa0e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2656972291605524813, guid: aab20167ec16f75469e6e7cb0b6ffa0e, type: 3}
       propertyPath: m_RootOrder

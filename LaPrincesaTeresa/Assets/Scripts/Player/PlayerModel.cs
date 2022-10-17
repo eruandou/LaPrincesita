@@ -316,6 +316,7 @@ public class PlayerModel : MonoBehaviour
 
     private void FlipCharacter()
     {
+        print("Flipo pero no");
         _isLookingRight = !_isLookingRight;
         var transform1 = transform;
         var scale = transform1.localScale;
