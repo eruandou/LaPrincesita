@@ -10,11 +10,12 @@ public class Switch : MonoBehaviour
     [SerializeField] private float timeAnim;
     [SerializeField] private GameObject crossRoad;
 
-    
+
     private bool _isActive;
     private Vector3 _originalPos;
-    
+
     private Collider2D _trigger;
+
     // Script Temporal cambiar por Interactable 
     void Start()
     {
@@ -26,7 +27,7 @@ public class Switch : MonoBehaviour
     private void Update()
     {
         if (!_isActive && _originalPos == switchMov.transform.position) return;
-        
+
         var actVect = _isActive ? activePOs.position : _originalPos;
         Lerping(switchMov.transform.position, actVect);
         if (switchMov.transform.position == activePOs.position)
@@ -37,7 +38,6 @@ public class Switch : MonoBehaviour
         {
             crossRoad.SetActive(false);
         }
-        
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -52,6 +52,6 @@ public class Switch : MonoBehaviour
 
     private void Lerping(Vector3 pointA, Vector3 pointB)
     {
-        switchMov.transform.position = Vector3.Lerp(pointA, pointB, timeAnim - Time.deltaTime);
+        switchMov.transform.position = Vector3.Lerp(pointA, pointB, 1);
     }
 }

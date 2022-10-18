@@ -12,6 +12,7 @@ public interface IPlayerController
     event Action<bool> OnCrouch;
     event Action<bool> OnRun;
     event Action<bool> OnOpenInventory;
+    event Action OnResetQuery;
 }
 
 public enum ControllerTypes
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
     public event Action<bool> OnCrouch;
     public event Action<bool> OnRun;
     public event Action<bool> OnOpenInventory;
+    public event Action OnResetQuery;
 
     private Dictionary<ControllerTypes, string> _controllerTypes;
 
@@ -42,6 +44,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
     private InputAction _crouchAction;
     private InputAction _runAction;
     private InputAction _openInventoryAction;
+    private InputAction _resetAction;
 
     private float _moveDir;
 
@@ -56,6 +59,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
         _crouchAction = actions["Crouch"];
         _runAction = actions["Run"];
         _openInventoryAction = actions["Inventory"];
+        _resetAction = actions["Reset"];
 
         SubscribeToEvents();
 
@@ -83,8 +87,13 @@ public class PlayerController : MonoBehaviour, IPlayerController
         _runAction.performed += OnRunAction;
         _runAction.canceled += OnRunAction;
         _openInventoryAction.performed += OnOpenInventoryAction;
+        _resetAction.performed += OnResetPlayerQuery;
     }
 
+    private void OnResetPlayerQuery(InputAction.CallbackContext context)
+    {
+        OnResetQuery?.Invoke();
+    }
 
     public void EnableInput(bool isEnabled)
     {
@@ -114,6 +123,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
         _runAction.performed -= OnRunAction;
         _runAction.canceled -= OnRunAction;
         _openInventoryAction.performed -= OnOpenInventoryAction;
+        _resetAction.performed -= OnResetPlayerQuery;
     }
 
     public void RequestChangeMap(ControllerTypes newType)

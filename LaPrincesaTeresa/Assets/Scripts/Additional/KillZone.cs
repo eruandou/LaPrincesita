@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Interface;
 using UnityEngine;
@@ -17,6 +18,24 @@ public class KillZone : MonoBehaviour
         if (!col.TryGetComponent(out PlayerModel model)) return;
 
         model.OnPlayerKilled();
+        ResetAllElements();
+    }
+
+#if UNITY_EDITOR
+    [ContextMenu("Validate killzone")]
+    private void ValidateKillZone()
+    {
+        if (TryGetComponent(out Collider2D col))
+        {
+            col.isTrigger = true;
+        }
+
+        gameObject.layer = LayerMask.NameToLayer("Triggerer");
+    }
+#endif
+
+    public void ResetLevel()
+    {
         ResetAllElements();
     }
 

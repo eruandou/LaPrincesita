@@ -14,7 +14,7 @@ public class Socket
 }
 
 [SelectionBase]
-public class PlayerModel : MonoBehaviour
+public class PlayerModel : MonoBehaviour, ILevelResetable
 {
     public event Action<float> OnMoveUpdate;
     public event Action<bool> OnJumpUpdate;
@@ -119,7 +119,17 @@ public class PlayerModel : MonoBehaviour
         controller.OnMove += MoveHandler;
         controller.OnRun += RunHandler;
         controller.OnOpenInventory += OpenInventoryHandler;
+        controller.OnResetQuery += AskForReset;
         Controller = controller;
+    }
+
+    private void AskForReset()
+    {
+        var killZone = FindObjectOfType<KillZone>();
+        if (killZone != null)
+        {
+            killZone.ResetLevel();
+        }
     }
 
     private void Awake()
@@ -316,7 +326,6 @@ public class PlayerModel : MonoBehaviour
 
     private void FlipCharacter()
     {
-        print("Flipo pero no");
         _isLookingRight = !_isLookingRight;
         var transform1 = transform;
         var scale = transform1.localScale;
@@ -496,7 +505,7 @@ public class PlayerModel : MonoBehaviour
     {
         _moveDirCached = 0;
     }
-    
+
     //todo sacar en al build final
     public void SetAllAbilitiesSand()
     {
@@ -520,4 +529,8 @@ public class PlayerModel : MonoBehaviour
         Gizmos.DrawLine(position, position + data.aboveHeadMinimumDistance * Vector3.up);
     }
 #endif
+    public void OnResetLevel()
+    {
+        OnPlayerKilled();
+    }
 }

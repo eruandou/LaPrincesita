@@ -9644,7 +9644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9168243
+      value: -1.9150105
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10243,6 +10243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1165205395}
   - component: {fileID: 1165205396}
+  - component: {fileID: 1165205397}
   m_Layer: 0
   m_Name: Killzone
   m_TagString: Untagged
@@ -10291,6 +10292,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 21.761288, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1165205397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165205394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ee1878aeb8fa742b9d613f27e2cb2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1248699638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11140,6 +11153,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1784223985, guid: f06922410265864488d480569d1dd035, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4058278003756467411, guid: f06922410265864488d480569d1dd035, type: 3}
       propertyPath: setAllAbilitiesForTesting
       value: 1
