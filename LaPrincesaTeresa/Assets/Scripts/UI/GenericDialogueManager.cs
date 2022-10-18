@@ -114,7 +114,7 @@ namespace UI
             NextDialogue();
         }
 
-        private void NextDialogue()
+        protected void NextDialogue()
         {
             if (!_dialogueToShow.CheckNextDialogueAvailable())
             {

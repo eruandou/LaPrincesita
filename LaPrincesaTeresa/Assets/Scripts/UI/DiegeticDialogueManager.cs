@@ -24,7 +24,7 @@ namespace UI
         {
             _waitForSeconds ??= new WaitForSeconds(waitBetweenDialogues);
             yield return _waitForSeconds;
-            NextDialogueTest();
+            NextDialogue();
         }
     }
 }
