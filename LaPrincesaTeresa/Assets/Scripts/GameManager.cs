@@ -1,4 +1,5 @@
 ﻿using Attributes;
+using DefaultNamespace.Managers;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,6 +16,8 @@ namespace DefaultNamespace
 
         [SerializeField, ReadOnlyInspector] private string menuLevelName;
 
+        public CustomSceneManager CustomSceneManager { get; private set; }
+
         private void Awake()
         {
             if (Instance != null)
@@ -23,19 +26,11 @@ namespace DefaultNamespace
                 return;
             }
 
+            CustomSceneManager = new CustomSceneManager();
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
 
-        public void LoadMenu()
-        {
-            ChangeLevel(menuLevelScene);
-        }
-
-        public void ChangeLevel(SceneAsset levelToLoad)
-        {
-            SceneManager.LoadScene(levelToLoad.name);
-        }
 
 #if UNITY_EDITOR
         [ContextMenu("Get menu level")]

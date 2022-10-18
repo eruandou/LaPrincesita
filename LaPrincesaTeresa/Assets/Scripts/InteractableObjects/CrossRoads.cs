@@ -1,5 +1,3 @@
-using System;
-using System.Runtime.CompilerServices;
 using Attributes;
 using DefaultNamespace;
 using Interface;
@@ -24,7 +22,7 @@ public class CrossRoads : MonoBehaviour, IInteractable
         if (!_isInteractable)
             return;
         _isInteractable = true;
-        GameManager.Instance.ChangeLevel(nextLevelScene);
+        GameManager.Instance.CustomSceneManager.ChangeScene(nextLevelSceneName);
     }
 
     public void FinishedInteractionCallback()
