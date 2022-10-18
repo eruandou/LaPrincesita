@@ -34,6 +34,7 @@ public class CrossRoads : MonoBehaviour, IInteractable
     private void GetSceneName()
     {
         nextLevelSceneName = nextLevelScene.name;
+        EditorUtility.SetDirty(gameObject);
     }
 
 #endif

@@ -9884,11 +9884,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.905405
+      value: -1.921032
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7565806
+      value: -3.7566204
       objectReference: {fileID: 0}
     - target: {fileID: 6476147066444456642, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_Follow
@@ -10471,6 +10471,10 @@ PrefabInstance:
       propertyPath: nextLevelScene
       value: 
       objectReference: {fileID: 102900000, guid: 6ff10d30892ea5a40b18434bb4f78035, type: 3}
+    - target: {fileID: 6812505111322566239, guid: 7e226bced976bd449b5ce6f0972e0939, type: 3}
+      propertyPath: nextLevelSceneName
+      value: Totorial part2 Fix
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e226bced976bd449b5ce6f0972e0939, type: 3}
 --- !u!1 &1165205394

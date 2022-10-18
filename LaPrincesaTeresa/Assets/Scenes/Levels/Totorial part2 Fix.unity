@@ -570,7 +570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.043787
+      value: 16.043537
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13717,6 +13717,10 @@ PrefabInstance:
       propertyPath: nextLevelScene
       value: 
       objectReference: {fileID: 102900000, guid: 1cab7752d60cc2c4ea5120651b35042e, type: 3}
+    - target: {fileID: 6812505111322566239, guid: 7e226bced976bd449b5ce6f0972e0939, type: 3}
+      propertyPath: nextLevelSceneName
+      value: Totorial part3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e226bced976bd449b5ce6f0972e0939, type: 3}
 --- !u!1 &1795184655
