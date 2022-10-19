@@ -16,7 +16,7 @@ MonoBehaviour:
   runSpeed: 12
   crouchSpeedMultiplier: 0.4
   crouchColliderSizeY: 1
-  crouchColliderOffsetY: -0.5
+  crouchColliderOffsetY: -0.71
   jumpInitialForce: 100
   dashInitialForce: 18
   dashCooldown: 0.8
