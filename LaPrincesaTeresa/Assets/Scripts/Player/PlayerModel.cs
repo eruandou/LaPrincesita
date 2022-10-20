@@ -20,6 +20,7 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
     public event Action<bool> OnJumpUpdate;
     public event Action<bool> OnCrouchUpdate;
     public event Action OnDoubleJump;
+    public event Action<bool> OnPushUpdate; 
 
     public event Action<bool> OnGroundedUpdate;
     public event Action<bool> OnGlidingUpdate;
