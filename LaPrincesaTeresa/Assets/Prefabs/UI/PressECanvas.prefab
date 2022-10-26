@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1390529227629634211}
   - component: {fileID: 1390529227629634213}
   - component: {fileID: 1390529227629634212}
+  - component: {fileID: 334963244236015024}
   m_Layer: 5
   m_Name: PressE
   m_TagString: Untagged
@@ -76,6 +77,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &334963244236015024
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390529227629634210}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: accf341fd15bdd34585389b75980d1ab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1390529229173649910
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +156,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 1692110567
+  m_SortingLayerID: 750998799
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &1390529229173649898
