@@ -14,16 +14,17 @@ public class FallingPlatform : MonoBehaviour
     private bool _hasToFall;
     private bool _restore;
     private bool _activeTrap;
-
+    private Animator _animator;
     private void Awake()
     {
         _hasToFall = true;
         _restore = false;
         _activeTrap = false;
-
+        
         _origin = transform.position;
         _collider2Ds = GetComponents<BoxCollider2D>();
         _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
         _rb.isKinematic = true;
     }
 
@@ -48,6 +49,7 @@ public class FallingPlatform : MonoBehaviour
         if (_restore)
         {
             EnableDisableThingies(true);
+            ReproduceAnimation(false);
             _hasToFall = true;
             _activeTrap = false;
             _rb.isKinematic = true;
@@ -78,6 +80,12 @@ public class FallingPlatform : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         _currCd = Time.time + timer;
+        ReproduceAnimation(true);
         _activeTrap = true;
+    }
+    private void ReproduceAnimation(bool state)
+    {
+        _animator.SetBool("Tembleque", state);
+
     }
 }
