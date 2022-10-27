@@ -11524,11 +11524,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6835826408835568788, guid: becedb60929bf42499a4fb5e8155bf85, type: 3}
       propertyPath: m_Size.x
-      value: 23.866196
+      value: 35.60805
       objectReference: {fileID: 0}
     - target: {fileID: 6835826408835568788, guid: becedb60929bf42499a4fb5e8155bf85, type: 3}
       propertyPath: m_Offset.x
-      value: 3.068769
+      value: 4.303171
       objectReference: {fileID: 0}
     - target: {fileID: 6835826408835568789, guid: becedb60929bf42499a4fb5e8155bf85, type: 3}
       propertyPath: m_RootOrder
@@ -11536,7 +11536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6835826408835568789, guid: becedb60929bf42499a4fb5e8155bf85, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.4766155
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6835826408835568789, guid: becedb60929bf42499a4fb5e8155bf85, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11581,6 +11581,26 @@ PrefabInstance:
     - target: {fileID: 6835826408835568791, guid: becedb60929bf42499a4fb5e8155bf85, type: 3}
       propertyPath: m_Name
       value: Killzone (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6835826409221964254, guid: becedb60929bf42499a4fb5e8155bf85, type: 3}
+      propertyPath: m_Size.x
+      value: 36.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6835826409225832884, guid: becedb60929bf42499a4fb5e8155bf85, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6835826409225832884, guid: becedb60929bf42499a4fb5e8155bf85, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6835826409326274635, guid: becedb60929bf42499a4fb5e8155bf85, type: 3}
+      propertyPath: m_Size.x
+      value: 36.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6835826409871188331, guid: becedb60929bf42499a4fb5e8155bf85, type: 3}
+      propertyPath: m_Size.x
+      value: 36.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: becedb60929bf42499a4fb5e8155bf85, type: 3}

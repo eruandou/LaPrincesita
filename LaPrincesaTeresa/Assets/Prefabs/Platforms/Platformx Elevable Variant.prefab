@@ -7,6 +7,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 67426840183289848, guid: a14bcfd8eae5e1d40a9eddf83ad05861, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.4101982
+      objectReference: {fileID: 0}
+    - target: {fileID: 67426840183289848, guid: a14bcfd8eae5e1d40a9eddf83ad05861, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.4128
+      objectReference: {fileID: 0}
+    - target: {fileID: 69154989921481210, guid: a14bcfd8eae5e1d40a9eddf83ad05861, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 69154989921481210, guid: a14bcfd8eae5e1d40a9eddf83ad05861, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709256721275645721, guid: a14bcfd8eae5e1d40a9eddf83ad05861, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.3793019
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709256721275645721, guid: a14bcfd8eae5e1d40a9eddf83ad05861, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.4128
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347914913016739186, guid: a14bcfd8eae5e1d40a9eddf83ad05861, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347914913016739186, guid: a14bcfd8eae5e1d40a9eddf83ad05861, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3585315366527383874, guid: a14bcfd8eae5e1d40a9eddf83ad05861, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -17,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6400567204643938708, guid: a14bcfd8eae5e1d40a9eddf83ad05861, type: 3}
       propertyPath: m_Name
-      value: Platformx Elevable
+      value: Platformx Elevable Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6498483831683182555, guid: a14bcfd8eae5e1d40a9eddf83ad05861, type: 3}
       propertyPath: m_SortingOrder
