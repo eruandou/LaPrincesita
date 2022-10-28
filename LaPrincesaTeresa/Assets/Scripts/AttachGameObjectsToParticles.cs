@@ -39,7 +39,12 @@ public class AttachGameObjectsToParticles : MonoBehaviour
                 m_Instances[i].SetActive(true);
                 //Cambia la intensidad de la luz en base al tamaño de la particula :D
                 var currLight = m_Instances[i].GetComponent<Light2D>();
-                currLight.intensity = (m_Particles[i].GetCurrentSize(m_ParticleSystem) / m_Particles[i].startSize) * lightMaxIntensity;
+               // currLight.intensity = (m_Particles[i].GetCurrentSize(m_ParticleSystem) / m_Particles[i].startSize) * lightMaxIntensity;
+               
+               //le cambio la intensidad a la particula en base a su lifetime
+                currLight.intensity = (m_Particles[i].remainingLifetime / m_Particles[i].startLifetime) * lightMaxIntensity;
+                //cambio el radio de la luz en base a su tamaño.
+                currLight.pointLightInnerRadius = m_Particles[i].GetCurrentSize(m_ParticleSystem) / m_Particles[i].startSize;
             }
             else
             {
