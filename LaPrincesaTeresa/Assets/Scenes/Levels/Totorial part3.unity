@@ -9536,11 +9536,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9211464
+      value: -1.914669
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7566204
+      value: -3.7566106
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176089006, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_RenderPostProcessing
@@ -9672,6 +9672,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 793217144}
     m_Modifications:
+    - target: {fileID: 2113874000, guid: 7e226bced976bd449b5ce6f0972e0939, type: 3}
+      propertyPath: nextLevelScene
+      value: 
+      objectReference: {fileID: 102900000, guid: 851e24d7aa1533b40ad234ef173df06b, type: 3}
+    - target: {fileID: 2113874000, guid: 7e226bced976bd449b5ce6f0972e0939, type: 3}
+      propertyPath: nextLevelSceneName
+      value: Totorial part4
+      objectReference: {fileID: 0}
     - target: {fileID: 6812505111322566208, guid: 7e226bced976bd449b5ce6f0972e0939, type: 3}
       propertyPath: m_Name
       value: CrossRoad
