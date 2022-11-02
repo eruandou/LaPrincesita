@@ -9489,7 +9489,7 @@ GameObject:
   - component: {fileID: 433547391}
   - component: {fileID: 433547394}
   m_Layer: 8
-  m_Name: Doble Jump Hint
+  m_Name: DiegeticDialogueDoubleJump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9554,7 +9554,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   isRepeatable: 1
-  repeatCooldown: 3
+  repeatCooldown: 5.9
 --- !u!4 &470890958 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6835826408835568789, guid: becedb60929bf42499a4fb5e8155bf85, type: 3}
@@ -9738,11 +9738,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9263096
+      value: -1.899168
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7566404
+      value: -3.7565603
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176089006, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_RenderPostProcessing
@@ -12549,11 +12549,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 435038506823434446, guid: 6c0371846ed4edb4ea7b677c983af421, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 435038506823434446, guid: 6c0371846ed4edb4ea7b677c983af421, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[0]
-      value: 1382053865
+      value: 55894593
       objectReference: {fileID: 0}
     - target: {fileID: 435038506823434446, guid: 6c0371846ed4edb4ea7b677c983af421, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[1]
