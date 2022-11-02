@@ -159,7 +159,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   isRepeatable: 0
-  repeatCooldown: 3
+  repeatCooldown: 11.1
 --- !u!4 &14346867
 Transform:
   m_ObjectHideFlags: 0
@@ -8847,11 +8847,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.894249
+      value: -1.9143391
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7684104
+      value: -3.7684505
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176089006, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_RenderPostProcessing
@@ -9382,6 +9382,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luciernagas (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3644846497698840607, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644846497698840607, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
+      propertyPath: lightMaxIntensity
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
 --- !u!4 &1009087665 stripped
@@ -9476,6 +9484,14 @@ PrefabInstance:
     - target: {fileID: 3644846497698840596, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
       propertyPath: m_Name
       value: Luciernagas (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644846497698840607, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644846497698840607, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
+      propertyPath: lightMaxIntensity
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
@@ -9973,6 +9989,14 @@ PrefabInstance:
     - target: {fileID: 3644846497698840596, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
       propertyPath: m_Name
       value: Luciernagas (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644846497698840607, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644846497698840607, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
+      propertyPath: lightMaxIntensity
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
@@ -11540,6 +11564,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Luciernagas (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3644846497698840607, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644846497698840607, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
+      propertyPath: lightMaxIntensity
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
 --- !u!4 &1861990082 stripped
@@ -11601,6 +11633,14 @@ PrefabInstance:
     - target: {fileID: 3644846497698840596, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
       propertyPath: m_Name
       value: Luciernagas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644846497698840607, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644846497698840607, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
+      propertyPath: lightMaxIntensity
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
@@ -11688,7 +11728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &2089924223
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11733,7 +11773,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   isRepeatable: 1
-  repeatCooldown: 3
+  repeatCooldown: 11.1
 --- !u!4 &2089924225
 Transform:
   m_ObjectHideFlags: 0
@@ -11885,6 +11925,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3534755865138184956, guid: d9069f40df7fc0d44a19dca27d8c70fc, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534755865138184957, guid: d9069f40df7fc0d44a19dca27d8c70fc, type: 3}
+      propertyPath: layerToCheckAgainst.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 3534755865138184957, guid: d9069f40df7fc0d44a19dca27d8c70fc, type: 3}
       propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -11942,9 +11990,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3644846497698840593, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
+      propertyPath: LightsModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3644846497698840596, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
       propertyPath: m_Name
       value: Luciernagas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644846497698840607, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644846497698840607, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}
+      propertyPath: lightMaxIntensity
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61e171c8a1776ee409ccc49a65a54255, type: 3}

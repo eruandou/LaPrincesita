@@ -15,5 +15,6 @@ MonoBehaviour:
   speakerImage: {fileID: 21300000, guid: 28b0f9049bed9e6408c6c16c3698e3c3, type: 3}
   speakerName: Girl
   timeBetweenCharacters: 0.05
-  dialogue: "Necesitarias saltar un poquitito m\xE1s alto, casi el doble"
+  dialogue: "Necesitarias saltar un poquitito m\xE1s alto, casi el doble dir\xEDa
+    yo."
   characterPerSecond: 20
