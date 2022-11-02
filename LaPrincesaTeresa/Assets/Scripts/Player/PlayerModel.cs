@@ -154,7 +154,7 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
 
     private IEnumerator Respawn()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         SetDeadElements(false);
         transform.position = levelStartingPosition;
         _dyingCoroutine = null;
