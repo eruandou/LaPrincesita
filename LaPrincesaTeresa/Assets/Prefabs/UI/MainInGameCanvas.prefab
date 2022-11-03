@@ -33,7 +33,7 @@ RectTransform:
   - {fileID: 3268566342550891351}
   - {fileID: 2600408351446481370}
   m_Father: {fileID: 897435931873515643}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 272afb231d41d1343b6283fc24940645, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 648d37ee99680b44fa51b0d62583d130, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -460,8 +460,8 @@ RectTransform:
   - {fileID: 2554074461361146903}
   - {fileID: 6249496772437421554}
   - {fileID: 6429305106482078514}
-  - {fileID: 8420318103002184041}
   - {fileID: 8474343633814109615}
+  - {fileID: 8420318103002184041}
   m_Father: {fileID: 2753907008952503705}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -521,7 +521,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 897435931873515643}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -558,8 +558,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Hello
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5b614ea1f139f7648b792a10540e4893, type: 2}
-  m_sharedMaterial: {fileID: -2220119765411478041, guid: 5b614ea1f139f7648b792a10540e4893, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 63eb8bb29e360d84dbe994a443221f70, type: 2}
+  m_sharedMaterial: {fileID: -7164799048188069988, guid: 63eb8bb29e360d84dbe994a443221f70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1685,8 +1685,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Hello
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5b614ea1f139f7648b792a10540e4893, type: 2}
-  m_sharedMaterial: {fileID: -2220119765411478041, guid: 5b614ea1f139f7648b792a10540e4893, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 63eb8bb29e360d84dbe994a443221f70, type: 2}
+  m_sharedMaterial: {fileID: -7164799048188069988, guid: 63eb8bb29e360d84dbe994a443221f70, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1963,7 +1963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e76fe3b77142b59a52e6202cb82684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueImage: {fileID: 8560265484836703987}
+  dialogueImage: {fileID: 6211193453188585303}
   dialogueText: {fileID: 8785195360598555752}
   speakerName: {fileID: 7453402868571218779}
   canvasGroup: {fileID: 1553776215026648312}

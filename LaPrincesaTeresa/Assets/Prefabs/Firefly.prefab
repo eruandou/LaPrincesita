@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3644846497698840594}
   - component: {fileID: 3644846497698840607}
   m_Layer: 0
-  m_Name: Luciernagas
+  m_Name: Firefly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
