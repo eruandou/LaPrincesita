@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9c711962352b33c42829fbcc3e632bcb
+guid: bd64e117fb64eb541938c5f6429d6be3
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,8 +9,9 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Colored Crayons
-  fallbackFontReferences: []
+  - Wildy Sans
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: eb6966f25cfeb324b92bdc75d37b5d1e, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

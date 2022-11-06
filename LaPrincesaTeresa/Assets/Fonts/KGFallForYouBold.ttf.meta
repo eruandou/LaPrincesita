@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 95bb4effdcb2dc940af2e801cad4d4c5
+guid: 51524909a1ed9714bb2c034022b9de7d
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,8 +9,9 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Avocado Cake
-  fallbackFontReferences: []
+  - KG Fall For You
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 60d0dfbdb47c95a4d83ef6794ae23fcb, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
