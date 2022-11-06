@@ -12,7 +12,6 @@ public class Panel : MonoBehaviour
 
     public void Open()
     {
-        if (IsOpen) return;
         IsOpen = true;
         OnOpen.Invoke();
         gameObject.SetActive(true);
@@ -20,7 +19,6 @@ public class Panel : MonoBehaviour
 
     public void Close()
     {
-        if (!IsOpen) return;
         IsOpen = false;
         OnClose.Invoke();
         gameObject.SetActive(false);

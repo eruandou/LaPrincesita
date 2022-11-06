@@ -3,6 +3,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
 public class MenuEvents : MonoBehaviour
 {
@@ -23,7 +25,6 @@ public class MenuEvents : MonoBehaviour
     public Panel helpPanel;
 
     private List<Panel> allPanels = new List<Panel>();
-
     private bool hasCredits, hasHelp, hasLevelSelector, isMainMenu;
 
     private void Start()
@@ -36,23 +37,27 @@ public class MenuEvents : MonoBehaviour
         goBackMainMenuButton.onClick.AddListener(OnGoBackToMain);
         quitButton.onClick.AddListener(OnClickQuit);
 
+        mainPanel.gameObject.SetActive(true);
         allPanels.Add(mainPanel);
-        
+
         if (hasHelp)
         {
             helpButton.onClick.AddListener(OnClickHelp);
+            helpPanel.gameObject.SetActive(true);
             allPanels.Add(helpPanel);
         }
 
         if (hasCredits)
         {
             creditsButton.onClick.AddListener(OnClickCredits);
+            creditPanel.gameObject.SetActive(true);
             allPanels.Add(creditPanel);
         }
 
         if (hasLevelSelector)
         {
             levelSelectorButton.onClick.AddListener(OnClickLevelSelector);
+            levelSelectorPanel.gameObject.SetActive(true);
             allPanels.Add(levelSelectorPanel);
         }
 
