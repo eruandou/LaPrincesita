@@ -13,7 +13,7 @@ namespace UI
         {
             _inGameDialogueManager = GetComponentInChildren<InGameDialogueManager>();
             _diegeticDialogueManager = GetComponentInChildren<DiegeticDialogueManager>();
-            Assert.IsNotNull(_inGameDialogueManager);
+          //  Assert.IsNotNull(_inGameDialogueManager);
             Assert.IsNotNull(_diegeticDialogueManager);
         }
 

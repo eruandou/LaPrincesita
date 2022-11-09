@@ -133,7 +133,8 @@ namespace UI
         private void SetupDialogueImage(Sprite talkerSprite, string speakerNameText)
         {
             dialogueImage.sprite = talkerSprite;
-            speakerName.text = speakerNameText;
+            if (speakerName != default)
+                speakerName.text = speakerNameText;
         }
 
         private IEnumerator TypeOutText()
