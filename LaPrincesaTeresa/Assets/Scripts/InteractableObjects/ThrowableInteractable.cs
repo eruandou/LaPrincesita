@@ -46,6 +46,11 @@ namespace InteractableObjects
             onPickUpEvent?.Invoke();
         }
 
+        public void OnRangeChanged(bool isInRange)
+        {
+            
+        }
+
         private void SetInteraction(bool isInteractable)
         {
             _isInteractable = isInteractable;

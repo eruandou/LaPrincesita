@@ -622,6 +622,19 @@ MonoBehaviour:
   objectIsInProximity:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 611141455394783614}
+        m_TargetAssemblyTypeName: InteractableObjects.ContinuedInteractionObject,
+          Assembly-CSharp
+        m_MethodName: OnRangeChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 6202648754758522992}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -634,6 +647,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  enterRange:
+    m_PersistentCalls:
+      m_Calls: []
+  exitRange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8199192865369548237
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,12 +802,28 @@ MonoBehaviour:
         m_CallState: 2
   onFinishedInteraction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6644894593463658939}
+        m_TargetAssemblyTypeName: InteractableObjects.ProximityByCollider, Assembly-CSharp
+        m_MethodName: ForceOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   interactionCooldown: 0.1
   progressPerInteraction: 1
   OnInteractionProgressUpdate:
     m_PersistentCalls:
       m_Calls: []
+  <RangeOutlineThickness>k__BackingField: 2
+  interactionRenderer:
+  - {fileID: 8944924881103643113}
+  - {fileID: 3757830284370939775}
   numberOfInteractionsNeeded: 5
 --- !u!61 &611141455394783613
 BoxCollider2D:
@@ -991,18 +1026,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3709955272488179778}
     m_Modifications:
-    - target: {fileID: 1390529227629634211, guid: 28d58ab56d120e047ba984d57fda50ba, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.19606934
-      objectReference: {fileID: 0}
-    - target: {fileID: 1390529227629634211, guid: 28d58ab56d120e047ba984d57fda50ba, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.19606934
-      objectReference: {fileID: 0}
-    - target: {fileID: 1390529227629634211, guid: 28d58ab56d120e047ba984d57fda50ba, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.19606934
-      objectReference: {fileID: 0}
     - target: {fileID: 1390529229173649910, guid: 28d58ab56d120e047ba984d57fda50ba, type: 3}
       propertyPath: m_Name
       value: PressECanvas

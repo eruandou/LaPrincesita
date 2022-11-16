@@ -5,5 +5,6 @@
         void OnInteract(PlayerModel model);
 
         void FinishedInteractionCallback();
+        void OnRangeChanged(bool isInRange);
     }
 }

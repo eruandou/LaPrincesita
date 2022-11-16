@@ -6,7 +6,7 @@ public class ResetableVisualElement : MonoBehaviour, ILevelResetable
     private Vector3 _startingPos;
     private Rigidbody2D _rb;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _startingPos = transform.position;
         TryGetComponent(out _rb);
@@ -15,7 +15,7 @@ public class ResetableVisualElement : MonoBehaviour, ILevelResetable
     public void OnResetLevel()
     {
         transform.position = _startingPos;
-        if (_rb != null)
+        if (_rb != default)
         {
             _rb.velocity = Vector3.zero;
         }

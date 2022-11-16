@@ -36,5 +36,10 @@ namespace InteractableObjects
         {
             onFinishedInteraction?.Invoke();
         }
+
+        public void OnRangeChanged(bool isInRange)
+        {
+            
+        }
     }
 }

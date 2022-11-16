@@ -52,9 +52,9 @@ MonoBehaviour:
   objectIsInProximity:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1778605390}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+      - m_Target: {fileID: 2113874000}
+        m_TargetAssemblyTypeName: CrossRoads, Assembly-CSharp
+        m_MethodName: OnRangeChanged
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -64,6 +64,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  enterRange:
+    m_PersistentCalls:
+      m_Calls: []
+  exitRange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!58 &1118230377
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -79,7 +85,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 6.37
+  m_Radius: 4.76
 --- !u!114 &2113874000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,8 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934aee59e4dd6124f8acda603af7ec2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelScene: {fileID: 102900000, guid: 1cab7752d60cc2c4ea5120651b35042e, type: 3}
-  nextLevelSceneName: Main Menu
+  nextLevelScene: {fileID: 102900000, guid: 6ff10d30892ea5a40b18434bb4f78035, type: 3}
+  nextLevelSceneName: Totorial part2 Fix
+  interactionRenderer:
+  - {fileID: 6812505111322566238}
+  <RangeOutlineThickness>k__BackingField: 6.5
 --- !u!1 &6812505111322566208
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6812505111322566237}
   - component: {fileID: 6812505111322566238}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: CrossRoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +157,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 82ea68a891e7c26409bab7973a21460d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -190,6 +199,10 @@ PrefabInstance:
     - target: {fileID: 1390529229173649910, guid: 28d58ab56d120e047ba984d57fda50ba, type: 3}
       propertyPath: m_Name
       value: PressECanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390529229173649910, guid: 28d58ab56d120e047ba984d57fda50ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1390529229173649911, guid: 28d58ab56d120e047ba984d57fda50ba, type: 3}
       propertyPath: m_Pivot.x
@@ -277,11 +290,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28d58ab56d120e047ba984d57fda50ba, type: 3}
---- !u!1 &1778605390 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1390529229173649910, guid: 28d58ab56d120e047ba984d57fda50ba, type: 3}
-  m_PrefabInstance: {fileID: 1390529227663748280}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1778605391 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1390529229173649911, guid: 28d58ab56d120e047ba984d57fda50ba, type: 3}

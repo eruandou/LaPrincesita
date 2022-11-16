@@ -16,6 +16,8 @@ namespace NPC
         [SerializeField] private UIEvent uiEvent;
         [SerializeField] private CanvasGroup pressEToInteract;
         [SerializeField] private float fadeInTime, fadeOutTime;
+
+        private Coroutine _setCanvasOpacityCoroutine;
         private PlayerModel _model;
         private bool _isInteractable;
 
@@ -40,15 +42,6 @@ namespace NPC
         }
 #endif
 
-        public void OnPlayerIsNear(bool playerIsNear)
-        {
-#if UNITY_EDITOR
-            print($"Player is near? {playerIsNear}");
-#endif
-            EnableDisableDialogue(playerIsNear);
-        }
-
-        private Coroutine _setCanvasOpacityCoroutine;
 
         private void EnableDisableDialogue(bool enable)
         {
@@ -117,6 +110,14 @@ namespace NPC
             _isInteractable = true;
             OnInteractionChange(ControllerTypes.Regular);
             InGameDialogueManager.OnInGameDialogueFinished -= FinishedInteractionCallback;
+        }
+
+        public void OnRangeChanged(bool isInRange)
+        {
+#if UNITY_EDITOR
+            print($"Player is near? {isInRange}");
+#endif
+            EnableDisableDialogue(isInRange);
         }
 
         public bool IsInteractable()
