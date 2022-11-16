@@ -9530,11 +9530,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.899168
+      value: -1.9130154
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7565606
+      value: -3.7566006
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9577,6 +9577,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1445264139987596110, guid: b9a6335c04f64c046ab08517e41514a8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -11.820007
+      objectReference: {fileID: 0}
     - target: {fileID: 5412584351052033218, guid: b9a6335c04f64c046ab08517e41514a8, type: 3}
       propertyPath: m_Name
       value: MainInGameCanvas
