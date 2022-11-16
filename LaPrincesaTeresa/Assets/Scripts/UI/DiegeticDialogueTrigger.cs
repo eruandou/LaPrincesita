@@ -22,6 +22,11 @@ public class DiegeticDialogueTrigger : MonoBehaviour
         if (_triggered || !GameStaticFunctions.IsGoInLayerMask(col.gameObject, playerCollision) ||
             _eventCoroutine != default) return;
 
+        TryInteract();
+    }
+
+    protected void TryInteract()
+    {
         _triggered = true;
 
         if (isRepeatable)
