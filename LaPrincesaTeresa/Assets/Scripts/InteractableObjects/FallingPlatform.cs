@@ -8,7 +8,7 @@ public class FallingPlatform : MonoBehaviour
     [SerializeField] private GameObject visual;
     [SerializeField] private bool hasToFall = true;
     [SerializeField]private bool restore = false;
-
+    [SerializeField] private LayerMask contactLayers;
     private Vector3 _origin;
     private float _currCd;
     private float _destroyTime;
@@ -77,6 +77,7 @@ public class FallingPlatform : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(GameStaticFunctions.IsGoInLayerMask(other.gameObject,contactLayers))
         _currCd = Time.time + timer;
         ReproduceAnimation(true);
         _activeTrap = true;
