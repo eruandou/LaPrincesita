@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Totorial part5.unity
     guid: de0ba542fb9d2f74d82973adf9cc2c73
   - enabled: 1
+    path: Assets/Scenes/Levels/Totorial part6.unity
+    guid: b5b9a9c545b7038438ec37cd48266033
+  - enabled: 1
     path: Assets/Scenes/Levels/SandBox.unity
     guid: fb3a60111238acd4db0f35535d65cb98
   m_configObjects: {}
