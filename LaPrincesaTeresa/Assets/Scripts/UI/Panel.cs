@@ -5,21 +5,32 @@ using System;
 
 public class Panel : MonoBehaviour
 {
-    public bool IsOpen { get; private set; }
+    private bool isOpen;
 
-    public Action OnOpen = delegate { };
-    public Action OnClose = delegate { };
+    private Action OnOpen = delegate { };
+    private Action OnClose = delegate { };
+
+    public void SetOpenCallback(Action onOpenAction) => OnOpen += onOpenAction;
+    public void ClearOpenCallbacks() => OnOpen = delegate { };
+
+    public void SetCloseCallback(Action onCloseAction) => OnClose += onCloseAction;
+    public void ClearCloseCallbacks() => OnClose = delegate { };
+
+    public bool GetIsOpen()
+    {
+        return isOpen;
+    }
 
     public void Open()
     {
-        IsOpen = true;
+        isOpen = true;
         OnOpen.Invoke();
         gameObject.SetActive(true);
     }
 
     public void Close()
     {
-        IsOpen = false;
+        isOpen = false;
         OnClose.Invoke();
         gameObject.SetActive(false);
     }
