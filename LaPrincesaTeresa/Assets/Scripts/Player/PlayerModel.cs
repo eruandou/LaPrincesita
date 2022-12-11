@@ -113,6 +113,8 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
 
     private void LoadSavedData()
     {
+        if (GameManager.Instance == default)
+            return;
         var saveData = GameManager.Instance.DataSaver.GetCurrentSaveData();
         SetGlideAbility(saveData.Glide);
         SetDashAbility(saveData.Dash);
