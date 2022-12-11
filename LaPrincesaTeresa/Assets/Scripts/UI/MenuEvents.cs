@@ -30,6 +30,7 @@ public class MenuEvents : MonoBehaviour
         CheckMenusValidity();
         ChangePanel(mainPanel);
         InputHandlingCallbacks();
+        CheckLevelSelectAvailable();
     }
 
     private void InputHandlingCallbacks()
@@ -74,6 +75,10 @@ public class MenuEvents : MonoBehaviour
         }
     }
 
+    private void CheckLevelSelectAvailable()
+    {
+        levelSelectorButton.interactable = GameManager.Instance.DataSaver.GetSaveDataFound();
+    }
 
     private void ChangePanel(Panel panelToOpen)
     {
