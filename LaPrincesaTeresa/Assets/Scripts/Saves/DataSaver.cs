@@ -14,6 +14,12 @@ namespace Saves
         private SaveData _currentSaveData;
         private const string SaveDataFolder = "SaveData/";
         private const string SaveDataName = "data01.json";
+        private bool _saveDataFound;
+
+        public bool GetSaveDataFound()
+        {
+            return _saveDataFound;
+        }
 
         public SaveData GetCurrentSaveData() => _currentSaveData;
 
@@ -49,9 +55,11 @@ namespace Saves
             if (!saveExists)
             {
                 _currentSaveData = new SaveData();
+                _saveDataFound = false;
                 return;
             }
 
+            _saveDataFound = true;
             var saveDataText = File.ReadAllText(filePath);
             var loadedSaveData = JsonUtility.FromJson<SaveData>(saveDataText);
             _currentSaveData = loadedSaveData;
