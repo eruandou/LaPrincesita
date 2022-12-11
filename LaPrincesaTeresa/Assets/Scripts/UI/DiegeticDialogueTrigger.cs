@@ -13,8 +13,10 @@ public class DiegeticDialogueTrigger : MonoBehaviour
     [SerializeField] private LayerMask playerCollision;
     [SerializeField] private bool isRepeatable;
     [SerializeField] private float repeatCooldown = 3;
+    [SerializeField] private int timesNeededToTrigger;
     private Coroutine _eventCoroutine;
     private WaitForSeconds _waitTime;
+    private int _triggeredTimes;
 
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -27,18 +29,21 @@ public class DiegeticDialogueTrigger : MonoBehaviour
 
     protected void TryInteract()
     {
-        _triggered = true;
+        _triggeredTimes++;
+        _triggered = _triggeredTimes >= timesNeededToTrigger;
 
-        if (isRepeatable)
+        if (_triggered && isRepeatable)
         {
             _eventCoroutine = StartCoroutine(RepeatCooldown());
         }
 
-        uiEvent.Raise(new UIParams(UICommand.DiegeticDialogueCommand, dialogue));
+        if (_triggered)
+            uiEvent.Raise(new UIParams(UICommand.DiegeticDialogueCommand, dialogue));
     }
 
     private IEnumerator RepeatCooldown()
     {
+        _triggeredTimes = 0;
         _waitTime ??= new WaitForSeconds(repeatCooldown);
         yield return _waitTime;
         _triggered = false;
