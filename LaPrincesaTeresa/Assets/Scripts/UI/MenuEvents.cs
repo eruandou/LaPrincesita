@@ -1,10 +1,8 @@
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
 
 public class MenuEvents : MonoBehaviour
@@ -31,13 +29,27 @@ public class MenuEvents : MonoBehaviour
         FixedCallbacks();
         CheckMenusValidity();
         ChangePanel(mainPanel);
+        InputHandlingCallbacks();
+    }
+
+    private void InputHandlingCallbacks()
+    {
+        var inputHandler = FindObjectOfType<InputSystemUIInputModule>();
+        inputHandler.cancel.ToInputAction().performed += OnGoBackToMain;
     }
 
     private void FixedCallbacks()
     {
         playButton.onClick.AddListener(OnClickPlay);
-        goBackMainMenuButton.onClick.AddListener(OnGoBackToMain);
+        goBackMainMenuButton.onClick.AddListener(ToMainMenuCallback);
         quitButton.onClick.AddListener(OnClickQuit);
+    }
+
+    private void ToMainMenuCallback()
+    {
+        if (_isMainMenu)
+            return;
+        ChangePanel(mainPanel);
     }
 
     private void CheckMenusValidity()
@@ -62,12 +74,6 @@ public class MenuEvents : MonoBehaviour
         }
     }
 
-    //private void Update()
-    //{
-    //    if (isMainMenu) return;
-    //    if (Input.GetKey(KeyCode.Escape)) //TODO add check if input escape is pressed and is not main menu, return to main
-    //        OnGoBackToMain();
-    //}
 
     private void ChangePanel(Panel panelToOpen)
     {
@@ -96,7 +102,10 @@ public class MenuEvents : MonoBehaviour
 
     private void OnClickCredits() => ChangePanel(creditPanel);
 
-    private void OnGoBackToMain() => ChangePanel(mainPanel);
+    private void OnGoBackToMain(InputAction.CallbackContext ctx)
+    {
+        ToMainMenuCallback();
+    }
 
     private static void OnClickQuit()
     {
