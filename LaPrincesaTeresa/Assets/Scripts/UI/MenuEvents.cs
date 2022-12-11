@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,60 +9,57 @@ using Button = UnityEngine.UI.Button;
 
 public class MenuEvents : MonoBehaviour
 {
-    public string playLevel = "Totorial part1 FIX";
+    [SerializeField] private string playLevel = "Totorial part1 FIX";
 
-    [Header("Buttons")]
-    public Button playButton;
-    public Button levelSelectorButton;
-    public Button creditsButton;
-    public Button helpButton;
-    public Button quitButton;
-    public Button goBackMainMenuButton;
+    [Header("Buttons")] [SerializeField] private Button playButton;
+    [SerializeField] private Button levelSelectorButton;
+    [SerializeField] private Button creditsButton;
+    [SerializeField] private Button helpButton;
+    [SerializeField] private Button quitButton;
+    [SerializeField] private Button goBackMainMenuButton;
 
-    [Header("Panels")]
-    public Panel mainPanel;
-    public Panel levelSelectorPanel;
-    public Panel creditPanel;
-    public Panel helpPanel;
+    [Header("Panels")] [SerializeField] private Panel mainPanel;
+    [SerializeField] private Panel levelSelectorPanel;
+    [SerializeField] private Panel creditPanel;
+    [SerializeField] private Panel helpPanel;
 
-    private List<Panel> allPanels = new List<Panel>();
-    private bool hasCredits, hasHelp, hasLevelSelector, isMainMenu;
+    private Panel _currentlySelectedPanel;
+    private bool _isMainMenu;
 
     private void Start()
     {
-        hasCredits = creditPanel != null && creditsButton != null;
-        hasHelp = helpPanel != null && helpButton != null;
-        hasLevelSelector = levelSelectorButton != null && levelSelectorPanel != null;
+        FixedCallbacks();
+        CheckMenusValidity();
+        ChangePanel(mainPanel);
+    }
 
+    private void FixedCallbacks()
+    {
         playButton.onClick.AddListener(OnClickPlay);
         goBackMainMenuButton.onClick.AddListener(OnGoBackToMain);
         quitButton.onClick.AddListener(OnClickQuit);
+    }
 
-        mainPanel.gameObject.SetActive(true);
-        allPanels.Add(mainPanel);
+    private void CheckMenusValidity()
+    {
+        var hasCredits = creditPanel != null && creditsButton != null;
+        var hasHelp = helpPanel != null && helpButton != null;
+        var hasLevelSelector = levelSelectorButton != null && levelSelectorPanel != null;
 
         if (hasHelp)
         {
             helpButton.onClick.AddListener(OnClickHelp);
-            helpPanel.gameObject.SetActive(true);
-            allPanels.Add(helpPanel);
         }
 
         if (hasCredits)
         {
             creditsButton.onClick.AddListener(OnClickCredits);
-            creditPanel.gameObject.SetActive(true);
-            allPanels.Add(creditPanel);
         }
 
         if (hasLevelSelector)
         {
             levelSelectorButton.onClick.AddListener(OnClickLevelSelector);
-            levelSelectorPanel.gameObject.SetActive(true);
-            allPanels.Add(levelSelectorPanel);
         }
-
-        ChangePanel(mainPanel);
     }
 
     //private void Update()
@@ -73,52 +71,41 @@ public class MenuEvents : MonoBehaviour
 
     private void ChangePanel(Panel panelToOpen)
     {
-        for (int i = 0; i < allPanels.Count; i++)
+        if (_currentlySelectedPanel == panelToOpen)
+            return;
+
+        if (_currentlySelectedPanel != default)
         {
-            if(allPanels[i] == panelToOpen)
-                allPanels[i].Open();
-            else
-                allPanels[i].Close();
+            _currentlySelectedPanel.Close();
         }
 
-        isMainMenu = panelToOpen == mainPanel;
-        goBackMainMenuButton.gameObject.SetActive(!isMainMenu);
+        _currentlySelectedPanel = panelToOpen;
+        _currentlySelectedPanel.Open();
+
+        _isMainMenu = panelToOpen == mainPanel;
+        goBackMainMenuButton.gameObject.SetActive(!_isMainMenu);
     }
 
     #region OnClick
-    public void OnClickPlay()
-    {
-        SceneManager.LoadScene(playLevel);
-    }
 
-    public void OnClickLevelSelector()
-    {
-        ChangePanel(levelSelectorPanel);
-    }
+    private void OnClickPlay() => SceneManager.LoadScene(playLevel);
 
-    public void OnClickHelp()
-    {
-        ChangePanel(helpPanel);
-    }
+    private void OnClickLevelSelector() => ChangePanel(levelSelectorPanel);
 
-    public void OnClickCredits()
-    {
-        ChangePanel(creditPanel);
-    }
+    private void OnClickHelp() => ChangePanel(helpPanel);
 
-    public void OnClickSanbox()
-    {
-        SceneManager.LoadScene("SandBox");
-    }
+    private void OnClickCredits() => ChangePanel(creditPanel);
 
-    public void OnGoBackToMain()
-    {
-        ChangePanel(mainPanel);
-    }
+    private void OnGoBackToMain() => ChangePanel(mainPanel);
 
-    public void OnClickQuit()
+    private static void OnClickQuit()
     {
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else
         Application.Quit();
+#endif
     }
+
     #endregion
 }
