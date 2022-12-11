@@ -1084,9 +1084,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<b><size=75>Code, Music,
+  m_text: '<b><size=75>Programming, Audio,
 
-    SFX & VFX</b> </size>
+    & VFX</b> </size>
 
     Ignacio Zambrano'
   m_isRightToLeft: 0
