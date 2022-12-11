@@ -42,7 +42,7 @@ public class MenuEvents : MonoBehaviour
     {
         playButton.onClick.AddListener(OnClickPlay);
         goBackMainMenuButton.onClick.AddListener(ToMainMenuCallback);
-        quitButton.onClick.AddListener(OnClickQuit);
+        quitButton.onClick.AddListener(GameStaticFunctions.QuitGame);
     }
 
     private void ToMainMenuCallback()
@@ -105,15 +105,6 @@ public class MenuEvents : MonoBehaviour
     private void OnGoBackToMain(InputAction.CallbackContext ctx)
     {
         ToMainMenuCallback();
-    }
-
-    private static void OnClickQuit()
-    {
-#if UNITY_EDITOR
-        EditorApplication.ExitPlaymode();
-#else
-        Application.Quit();
-#endif
     }
 
     #endregion

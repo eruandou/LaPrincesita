@@ -245,7 +245,7 @@
                 {
                     "name": "",
                     "id": "9481c863-e21c-4b23-b249-cf2e3b7d3260",
-                    "path": "<Keyboard>/enter",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
