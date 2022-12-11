@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using Attributes;
-using DefaultNamespace;
 using UnityEditor;
 public class TriggerSceneChanger : MonoBehaviour
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine.SceneManagement;
 
-namespace DefaultNamespace.Managers
+namespace Managers
 {
     public class CustomSceneManager
     {
@@ -21,8 +21,8 @@ namespace DefaultNamespace.Managers
         private static void LoadSceneInternal(string sceneToLoad, Action finishedCallback = null)
         {
             var asyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
-            asyncOperation.completed += (lawea) => SceneLoadedSuccesfully?.Invoke();
-            finishedCallback?.Invoke();
+            asyncOperation.completed += (op) => SceneLoadedSuccesfully?.Invoke();
+            asyncOperation.completed += (op) => finishedCallback?.Invoke();
         }
 
         public void LoadMenu()

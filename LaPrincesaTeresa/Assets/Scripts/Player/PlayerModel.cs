@@ -20,7 +20,7 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
     public event Action<bool> OnJumpUpdate;
     public event Action<bool> OnCrouchUpdate;
     public event Action OnDoubleJump;
-    public event Action<bool> OnPushUpdate; 
+    public event Action<bool> OnPushUpdate;
 
     public event Action<bool> OnGroundedUpdate;
     public event Action<bool> OnGlidingUpdate;
@@ -64,7 +64,7 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
     private bool _canDash;
     private bool _canBigPush;
 
-    public void AddMaxJumps(int jumpsToAdd) => _maxJumps += jumpsToAdd;
+    public void SetMaxJumps(bool doubleJump) => _maxJumps = doubleJump ? 2 : 1;
     public void AddDashTime(float extraDashTime) => _dashTime = extraDashTime;
     public void SetGlideAbility(bool canGlide) => _canGlide = canGlide;
     public void SetDashAbility(bool canDash) => _canDash = canDash;
@@ -103,13 +103,21 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
 
     private void SetAllAbilities()
     {
-        AddMaxJumps(1);
+        SetMaxJumps(true);
         SetGlideAbility(true);
         SetDashAbility(true);
     }
 #endif
 
     #endregion
+
+    private void LoadSavedData()
+    {
+        var saveData = GameManager.Instance.DataSaver.GetCurrentSaveData();
+        SetGlideAbility(saveData.Glide);
+        SetDashAbility(saveData.Dash);
+        SetMaxJumps(saveData.DoubleJump);
+    }
 
     public void SubscribeToController(PlayerController controller)
     {
@@ -124,7 +132,7 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
         Controller = controller;
     }
 
-    private void AskForReset()
+    private static void AskForReset()
     {
         var killZone = FindObjectOfType<KillZone>();
         if (killZone != null)
@@ -189,6 +197,8 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
         {
             _equipableItemsPositionBySocket.Add(socket.socketName, socket.transformObject);
         }
+
+        LoadSavedData();
 
 #if UNITY_EDITOR
         if (setAllAbilitiesForTesting)
@@ -510,7 +520,7 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
     //todo sacar en al build final
     public void SetAllAbilitiesSand()
     {
-        AddMaxJumps(1);
+        SetMaxJumps(true);
         SetGlideAbility(true);
         SetDashAbility(true);
     }

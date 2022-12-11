@@ -7,12 +7,12 @@ namespace ScriptableObjects.Badges.Passive
     {
         public override void OnEquip(PlayerModel playerModel)
         {
-            playerModel.AddMaxJumps((int)numericModifier);
+            playerModel.SetMaxJumps(true);
         }
 
         public override void OnUnequip(PlayerModel playerModel)
         {
-            playerModel.AddMaxJumps((int)numericModifier * -1);
+            playerModel.SetMaxJumps(false);
         }
     }
 }
