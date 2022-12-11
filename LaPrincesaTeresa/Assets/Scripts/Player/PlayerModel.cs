@@ -200,7 +200,7 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
             _equipableItemsPositionBySocket.Add(socket.socketName, socket.transformObject);
         }
 
-        LoadSavedData();
+     
 
 #if UNITY_EDITOR
         if (setAllAbilitiesForTesting)
@@ -210,6 +210,10 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
 #endif
     }
 
+    private void Start()
+    {
+        LoadSavedData();
+    }
 
     public void PickupObject(ThrowableInteractable objectToPickup)
     {
