@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Switch : MonoBehaviour
+public class SwitchOneTouch : MonoBehaviour
 {
     [SerializeField] private GameObject switchMov;
     [SerializeField] private Transform activePOs;
@@ -37,14 +37,9 @@ public class Switch : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         _isActive = true;
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        _isActive = false;
     }
 
     private void Lerping(Vector3 pointA, Vector3 pointB)
