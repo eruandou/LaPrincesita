@@ -18,6 +18,11 @@ namespace Managers
             LoadSceneInternal(sceneToLoad, finishedCallback);
         }
 
+        public void LoadLevelSelect()
+        {
+            LoadSceneInternal("LevelSelect");
+        }
+
         private static void LoadSceneInternal(string sceneToLoad, Action finishedCallback = null)
         {
             var asyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);

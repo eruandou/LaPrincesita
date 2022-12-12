@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 1382053865
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5f448166fd43c6f419acb7319cf6b12d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4fc70f4f84ef7b4ea27cfc217b91dd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -206,9 +206,9 @@ GameObject:
   - component: {fileID: 3534755865138184955}
   - component: {fileID: 3534755865138184956}
   - component: {fileID: 1656649678}
-  - component: {fileID: 3390756471125303130}
+  - component: {fileID: -1067984445352645843}
   m_Layer: 8
-  m_Name: Jump Pickeable
+  m_Name: DashPickeable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,7 +266,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3390756471125303130
+--- !u!114 &-1067984445352645843
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -284,4 +284,4 @@ MonoBehaviour:
   onPickUp:
     m_PersistentCalls:
       m_Calls: []
-  powerUpToGive: 0
+  powerUpToGive: 1

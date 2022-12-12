@@ -116,9 +116,9 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
         if (GameManager.Instance == default)
             return;
         var saveData = GameManager.Instance.DataSaver.GetCurrentSaveData();
-        SetGlideAbility(saveData.Glide);
-        SetDashAbility(saveData.Dash);
-        SetMaxJumps(saveData.DoubleJump);
+        SetGlideAbility(saveData.glide);
+        SetDashAbility(saveData.dash);
+        SetMaxJumps(saveData.doubleJump);
     }
 
     public void SubscribeToController(PlayerController controller)

@@ -1,6 +1,6 @@
 {
-    "DoubleJump": false,
-    "Glide": false,
-    "Dash": false,
+    "doubleJump": true,
+    "glide": true,
+    "dash": false,
     "unlockedLevels": []
 }

@@ -6,24 +6,24 @@ namespace Saves
     [Serializable]
     public struct SaveData
     {
-        public bool DoubleJump;
-        public bool Glide;
-        public bool Dash;
+        public bool doubleJump;
+        public bool glide;
+        public bool dash;
         public List<string> unlockedLevels;
 
         public void UnlockDoubleJump()
         {
-            DoubleJump = true;
+            doubleJump = true;
         }
 
         public void UnlockGlide()
         {
-            Glide = true;
+            glide = true;
         }
 
         public void UnlockDash()
         {
-            Dash = true;
+            dash = true;
         }
 
         public void UnlockLevel(string levelID)

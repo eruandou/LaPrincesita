@@ -33,9 +33,19 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void PowerUpGet(PowerupType powerUpObtained)
+    {
+        DataSaver.SetUnlockedElement(powerUpObtained);
+    }
+
+    public void UnlockLevel(string levelID)
+    {
+        DataSaver.SetUnlockedElement(PowerupType.Level, levelID);
+    }
+
     private void OnApplicationQuit()
     {
-        DataSaver.SaveData();
+        DataSaver.SaveCurrentData();
     }
 
 #if UNITY_EDITOR
