@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace LevelSelect
 {
@@ -9,17 +10,41 @@ namespace LevelSelect
 
         [SerializeField] private SpriteRenderer visuals;
         [SerializeField] private SpriteRenderer connection;
-        [SerializeField] private LevelNode connectionLevel;
 
+        [FormerlySerializedAs("connectionLevel")] [SerializeField]
+        private LevelNode nextConnectionLevel;
+
+        [SerializeField] private LevelNode rightNode, leftNode, upNode, downNode;
+        public bool IsLocked { get; private set; }
         private event Action<bool> OnUnlock;
 
         public void Init()
         {
             LockLevel();
-            if (connectionLevel != default)
+            if (nextConnectionLevel != default)
             {
-                connectionLevel.OnUnlock += SetConnectionVisibility;
+                nextConnectionLevel.OnUnlock += SetNextConnectionVisibility;
             }
+        }
+
+        public LevelNode GetLeftConnection()
+        {
+            return leftNode;
+        }
+
+        public LevelNode GetRightConnection()
+        {
+            return rightNode;
+        }
+
+        public LevelNode GetUpConnection()
+        {
+            return upNode;
+        }
+
+        public LevelNode GetDownConnection()
+        {
+            return downNode;
         }
 
         private void SetLevelVisibility(bool isActive)
@@ -27,7 +52,7 @@ namespace LevelSelect
             visuals.gameObject.SetActive(isActive);
         }
 
-        private void SetConnectionVisibility(bool isActive)
+        private void SetNextConnectionVisibility(bool isActive)
         {
             connection.enabled = isActive;
         }
@@ -35,13 +60,15 @@ namespace LevelSelect
         private void LockLevel()
         {
             SetLevelVisibility(false);
-            SetConnectionVisibility(false);
+            SetNextConnectionVisibility(false);
+            IsLocked = true;
         }
 
         [ContextMenu("Test unlock level")]
         public void UnlockLevel()
         {
             SetLevelVisibility(true);
+            IsLocked = false;
             OnUnlock?.Invoke(true);
         }
     }

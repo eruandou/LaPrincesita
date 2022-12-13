@@ -9,6 +9,7 @@ namespace LevelSelect
     public class LevelSelectMap : MonoBehaviour
     {
         [SerializeField] private List<LevelNode> m_levelNodes;
+        [SerializeField] private LevelSelectPlayer m_levelSelectPlayer;
 
         private void Awake()
         {
@@ -16,6 +17,8 @@ namespace LevelSelect
             {
                 levelNode.Init();
             }
+
+            m_levelSelectPlayer.SetToNode(m_levelNodes[0]);
         }
 
         private void Start()

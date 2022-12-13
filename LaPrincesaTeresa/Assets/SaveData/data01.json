@@ -1,6 +1,8 @@
 {
-    "doubleJump": true,
-    "glide": true,
+    "doubleJump": false,
+    "glide": false,
     "dash": false,
-    "unlockedLevels": []
+    "unlockedLevels": [
+        "Totorial Inicio"
+    ]
 }
