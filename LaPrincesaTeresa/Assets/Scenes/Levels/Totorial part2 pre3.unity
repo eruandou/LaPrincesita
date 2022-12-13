@@ -723,11 +723,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.617535
+      value: -1.8730621
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2692094
+      value: 2.2529893
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176089006, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_RenderPostProcessing
@@ -1352,11 +1352,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: timer
-      value: 1
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: countDown
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: contactLayers.m_Bits
@@ -1500,11 +1500,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: timer
-      value: 1
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: countDown
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: contactLayers.m_Bits
@@ -1888,11 +1888,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: timer
-      value: 1
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: countDown
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: contactLayers.m_Bits
@@ -1962,11 +1962,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: timer
-      value: 2
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: countDown
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: contactLayers.m_Bits
@@ -2311,11 +2311,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: timer
-      value: 1
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: countDown
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: contactLayers.m_Bits
