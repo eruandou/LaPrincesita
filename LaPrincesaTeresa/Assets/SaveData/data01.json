@@ -1,6 +1,10 @@
 {
     "doubleJump": true,
-    "glide": true,
+    "glide": false,
     "dash": false,
-    "unlockedLevels": []
+    "unlockedLevels": [
+        "Totorial part3",
+        "Totorial part2 pre3",
+        "Totorial part2 Fix"
+    ]
 }
