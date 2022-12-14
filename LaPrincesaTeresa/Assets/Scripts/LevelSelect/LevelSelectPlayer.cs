@@ -49,7 +49,7 @@ namespace LevelSelect
             var x = Mathf.Abs(inputValue.x);
             var y = Mathf.Abs(inputValue.y);
 
-            LevelNode nodeToMoveTo = default;
+            LevelNode nodeToMoveTo;
             if (x > y)
             {
                 if (inputValue.x > 0)
