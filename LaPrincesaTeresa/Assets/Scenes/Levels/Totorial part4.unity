@@ -564,6 +564,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1388553754}
     m_Modifications:
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: timer
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: countDown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6400567204643938708, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: m_Name
       value: FallingPlatform (4)
@@ -8395,6 +8403,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1388553754}
     m_Modifications:
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: timer
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: countDown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6400567204643938708, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: m_Name
       value: FallingPlatform (1)
@@ -8790,11 +8806,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9098701
+      value: -1.91288
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7684405
+      value: -3.7684505
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176089006, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_RenderPostProcessing
@@ -8829,6 +8845,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1388553754}
     m_Modifications:
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: timer
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: countDown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6400567204643938708, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: m_Name
       value: FallingPlatform (3)
@@ -9211,6 +9235,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1388553754}
     m_Modifications:
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: timer
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: countDown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6400567204643938708, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: m_Name
       value: FallingPlatform (8)
@@ -9398,6 +9430,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1388553754}
     m_Modifications:
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: timer
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: countDown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6400567204643938708, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: m_Name
       value: FallingPlatform (11)
@@ -9460,6 +9500,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1388553754}
     m_Modifications:
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: timer
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: countDown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6400567204643938708, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: m_Name
       value: FallingPlatform (5)
@@ -9775,6 +9823,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1388553754}
     m_Modifications:
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: timer
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: countDown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6400567204643938708, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: m_Name
       value: FallingPlatform (9)
@@ -9926,6 +9982,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1388553754}
     m_Modifications:
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: timer
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: countDown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6400567204643938708, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: m_Name
       value: FallingPlatform (10)
@@ -11755,6 +11819,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1388553754}
     m_Modifications:
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: timer
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: countDown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6400567204643938708, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: m_Name
       value: FallingPlatform (2)
@@ -11817,6 +11889,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1388553754}
     m_Modifications:
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: timer
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: countDown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6400567204643938708, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: m_Name
       value: FallingPlatform (7)
@@ -11879,6 +11959,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1388553754}
     m_Modifications:
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: timer
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925599162032576372, guid: 6b06962abfc90d548b93be498489143c, type: 3}
+      propertyPath: countDown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6400567204643938708, guid: 6b06962abfc90d548b93be498489143c, type: 3}
       propertyPath: m_Name
       value: FallingPlatform (6)

@@ -27,6 +27,13 @@ public class DiegeticDialogueTrigger : MonoBehaviour
         TryInteract();
     }
 
+    public void InteractFromOutside()
+    {
+        if (_triggered ||
+            _eventCoroutine != default) return;
+
+        TryInteract();
+    }
     protected void TryInteract()
     {
         _triggeredTimes++;
