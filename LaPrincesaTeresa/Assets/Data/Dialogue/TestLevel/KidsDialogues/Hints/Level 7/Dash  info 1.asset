@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Dash  info 1
   m_EditorClassIdentifier: 
   dialogueObjects:
-  - {fileID: 11400000, guid: aa909c73734e5fc42850d6e71eaee811, type: 2}
+  - {fileID: 11400000, guid: a33e93f6a4cd5bd4499a48e1684dad7e, type: 2}

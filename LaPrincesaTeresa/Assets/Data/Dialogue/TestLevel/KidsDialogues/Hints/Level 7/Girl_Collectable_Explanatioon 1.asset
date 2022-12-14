@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerImage: {fileID: 21300000, guid: 28b0f9049bed9e6408c6c16c3698e3c3, type: 3}
   speakerName: Girl
   timeBetweenCharacters: 0.05
-  dialogue: "A bottle \xBFwhat can it be for?"
+  dialogue: A...bottle? What could that be used for?
   characterPerSecond: 20
