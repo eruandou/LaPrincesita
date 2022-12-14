@@ -50,9 +50,9 @@ public class DiegeticDialogueTrigger : MonoBehaviour
 
     private IEnumerator RepeatCooldown()
     {
-        _triggeredTimes = 0;
         _waitTime ??= new WaitForSeconds(repeatCooldown);
         yield return _waitTime;
+        _triggeredTimes = 0;
         _triggered = false;
         _eventCoroutine = default;
     }

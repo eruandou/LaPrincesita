@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using Attributes;
+using Managers;
 using UnityEditor;
 
 public class TriggerSceneChanger : MonoBehaviour
@@ -13,11 +14,9 @@ public class TriggerSceneChanger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (GameStaticFunctions.IsGoInLayerMask(other.gameObject, contactLayers))
-        {
-            GameManager.Instance.UnlockLevel(nextLevelSceneName);
-            GameManager.Instance.CustomSceneManager.LoadLevelSelect();
-        }
+        if (!GameStaticFunctions.IsGoInLayerMask(other.gameObject, contactLayers)) return;
+        GameManager.Instance.UnlockLevel(nextLevelSceneName);
+        GameManager.Instance.CustomSceneManager.LoadLevelSelect();
     }
 #if UNITY_EDITOR
     [ContextMenu("Get scene name")]
