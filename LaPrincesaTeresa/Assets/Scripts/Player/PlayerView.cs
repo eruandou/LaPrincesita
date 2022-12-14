@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections;
+using Player;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
 public class PlayerView : MonoBehaviour
 {
-    private Animator _animator;
     [SerializeField] private float doubleJumpSpinDuration;
     [SerializeField] private ParticleSystem butterflyParticles;
+    [SerializeField] private PlayerSfxManager audioManager;
+    [SerializeField] private AudioSource audioSource;
+
+    private Animator _animator;
     private bool _isCrouching, _isJumping, _isGrounded, _isGliding, _isDashing, _isDead, _isPushing;
     private static readonly int Movement = Animator.StringToHash("Movement");
     private static readonly int Jumping = Animator.StringToHash("Jumping");
@@ -45,11 +49,20 @@ public class PlayerView : MonoBehaviour
     private void SetDashing(bool isDashing)
     {
         _isDashing = isDashing;
+        if (isDashing)
+        {
+            audioSource.PlayOneShot(audioManager.GetAudioClip("Dash"));
+        }
     }
 
     private void SetDead(bool isDead)
     {
         _isDead = isDead;
+        if (isDead)
+        {
+            audioSource.PlayOneShot(audioManager.GetAudioClip("Die"));
+        }
+
         // StartCoroutine(PlayerIsDead());
     }
 
@@ -68,6 +81,11 @@ public class PlayerView : MonoBehaviour
         if (isJumping && _isGrounded)
         {
             OnStartJumpFromGround();
+        }
+
+        if (isJumping)
+        {
+            audioSource.PlayOneShot(audioManager.GetAudioClip("Jump"));
         }
 
         _isJumping = isJumping;
@@ -99,6 +117,7 @@ public class PlayerView : MonoBehaviour
         _animator.SetLayerWeight(_spinJumpLayer, 1);
         _animator.Play("Twirl", _spinJumpLayer, 0);
         butterflyParticles.Play();
+        audioSource.PlayOneShot(audioManager.GetAudioClip("DoubleJump"));
         yield return _waitTimeForSpinAnim;
         _animator.SetLayerWeight(_spinJumpLayer, 0);
     }

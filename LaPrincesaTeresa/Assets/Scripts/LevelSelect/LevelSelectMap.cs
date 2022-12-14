@@ -20,8 +20,6 @@ namespace LevelSelect
             {
                 m_levelNodes[i].Init(i);
             }
-
-            m_levelSelectPlayer.SetToNode(m_levelNodes[lastVisitedNode]);
         }
 
         private void Start()
@@ -31,6 +29,11 @@ namespace LevelSelect
             var unlockedLevels = saveData.unlockedLevels;
 
             UnlockLevels(unlockedLevels);
+            var levelToSendThePlayerTo = m_levelNodes.Count > lastVisitedNode && !m_levelNodes[lastVisitedNode].IsLocked
+                ? lastVisitedNode
+                : 0;
+
+            m_levelSelectPlayer.SetToNode(m_levelNodes[levelToSendThePlayerTo]);
         }
 
         private void UnlockLevels(List<string> unlockedLevels)
@@ -54,12 +57,11 @@ namespace LevelSelect
         [ContextMenu("Get all level nodes")]
         private void GetAllLevelNodes()
         {
-#if !UNITY_EDITOR
-     return;
-#endif
+#if UNITY_EDITOR
             var nodes = GetComponentsInChildren<LevelNode>();
             m_levelNodes = nodes.ToList();
             EditorUtility.SetDirty(gameObject);
+#endif
         }
     }
 }

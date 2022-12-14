@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a02a56ed6df409eb37d88769cf73278, type: 3}
+  m_Name: Ending_Part5_Dialogue
+  m_EditorClassIdentifier: 
+  dialogueObjects:
+  - {fileID: 11400000, guid: df45c966fc0be754b9ad678139262af8, type: 2}
+  - {fileID: 11400000, guid: c3ed7427cc54305438c8c1b5e56d41dd, type: 2}
+  - {fileID: 11400000, guid: af7f29f6f9d411e45811da470754177c, type: 2}
+  - {fileID: 11400000, guid: 8cd68fd2d7b36fa4999ee8b508cc37c7, type: 2}
+  - {fileID: 11400000, guid: 85e915567c7b9e047901826e06fec9bb, type: 2}
+  - {fileID: 11400000, guid: 65e201473bb1a6146b62872382b65c96, type: 2}
+  - {fileID: 11400000, guid: cf8d27d5582ed224ba7a469b18c1c193, type: 2}
+  - {fileID: 11400000, guid: afebccc128f01da46a089f83865cf41b, type: 2}
+  - {fileID: 11400000, guid: 51e4c443d341fa048ab4cfc3ba7dc2c8, type: 2}

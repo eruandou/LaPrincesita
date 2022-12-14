@@ -760,8 +760,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2112900096}
         m_TargetAssemblyTypeName: PlayerModel, Assembly-CSharp
-        m_MethodName: AddMaxJumps
-        m_Mode: 3
+        m_MethodName: SetAllAbilitiesSand
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -770,18 +770,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 139607577}
-        m_TargetAssemblyTypeName: OneUseTrigger, Assembly-CSharp
-        m_MethodName: DestroyTriggerer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  clipToPlay: {fileID: 0}
 --- !u!61 &139607578
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10227,11 +10216,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8501167
+      value: -1.8480053
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176088912, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7494805
+      value: -3.7494705
       objectReference: {fileID: 0}
     - target: {fileID: 6476147065176089006, guid: 64795cdd3666762479901256b896133a, type: 3}
       propertyPath: m_RenderPostProcessing
@@ -11312,7 +11301,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   isRepeatable: 0
-  repeatCooldown: 7.7
+  repeatCooldown: 8.8
   timesNeededToTrigger: 0
 --- !u!61 &1353242996
 BoxCollider2D:

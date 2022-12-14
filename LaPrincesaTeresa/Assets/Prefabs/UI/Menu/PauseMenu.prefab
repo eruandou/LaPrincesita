@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4342405300201035630}
   - component: {fileID: 6391272525694551585}
   - component: {fileID: 3365336782825495864}
+  - component: {fileID: 200863009645486214}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -97,6 +98,9 @@ MonoBehaviour:
   mainMenuButton: {fileID: 4937125749387416850}
   pauseMenuCanvas: {fileID: 3365336782825495864}
   fadeDuration: 0.6
+  hoverAudioSource: {fileID: 200863009645486214}
+  hoverClip: {fileID: 8300000, guid: 80657dff52919b3429f69a6ca452eb26, type: 3}
+  clickClip: {fileID: 8300000, guid: 564e587c919c40d4485aedf239e88ba2, type: 3}
 --- !u!225 &3365336782825495864
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -109,6 +113,102 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!82 &200863009645486214
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5042120585264636254}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 6599390937743526244, guid: 3f92349608980dd4e8cb7e09a962fd7c, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8494904425910205951
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,12 +402,46 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7812625595533451515, guid: cdc3c2590026b334397a53b994300ac2, type: 3}
   m_PrefabInstance: {fileID: 2947663268414404073}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7674185308943497800}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7674185308943497800 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4785104020569558945, guid: cdc3c2590026b334397a53b994300ac2, type: 3}
+  m_PrefabInstance: {fileID: 2947663268414404073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3008567435103999472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7674185308943497800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6391272525694551585}
+          m_TargetAssemblyTypeName: UI.PauseMenu, Assembly-CSharp
+          m_MethodName: PointerEnterForButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &3598526751138471274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -443,12 +577,46 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7812625595533451515, guid: cdc3c2590026b334397a53b994300ac2, type: 3}
   m_PrefabInstance: {fileID: 3598526751138471274}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8329569974990328523}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8329569974990328523 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4785104020569558945, guid: cdc3c2590026b334397a53b994300ac2, type: 3}
+  m_PrefabInstance: {fileID: 3598526751138471274}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1990319813210157179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8329569974990328523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6391272525694551585}
+          m_TargetAssemblyTypeName: UI.PauseMenu, Assembly-CSharp
+          m_MethodName: PointerEnterForButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &5702379045393200902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -566,12 +734,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdc3c2590026b334397a53b994300ac2, type: 3}
+--- !u!1 &957843155600636071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4785104020569558945, guid: cdc3c2590026b334397a53b994300ac2, type: 3}
+  m_PrefabInstance: {fileID: 5702379045393200902}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1386438501367779610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957843155600636071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6391272525694551585}
+          m_TargetAssemblyTypeName: UI.PauseMenu, Assembly-CSharp
+          m_MethodName: PointerEnterForButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &2544232598300760061 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7812625595533451515, guid: cdc3c2590026b334397a53b994300ac2, type: 3}
   m_PrefabInstance: {fileID: 5702379045393200902}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 957843155600636071}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}

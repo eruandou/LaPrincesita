@@ -65,6 +65,8 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
     private bool _canDash;
     private bool _canBigPush;
 
+    private bool _overrideAbilities;
+
     public void SetMaxJumps(bool doubleJump) => _maxJumps = doubleJump ? 2 : 1;
     public void AddDashTime(float extraDashTime) => _dashTime = extraDashTime;
     public void SetGlideAbility(bool canGlide) => _canGlide = canGlide;
@@ -114,7 +116,7 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
 
     private void LoadSavedData()
     {
-        if (GameManager.Instance == default)
+        if (GameManager.Instance == default || _overrideAbilities)
             return;
         var saveData = GameManager.Instance.DataSaver.GetCurrentSaveData();
         SetGlideAbility(saveData.glide);
@@ -531,6 +533,7 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
     //todo sacar en al build final
     public void SetAllAbilitiesSand()
     {
+        _overrideAbilities = true;
         SetMaxJumps(true);
         SetGlideAbility(true);
         SetDashAbility(true);

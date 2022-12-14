@@ -52,36 +52,15 @@ namespace LevelSelect
             LevelNode nodeToMoveTo;
             if (x > y)
             {
-                if (inputValue.x > 0)
-                {
-                    nodeToMoveTo = _currentNode.GetRightConnection();
-                }
-                else
-                {
-                    nodeToMoveTo = _currentNode.GetLeftConnection();
-                }
+                nodeToMoveTo = inputValue.x > 0 ? _currentNode.GetRightConnection() : _currentNode.GetLeftConnection();
             }
             else if (x < y)
             {
-                if (inputValue.y > 0)
-                {
-                    nodeToMoveTo = _currentNode.GetUpConnection();
-                }
-                else
-                {
-                    nodeToMoveTo = _currentNode.GetDownConnection();
-                }
+                nodeToMoveTo = inputValue.y > 0 ? _currentNode.GetUpConnection() : _currentNode.GetDownConnection();
             }
             else
             {
-                if (inputValue.x > 0)
-                {
-                    nodeToMoveTo = _currentNode.GetRightConnection();
-                }
-                else
-                {
-                    nodeToMoveTo = _currentNode.GetLeftConnection();
-                }
+                nodeToMoveTo = inputValue.x > 0 ? _currentNode.GetRightConnection() : _currentNode.GetLeftConnection();
             }
 
             if (nodeToMoveTo == default || nodeToMoveTo.IsLocked)
@@ -92,7 +71,6 @@ namespace LevelSelect
         private void MoveToNode(LevelNode nodeToMoveTo)
         {
             var distanceAxis = (nodeToMoveTo.transform.position - transform.position).normalized;
-
 
             transform.localScale = transform.localScale.xYZ(distanceAxis.x > 0 ? 2 : -2);
 

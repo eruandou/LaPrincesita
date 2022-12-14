@@ -12,7 +12,8 @@ namespace UI
         [SerializeField] private Button resumeButton, quitButton, mainMenuButton;
         [SerializeField] private CanvasGroup pauseMenuCanvas;
         [SerializeField] private float fadeDuration = 0.6f;
-
+        [SerializeField] private AudioSource hoverAudioSource;
+        [SerializeField] private AudioClip hoverClip, clickClip;
         private const string MAIN_MENU_SCENE = "Main Menu";
 
         private bool _isPaused;
@@ -44,6 +45,20 @@ namespace UI
             resumeButton.onClick.AddListener(() => SetPauseState(false));
             quitButton.onClick.AddListener(QuitGame);
             mainMenuButton.onClick.AddListener(ToMainMenu);
+
+            ButtonClick(resumeButton);
+            ButtonClick(quitButton);
+            ButtonClick(mainMenuButton);
+        }
+
+        public void PointerEnterForButton()
+        {
+            hoverAudioSource.PlayOneShot(hoverClip);
+        }
+
+        private void ButtonClick(Button p_button)
+        {
+            p_button.onClick.AddListener(() => hoverAudioSource.PlayOneShot(clickClip));
         }
 
         private void PauseCallbacks(PlayerInput playerInput)

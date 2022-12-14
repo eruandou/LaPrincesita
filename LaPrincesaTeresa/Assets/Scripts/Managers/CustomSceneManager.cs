@@ -64,7 +64,7 @@ namespace Managers
 
         public void LoadMenu()
         {
-            LoadSceneInternal("MainMenu");
+            LoadSceneInternal("Main Menu");
         }
     }
 }

@@ -37,22 +37,22 @@ namespace LevelSelect
 
         public LevelNode GetLeftConnection()
         {
-            return leftNode;
+            return leftNode == default || leftNode.IsLocked ? default : leftNode;
         }
 
         public LevelNode GetRightConnection()
         {
-            return rightNode;
+            return rightNode == default || rightNode.IsLocked ? default : rightNode;
         }
 
         public LevelNode GetUpConnection()
         {
-            return upNode;
+            return upNode == default || upNode.IsLocked ? default : upNode;
         }
 
         public LevelNode GetDownConnection()
         {
-            return downNode;
+            return downNode == default || downNode.IsLocked ? default : downNode;
         }
 
         private void SetLevelVisibility(bool isActive)
@@ -83,11 +83,10 @@ namespace LevelSelect
         [ContextMenu("Set level name")]
         private void SetLevelName()
         {
-#if !UNITY_EDITOR
-     return;
-#endif
+#if UNITY_EDITOR
             levelName.text = LevelData.levelFormalName;
             EditorUtility.SetDirty(this);
+#endif
         }
     }
 }

@@ -285,3 +285,4 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   powerUpToGive: 1
+  clipToPlay: {fileID: 8300000, guid: 490ad689b92bf6b4db1aa95ed2c24584, type: 3}

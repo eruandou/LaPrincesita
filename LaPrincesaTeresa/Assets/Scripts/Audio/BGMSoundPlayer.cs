@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class BGMSoundPlayer : MonoBehaviour
+namespace Audio
 {
-    [SerializeField] private AudioMixerSnapshot useSnapshot;
-    private void Start()
+    public class BGMSoundPlayer : MonoBehaviour
     {
-        useSnapshot.TransitionTo(1f);
+        [SerializeField] private AudioMixerSnapshot useSnapshot;
+        private void Start()
+        {
+            useSnapshot.TransitionTo(1f);
+        }
     }
 }

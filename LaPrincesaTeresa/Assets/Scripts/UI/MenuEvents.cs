@@ -2,6 +2,7 @@ using Managers;
 using Saves;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
@@ -22,6 +23,9 @@ public class MenuEvents : MonoBehaviour
     [SerializeField] private Panel creditPanel;
     [SerializeField] private Panel helpPanel;
     [SerializeField] private Panel warningPanel;
+    [SerializeField] private AudioClip hoverClip, inClip, outClip;
+    [SerializeField] private AudioSource audioSource;
+
     private Panel _currentlySelectedPanel;
     private bool _isMainMenu;
 
@@ -50,6 +54,31 @@ public class MenuEvents : MonoBehaviour
         overwriteSaveFileButton.onClick.AddListener(GoToLevelSelect);
         cancelOverwriteSaveFileButton.onClick.AddListener(CancelOverwriteSaveFile);
         continueButton.onClick.AddListener(GoToLevelSelect);
+
+        SetButtonOnClickSound(playButton);
+        SetButtonOnClickSound(overwriteSaveFileButton);
+        SetButtonOnClickSound(continueButton);
+        SetButtonOnClickSound(creditsButton);
+        SetButtonOnClickSound(helpButton);
+
+        SetButtonOffClickSound(goBackMainMenuButton);
+        SetButtonOffClickSound(cancelOverwriteSaveFileButton);
+        SetButtonOffClickSound(quitButton);
+    }
+
+    private void SetButtonOnClickSound(Button p_button)
+    {
+        p_button.onClick.AddListener(() => audioSource.PlayOneShot(inClip));
+    }
+
+    private void SetButtonOffClickSound(Button p_button)
+    {
+        p_button.onClick.AddListener(() => audioSource.PlayOneShot(outClip));
+    }
+
+    public void SendButtonHoverSound()
+    {
+        audioSource.PlayOneShot(hoverClip);
     }
 
     private void ToMainMenuCallback()

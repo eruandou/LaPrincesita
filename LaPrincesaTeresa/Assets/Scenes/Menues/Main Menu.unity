@@ -630,12 +630,46 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4583640578083963966, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
   m_PrefabInstance: {fileID: 180997145}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 180997148}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &180997148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1267837533974178660, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
+  m_PrefabInstance: {fileID: 180997145}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &180997149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180997148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 301039025}
+          m_TargetAssemblyTypeName: MenuEvents, Assembly-CSharp
+          m_MethodName: SendButtonHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &189726792 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4097045168892977474, guid: 2ed3465b77668ef4a8db9c1264b8479e, type: 3}
@@ -674,6 +708,7 @@ RectTransform:
   - {fileID: 763841763}
   - {fileID: 861165200}
   - {fileID: 598426980}
+  - {fileID: 1631357009}
   - {fileID: 858264645}
   m_Father: {fileID: 825404992}
   m_RootOrder: 3
@@ -710,6 +745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 301039026}
   - component: {fileID: 301039025}
+  - component: {fileID: 301039027}
   m_Layer: 0
   m_Name: MenuEvents
   m_TagString: Untagged
@@ -741,6 +777,10 @@ MonoBehaviour:
   creditPanel: {fileID: 280717266}
   helpPanel: {fileID: 1754890690}
   warningPanel: {fileID: 835312650}
+  hoverClip: {fileID: 8300000, guid: 80657dff52919b3429f69a6ca452eb26, type: 3}
+  inClip: {fileID: 8300000, guid: 564e587c919c40d4485aedf239e88ba2, type: 3}
+  outClip: {fileID: 8300000, guid: 0d3b01a5ef0939e4ba4c324d66fc1312, type: 3}
+  audioSource: {fileID: 301039027}
 --- !u!4 &301039026
 Transform:
   m_ObjectHideFlags: 0
@@ -756,6 +796,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &301039027
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301039024}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &311002035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -867,12 +1003,46 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4583640578083963966, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
   m_PrefabInstance: {fileID: 311002035}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 311002038}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &311002038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1267837533974178660, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
+  m_PrefabInstance: {fileID: 311002035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &311002039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311002038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 301039025}
+          m_TargetAssemblyTypeName: MenuEvents, Assembly-CSharp
+          m_MethodName: SendButtonHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &342334651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,17 +2082,51 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7665970803501478280, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
   m_PrefabInstance: {fileID: 598426979}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &598426981 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1267837533974178660, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
+  m_PrefabInstance: {fileID: 598426979}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &678183838 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4583640578083963966, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
   m_PrefabInstance: {fileID: 598426979}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 598426981}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &678183839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598426981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 301039025}
+          m_TargetAssemblyTypeName: MenuEvents, Assembly-CSharp
+          m_MethodName: SendButtonHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &763841762
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,8 +2567,8 @@ RectTransform:
   - {fileID: 1134600567}
   - {fileID: 1754890691}
   - {fileID: 280717265}
-  - {fileID: 1586450918}
   - {fileID: 835312649}
+  - {fileID: 1586450918}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2408,7 +2612,7 @@ RectTransform:
   - {fileID: 7665970802396904393}
   - {fileID: 872390580}
   m_Father: {fileID: 825404992}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2461,9 +2665,8 @@ RectTransform:
   - {fileID: 428260671}
   - {fileID: 984755087}
   - {fileID: 359532805}
-  - {fileID: 1631357009}
   m_Father: {fileID: 280717265}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2612,6 +2815,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7665970803501478280, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
   m_PrefabInstance: {fileID: 861165199}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &861165201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1267837533974178660, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
+  m_PrefabInstance: {fileID: 861165199}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &872390579
 GameObject:
   m_ObjectHideFlags: 0
@@ -2625,6 +2833,7 @@ GameObject:
   - component: {fileID: 872390583}
   - component: {fileID: 872390582}
   - component: {fileID: 872390581}
+  - component: {fileID: 872390585}
   m_Layer: 5
   m_Name: NoButton
   m_TagString: Untagged
@@ -2750,6 +2959,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872390579}
   m_CullTransparentMesh: 1
+--- !u!114 &872390585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872390579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 301039025}
+          m_TargetAssemblyTypeName: MenuEvents, Assembly-CSharp
+          m_MethodName: SendButtonHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &911434966
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,11 +3374,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4097045168892977474, guid: 2ed3465b77668ef4a8db9c1264b8479e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 10.2266
+      value: 10.226624
       objectReference: {fileID: 0}
     - target: {fileID: 4097045168892977474, guid: 2ed3465b77668ef4a8db9c1264b8479e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15.3128
+      value: -15.312805
       objectReference: {fileID: 0}
     - target: {fileID: 4097045168892977474, guid: 2ed3465b77668ef4a8db9c1264b8479e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3598,12 +3836,46 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4583640578083963966, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
   m_PrefabInstance: {fileID: 1184208765}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1184208768}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1184208768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1267837533974178660, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
+  m_PrefabInstance: {fileID: 1184208765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1184208769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184208768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 301039025}
+          m_TargetAssemblyTypeName: MenuEvents, Assembly-CSharp
+          m_MethodName: SendButtonHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1203628024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4488,12 +4760,46 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4583640578083963966, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
   m_PrefabInstance: {fileID: 1586450917}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1586450920}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1586450920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1267837533974178660, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
+  m_PrefabInstance: {fileID: 1586450917}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1586450921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586450920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 301039025}
+          m_TargetAssemblyTypeName: MenuEvents, Assembly-CSharp
+          m_MethodName: SendButtonHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1617598707
 GameObject:
   m_ObjectHideFlags: 0
@@ -4738,13 +5044,13 @@ RectTransform:
   - {fileID: 1626992745}
   - {fileID: 61085297}
   - {fileID: 1413608084}
-  m_Father: {fileID: 858264645}
-  m_RootOrder: 5
+  m_Father: {fileID: 280717265}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -67.742065, y: 3.496399}
-  m_SizeDelta: {x: 0, y: -39.28125}
+  m_AnchoredPosition: {x: -32.74208, y: 19.729414}
+  m_SizeDelta: {x: 1469.8, y: 563.1887}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1631357010
 MonoBehaviour:
@@ -5443,12 +5749,46 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4583640578083963966, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
   m_PrefabInstance: {fileID: 1910512858}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1910512861}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1910512861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1267837533974178660, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
+  m_PrefabInstance: {fileID: 1910512858}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1910512862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910512861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 301039025}
+          m_TargetAssemblyTypeName: MenuEvents, Assembly-CSharp
+          m_MethodName: SendButtonHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1954548559
 GameObject:
   m_ObjectHideFlags: 0
@@ -5606,12 +5946,41 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4583640578083963966, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
   m_PrefabInstance: {fileID: 861165199}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 861165201}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2026810940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861165201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 301039025}
+          m_TargetAssemblyTypeName: MenuEvents, Assembly-CSharp
+          m_MethodName: SendButtonHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!222 &846005799580945525
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5633,6 +6002,7 @@ GameObject:
   - component: {fileID: 6030779712495908732}
   - component: {fileID: 4583640579322695295}
   - component: {fileID: 8243851940828170590}
+  - component: {fileID: 8243851940828170591}
   m_Layer: 5
   m_Name: OkButton
   m_TagString: Untagged
@@ -5771,12 +6141,46 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4583640578083963966, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
   m_PrefabInstance: {fileID: 3903580987270173619}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3903580987270173622}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3903580987270173622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1267837533974178660, guid: 2b7e6137a02b2fa49863f4fa3528357c, type: 3}
+  m_PrefabInstance: {fileID: 3903580987270173619}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3903580987270173623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903580987270173622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 301039025}
+          m_TargetAssemblyTypeName: MenuEvents, Assembly-CSharp
+          m_MethodName: SendButtonHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &4097045169081655562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6127,3 +6531,32 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &8243851940828170591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267837535144026405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 301039025}
+          m_TargetAssemblyTypeName: MenuEvents, Assembly-CSharp
+          m_MethodName: SendButtonHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

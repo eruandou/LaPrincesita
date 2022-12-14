@@ -18,9 +18,7 @@ namespace LevelSelect
         [ContextMenu("Get scene ID")]
         private void GetSceneToID()
         {
-#if !UNITY_EDITOR
-     return;
-#endif
+#if UNITY_EDITOR
             if (sceneLevel != null)
             {
                 levelID = sceneLevel.name;
@@ -28,6 +26,7 @@ namespace LevelSelect
 
 
             EditorUtility.SetDirty(this);
+#endif
         }
     }
 }

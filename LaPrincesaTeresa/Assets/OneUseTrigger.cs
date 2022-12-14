@@ -5,10 +5,11 @@ public class OneUseTrigger : MonoBehaviour
 {
     [SerializeField] private LayerMask layerToCheckAgainst;
     [SerializeField] protected UnityEvent<PlayerModel> onPickUp;
+    [SerializeField] private AudioClip clipToPlay;
 
     private void Awake()
     {
-        onPickUp.AddListener((model)=>DestroyTriggerer());
+        onPickUp.AddListener((model) => DestroyTriggerer());
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -22,6 +23,8 @@ public class OneUseTrigger : MonoBehaviour
 
     public void DestroyTriggerer()
     {
+        if (clipToPlay != default)
+            AudioSource.PlayClipAtPoint(clipToPlay, transform.position);
         Destroy(gameObject);
     }
 }
