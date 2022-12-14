@@ -57,8 +57,9 @@ namespace UI
             SetPauseState(!_isPaused);
         }
 
-        private static void ToMainMenu()
+        private void ToMainMenu()
         {
+            SetPauseState(false);
             SceneManager.LoadScene(MAIN_MENU_SCENE);
         }
 

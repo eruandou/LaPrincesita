@@ -73,6 +73,13 @@ namespace Saves
             File.WriteAllText(path, jsonFile);
         }
 
+        public void ResetSaveData()
+        {
+            _currentSaveData = new SaveData();
+            _currentSaveData.UnlockLevel("Totorial Inicio");
+            SaveData(_currentSaveData);
+        }
+
         public static string GetFullSaveDataPath()
         {
             return string.Concat(GetDataFolderPath(), SaveDataName);

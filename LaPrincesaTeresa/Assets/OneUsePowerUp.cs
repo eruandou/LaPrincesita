@@ -21,10 +21,16 @@ public class OneUsePowerUp : OneUseTrigger
     {
         if (AlreadyCollected())
         {
-            DestroyObject();
+            DestroyTriggerer();
             return;
         }
 
-        onPickUp.AddListener(() => GameManager.Instance.PowerUpGet(powerUpToGive));
+        onPickUp.AddListener(HandlePickupPowerUp);
+    }
+
+    private void HandlePickupPowerUp(PlayerModel model)
+    {
+        GameManager.Instance.PowerUpGet(powerUpToGive);
+        model.ReloadSavedData();
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using LevelSelect;
 using Saves;
 using UnityEditor;
 using UnityEditorInternal;
@@ -25,6 +26,7 @@ namespace Editor
         }
 
         private static bool _glideUnlocked, _doubleJumpUnlocked, _dashUnlocked;
+        private static LevelNodeData _defaultUnlockedNode;
         private static ReorderableList _sceneToUnlock;
         private static SerializedObject _serializedObject;
         private static SerializedProperty _serializedProperty;
@@ -60,6 +62,8 @@ namespace Editor
             _glideUnlocked = EditorGUILayout.Toggle("glide", _glideUnlocked);
             _doubleJumpUnlocked = EditorGUILayout.Toggle("Double Jump", _doubleJumpUnlocked);
             _dashUnlocked = EditorGUILayout.Toggle("dash", _dashUnlocked);
+            _defaultUnlockedNode = (LevelNodeData)EditorGUILayout.ObjectField("default unlocked node",
+                _defaultUnlockedNode, typeof(LevelNodeData));
 /*
             if (_serializedObject == null)
             {
@@ -75,6 +79,7 @@ namespace Editor
             {
                 CreateSaveFile();
             }
+
             if (GUILayout.Button("Delete save file"))
             {
                 DeleteSaveFile();
@@ -92,7 +97,11 @@ namespace Editor
             {
                 glide = _glideUnlocked,
                 dash = _dashUnlocked,
-                doubleJump = _doubleJumpUnlocked
+                doubleJump = _doubleJumpUnlocked,
+                unlockedLevels = new List<string>()
+                {
+                    _defaultUnlockedNode.levelID
+                }
             };
             var saveFileLocation = DataSaver.GetFullSaveDataPath();
             if (!File.Exists(saveFileLocation))

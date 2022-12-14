@@ -3,8 +3,12 @@
     "glide": false,
     "dash": false,
     "unlockedLevels": [
+        "Totorial Inicio",
+        "Totorial part1 FIX",
+        "Totorial part2 Fix",
         "Totorial part3",
-        "Totorial part2 pre3",
-        "Totorial part2 Fix"
+        "Totorial part4",
+        "Totorial part5",
+        "Totorial part6"
     ]
 }

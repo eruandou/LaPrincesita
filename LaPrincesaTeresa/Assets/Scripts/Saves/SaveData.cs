@@ -28,6 +28,7 @@ namespace Saves
 
         public void UnlockLevel(string levelID)
         {
+            unlockedLevels ??= new List<string>();
             if (unlockedLevels.Contains(levelID))
                 return;
             unlockedLevels.Add(levelID);

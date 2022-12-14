@@ -1,3 +1,4 @@
+using Saves;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,20 +8,19 @@ using Button = UnityEngine.UI.Button;
 
 public class MenuEvents : MonoBehaviour
 {
-    [SerializeField] private string playLevel = "Totorial part1 FIX";
-
     [Header("Buttons")] [SerializeField] private Button playButton;
-    [SerializeField] private Button levelSelectorButton;
+    [SerializeField] private Button continueButton;
     [SerializeField] private Button creditsButton;
     [SerializeField] private Button helpButton;
     [SerializeField] private Button quitButton;
     [SerializeField] private Button goBackMainMenuButton;
+    [SerializeField] private Button overwriteSaveFileButton;
+    [SerializeField] private Button cancelOverwriteSaveFileButton;
 
     [Header("Panels")] [SerializeField] private Panel mainPanel;
-    [SerializeField] private Panel levelSelectorPanel;
     [SerializeField] private Panel creditPanel;
     [SerializeField] private Panel helpPanel;
-
+    [SerializeField] private Panel warningPanel;
     private Panel _currentlySelectedPanel;
     private bool _isMainMenu;
 
@@ -28,9 +28,10 @@ public class MenuEvents : MonoBehaviour
     {
         FixedCallbacks();
         CheckMenusValidity();
-        ChangePanel(mainPanel);
         InputHandlingCallbacks();
-        CheckLevelSelectAvailable();
+        CheckContinueAvailable();
+
+        ChangePanel(mainPanel);
     }
 
     private void InputHandlingCallbacks()
@@ -41,9 +42,13 @@ public class MenuEvents : MonoBehaviour
 
     private void FixedCallbacks()
     {
-        playButton.onClick.AddListener(OnClickPlay);
+        playButton.onClick.AddListener(OnNewGame);
         goBackMainMenuButton.onClick.AddListener(ToMainMenuCallback);
         quitButton.onClick.AddListener(GameStaticFunctions.QuitGame);
+        overwriteSaveFileButton.onClick.AddListener(OverWriteSaveFile);
+        overwriteSaveFileButton.onClick.AddListener(GoToLevelSelect);
+        cancelOverwriteSaveFileButton.onClick.AddListener(CancelOverwriteSaveFile);
+        continueButton.onClick.AddListener(GoToLevelSelect);
     }
 
     private void ToMainMenuCallback()
@@ -57,7 +62,6 @@ public class MenuEvents : MonoBehaviour
     {
         var hasCredits = creditPanel != null && creditsButton != null;
         var hasHelp = helpPanel != null && helpButton != null;
-        var hasLevelSelector = levelSelectorButton != null && levelSelectorPanel != null;
 
         if (hasHelp)
         {
@@ -68,16 +72,27 @@ public class MenuEvents : MonoBehaviour
         {
             creditsButton.onClick.AddListener(OnClickCredits);
         }
-
-        if (hasLevelSelector)
-        {
-            levelSelectorButton.onClick.AddListener(OnClickLevelSelector);
-        }
     }
 
-    private void CheckLevelSelectAvailable()
+    private static void OverWriteSaveFile()
     {
-        levelSelectorButton.interactable = GameManager.Instance.DataSaver.GetSaveDataFound();
+        GameManager.Instance.DataSaver.ResetSaveData();
+    }
+
+    private void CancelOverwriteSaveFile()
+    {
+        ChangePanel(mainPanel);
+    }
+
+
+    private void CheckContinueAvailable()
+    {
+        continueButton.interactable = GameManager.Instance.DataSaver.GetSaveDataFound();
+    }
+
+    private void GoToLevelSelect()
+    {
+        GameManager.Instance.CustomSceneManager.LoadLevelSelect();
     }
 
     private void ChangePanel(Panel panelToOpen)
@@ -99,9 +114,20 @@ public class MenuEvents : MonoBehaviour
 
     #region OnClick
 
-    private void OnClickPlay() => SceneManager.LoadScene(playLevel);
+    private void OnNewGame()
+    {
+        //check if save file exists
+        var saveFileFound = GameManager.Instance.DataSaver.GetSaveDataFound();
+        if (saveFileFound)
+        {
+            ChangePanel(warningPanel);
+            return;
+        }
 
-    private void OnClickLevelSelector() => ChangePanel(levelSelectorPanel);
+        OverWriteSaveFile();
+        GoToLevelSelect();
+    }
+
 
     private void OnClickHelp() => ChangePanel(helpPanel);
 
