@@ -2,6 +2,7 @@
 using UnityEngine;
 using Attributes;
 using UnityEditor;
+
 public class TriggerSceneChanger : MonoBehaviour
 {
     [SerializeField] private LayerMask contactLayers;
@@ -14,7 +15,8 @@ public class TriggerSceneChanger : MonoBehaviour
     {
         if (GameStaticFunctions.IsGoInLayerMask(other.gameObject, contactLayers))
         {
-         GameManager.Instance.CustomSceneManager.ChangeScene(nextLevelSceneName);
+            GameManager.Instance.UnlockLevel(nextLevelSceneName);
+            GameManager.Instance.CustomSceneManager.LoadLevelSelect();
         }
     }
 #if UNITY_EDITOR

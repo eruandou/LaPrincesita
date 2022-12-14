@@ -15,6 +15,6 @@ MonoBehaviour:
   speakerImage: {fileID: 21300000, guid: 28b0f9049bed9e6408c6c16c3698e3c3, type: 3}
   speakerName: Girl
   timeBetweenCharacters: 0.05
-  dialogue: "Y fue all\xED que la princesa vi\xF3 unas frutillas conocidas, debieron
-    parecerle algo importante."
+  dialogue: And so the Princess saw a small, beatufil strawberry which caught her
+    eye. Must've been something really important
   characterPerSecond: 20

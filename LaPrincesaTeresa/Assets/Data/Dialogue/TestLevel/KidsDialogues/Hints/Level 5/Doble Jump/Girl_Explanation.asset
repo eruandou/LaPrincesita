@@ -15,6 +15,6 @@ MonoBehaviour:
   speakerImage: {fileID: 21300000, guid: 28b0f9049bed9e6408c6c16c3698e3c3, type: 3}
   speakerName: Girl
   timeBetweenCharacters: 0.05
-  dialogue: "\xA1Wow! \xBFQu\xE9 es eso? \xBF Un globo? Quiz\xE1 con esto pueda impulsarse
-    la princesa."
+  dialogue: Wow! What is that? A balloon? Maybe the Princess can make herself lighter
+    with it
   characterPerSecond: 20
