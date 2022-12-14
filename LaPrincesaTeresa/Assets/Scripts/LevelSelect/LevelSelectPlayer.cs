@@ -13,7 +13,7 @@ namespace LevelSelect
         [SerializeField] private Animator animator;
         private static readonly int Move = Animator.StringToHash("Move");
 
-        private void Awake()
+        private void Start()
         {
             var actions = playerInput.actions;
 
@@ -27,6 +27,15 @@ namespace LevelSelect
 
             move.performed += TryMove;
             select.performed += TrySelect;
+        }
+
+        private void OnDestroy()
+        {
+            var actions = playerInput.actions;
+            var move = actions["MoveOption"];
+            var select = actions["Select"];
+            move.performed -= TryMove;
+            select.performed -= TrySelect;
         }
 
         private void TryMove(InputAction.CallbackContext ctx)
@@ -86,8 +95,9 @@ namespace LevelSelect
 
             animator.SetBool(Move, true);
             _currentNode = nodeToMoveTo;
+            var positionToMoveTo = _currentNode.transform.position;
             _isMoving = true;
-            var lerpMovement = transform.DOMove(nodeToMoveTo.transform.position, 2);
+            var lerpMovement = transform.DOMove(positionToMoveTo, 2);
             lerpMovement.onComplete += FinishMovement;
         }
 
@@ -101,7 +111,7 @@ namespace LevelSelect
         {
             if (_isMoving || _currentNode == default || !ctx.ReadValueAsButton())
                 return;
-
+            LevelSelectMap.lastVisitedNode = _currentNode.NodeNumber;
             GameManager.Instance.CustomSceneManager.ChangeScene(_currentNode.LevelData.levelID);
         }
 

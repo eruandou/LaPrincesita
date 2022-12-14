@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 421f6e2fc9304c93850148e13e1fdbda, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: 
-  levelID: Totorial part1 FIX
-  sceneLevel: {fileID: 102900000, guid: cb5fd8d2612963248add8e63b8f8fa18, type: 3}
-  sceneLevelConnections: []
+  levelID: Totorial part2 Fix
+  levelFormalName: Level 2
+  sceneLevel: {fileID: 102900000, guid: 6ff10d30892ea5a40b18434bb4f78035, type: 3}

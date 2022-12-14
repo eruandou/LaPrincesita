@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Level7
   m_EditorClassIdentifier: 
   levelID: Totorial part5
+  levelFormalName: Level 7
   sceneLevel: {fileID: 102900000, guid: de0ba542fb9d2f74d82973adf9cc2c73, type: 3}
-  sceneLevelConnections: []

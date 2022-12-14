@@ -11,14 +11,16 @@ namespace LevelSelect
         [SerializeField] private List<LevelNode> m_levelNodes;
         [SerializeField] private LevelSelectPlayer m_levelSelectPlayer;
 
+        public static int lastVisitedNode;
+
         private void Awake()
         {
-            foreach (var levelNode in m_levelNodes)
+            for (int i = 0; i < m_levelNodes.Count; i++)
             {
-                levelNode.Init();
+                m_levelNodes[i].Init(i);
             }
 
-            m_levelSelectPlayer.SetToNode(m_levelNodes[0]);
+            m_levelSelectPlayer.SetToNode(m_levelNodes[lastVisitedNode]);
         }
 
         private void Start()

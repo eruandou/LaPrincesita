@@ -9,6 +9,7 @@ namespace LevelSelect
     public class LevelNodeData : ScriptableObject
     {
         public string levelID;
+        public string levelFormalName;
 
 #if UNITY_EDITOR
         public SceneAsset sceneLevel;

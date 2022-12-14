@@ -121,6 +121,11 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
         SetMaxJumps(saveData.doubleJump);
     }
 
+    public void ReloadSavedData()
+    {
+        LoadSavedData();
+    }
+
     public void SubscribeToController(PlayerController controller)
     {
         controller.OnCrouch += CrouchHandler;
@@ -200,7 +205,6 @@ public class PlayerModel : MonoBehaviour, ILevelResetable
             _equipableItemsPositionBySocket.Add(socket.socketName, socket.transformObject);
         }
 
-     
 
 #if UNITY_EDITOR
         if (setAllAbilitiesForTesting)
