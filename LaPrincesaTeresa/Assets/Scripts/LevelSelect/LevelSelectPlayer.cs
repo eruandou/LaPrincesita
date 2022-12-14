@@ -8,10 +8,12 @@ namespace LevelSelect
 {
     public class LevelSelectPlayer : MonoBehaviour
     {
-        private LevelNode _currentNode;
         [SerializeField] private PlayerInput playerInput;
-        private bool _isMoving;
         [SerializeField] private Animator animator;
+
+        private LevelNode _currentNode;
+        private bool _isMoving;
+
         private static readonly int Move = Animator.StringToHash("Move");
 
         private void Start()
@@ -92,7 +94,7 @@ namespace LevelSelect
             var distanceAxis = (nodeToMoveTo.transform.position - transform.position).normalized;
 
 
-            transform.localScale = transform.localScale.xYZ(distanceAxis.x > 0 ? 1 : -1);
+            transform.localScale = transform.localScale.xYZ(distanceAxis.x > 0 ? 2 : -2);
 
             animator.SetBool(Move, true);
             _currentNode = nodeToMoveTo;
