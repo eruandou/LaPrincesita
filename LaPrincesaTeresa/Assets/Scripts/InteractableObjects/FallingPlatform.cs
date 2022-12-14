@@ -7,7 +7,7 @@ public class FallingPlatform : MonoBehaviour
     [SerializeField] private float countDown;
     [SerializeField] private GameObject visual;
     [SerializeField] private bool hasToFall = true;
-    [SerializeField]private bool restore = false;
+    [SerializeField] private bool restore = false;
     [SerializeField] private LayerMask contactLayers;
     private Vector3 _origin;
     private float _currCd;
@@ -16,10 +16,12 @@ public class FallingPlatform : MonoBehaviour
     private Collider2D[] _collider2Ds;
     private bool _activeTrap;
     private Animator _animator;
+    private static readonly int Tembleque = Animator.StringToHash("Tembleque");
+
     private void Awake()
     {
         _activeTrap = false;
-        
+
         _origin = transform.position;
         _collider2Ds = GetComponents<BoxCollider2D>();
         _rb = GetComponent<Rigidbody2D>();
@@ -77,14 +79,14 @@ public class FallingPlatform : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(GameStaticFunctions.IsGoInLayerMask(other.gameObject,contactLayers))
-        _currCd = Time.time + timer;
+        if (GameStaticFunctions.IsGoInLayerMask(other.gameObject, contactLayers))
+            _currCd = Time.time + timer;
         ReproduceAnimation(true);
         _activeTrap = true;
     }
+
     private void ReproduceAnimation(bool state)
     {
-        _animator.SetBool("Tembleque", state);
-
+        _animator.SetBool(Tembleque, state);
     }
 }

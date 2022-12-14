@@ -10,8 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a02a56ed6df409eb37d88769cf73278, type: 3}
-  m_Name: Tuto 1
+  m_Name: Cinematic1
   m_EditorClassIdentifier: 
   dialogueObjects:
   - {fileID: 11400000, guid: a0d9fa17a3efe7848b999a428502343f, type: 2}
   - {fileID: 11400000, guid: da233efa17455fc47adab6ece38823e3, type: 2}
+  - {fileID: 11400000, guid: 8f7debe15cb873a4888aac6b57267452, type: 2}
+  - {fileID: 11400000, guid: 2804a9ce7e994984fbeca76852e7c619, type: 2}
+  - {fileID: 11400000, guid: b08af3f03094f1749ad4c4a8dca580bd, type: 2}
+  - {fileID: 11400000, guid: 78c590c610ebc31428288ffd31b9dbce, type: 2}
+  - {fileID: 11400000, guid: 56986f620fa220941a7bdad21803a0ac, type: 2}
+  - {fileID: 11400000, guid: 734006ba9884629429e2f211dadecc93, type: 2}
+  - {fileID: 11400000, guid: 5bf9eafa74355af4aac5ecc4e16fcee9, type: 2}

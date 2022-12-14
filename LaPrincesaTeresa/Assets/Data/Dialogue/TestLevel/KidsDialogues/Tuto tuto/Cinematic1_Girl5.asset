@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2411b1af4a3b467ca4bdf9dbaf54fdd3, type: 3}
-  m_Name: Tuto Piba
+  m_Name: Cinematic1_Girl5
   m_EditorClassIdentifier: 
   speakerImage: {fileID: 21300000, guid: 28b0f9049bed9e6408c6c16c3698e3c3, type: 3}
   speakerName: Girl
-  timeBetweenCharacters: 0.05
-  dialogue: The Princess crossed the the bridge to bring the sword to her knight.
-  characterPerSecond: 20
+  timeBetweenCharacters: 0.055555556
+  dialogue: With an unknown strenght filling her, she jumped and was able to grab
+    the enormous claymore sword
+  characterPerSecond: 18
